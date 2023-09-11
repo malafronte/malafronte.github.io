@@ -1,5 +1,5 @@
 ---
-title: Docs
+title: Guida
 comments: false
 menu:
   main:

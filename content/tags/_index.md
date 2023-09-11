@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: Tag
 menu:
   main:
     parent: blog
@@ -8,5 +8,5 @@ menu:
         vendor: bs
         name: tags
         color: green
-      description: All of tags.
+      description: Tutti i tag.
 ---

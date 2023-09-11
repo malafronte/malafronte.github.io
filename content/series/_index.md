@@ -1,5 +1,5 @@
 ---
-title: Series
+title: Serie
 menu:
   main:
     parent: blog
@@ -7,5 +7,5 @@ menu:
       icon:
         vendor: bs
         name: columns
-      description: All of the series.
+      description: Tutte le serie.
 ---

@@ -1,7 +1,7 @@
 baseURL: https://malafronte.github.io/doc-info-quarta-23-24/
 title: Corso di Informatica per la quarta
 # Copyright, the {year} is the placeholder of this year.
-copyright: "Copyright © 2022-{year} [Gennaro Malafronte](https://github.com/malafronte/). All Rights Reserved."
+copyright: "Copyright © 2022-{year} [Gennaro Malafronte](https://github.com/malafronte/)"
 defaultContentLanguage: it
 defaultContentLanguageInSubdir: false # disable this to remove the default language code from URL, i.e. /en/docs -> /docs.
 disableLanguages:

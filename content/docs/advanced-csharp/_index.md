@@ -9,7 +9,7 @@ comments: false
 nav_weight: 1000
 nav_icon:
   vendor: bootstrap
-  name: toggles
+  name: stack
   color: '#e24d0e'
 series:
   - Docs

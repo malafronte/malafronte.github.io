@@ -1,5 +1,5 @@
 ---
-title: Archives
+title: Archivio
 menu:
   main:
     parent: blog
@@ -8,5 +8,5 @@ menu:
         vendor: bs
         name: archive
         className: text-primary-emphasis
-      description: Posts archive.
+      description: Archivio dei post.
 ---

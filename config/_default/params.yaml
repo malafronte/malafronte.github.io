@@ -4,21 +4,21 @@ hb:
   # js_bundle_name: main # the JS bundle name.
   # css_bundle_name: main # the CSS bundle name.
   styles:
-    primary: "#7952b3"
+    primary: "#AA09C6"
+    #"#7952b3"
   header:
     brand: Informatica in quarta # the brand name, leave it empty to use site's title.
     #logo_bg: '#712cf9' # logo background color, used by logo with transparent background.
     # see https://hbstack.dev/en/docs/modules/socials/.
     socials:
       github: malafronte
-      #twitter: genmalafronte
+      linkedin: gennaromalafronte
   footer:
     powered_by: false
     #see https://hbstack.dev/en/docs/modules/socials/.
     socials:
       _color: true # when false, remove the color of social icons.
-      github: malafronte
-      #twitter: genmalafronte
+      github: malafronte/doc-info-quarta-23-24
   blog:
     full_width: false # when true, the blog layout takes full width.
     sidebar:
@@ -81,8 +81,9 @@ mermaid:
   # replace it with other CDNs or self-hosted URLs.
   js_url: https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs
 code_block_panel:
-    max_lines: 500
+    max_lines: 20
     wrap: true
+    line_nos: false
 hugopress:
   modules:
     hb-custom:
