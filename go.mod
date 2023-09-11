@@ -76,4 +76,6 @@ require (
 	github.com/hugomods/snackbar v0.1.2 // indirect
 	github.com/hugomods/workbox v0.1.0 // indirect
 	github.com/jakearchibald/idb v7.1.1+incompatible // indirect
+	github.com/hbstack/header/modules/banner v0.5.3 // indirect
+	github.com/hugomods/aos v0.1.0 // indirect
 )

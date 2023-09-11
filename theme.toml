@@ -1,9 +1,9 @@
-name = "HB Starter Theme Template"
+name = "Corso di Informatica per la quarta"
 license = "MIT"
-licenselink = "https://github.com/hbstack/theme/blob/main/LICENSE"
-description = "The starter theme template of HB (Hugo Bootstrap) Framework"
-homepage = "https://github.com/hbstack/theme"
-demosite = "https://theme.hbstack.dev/"
+licenselink = "https://github.com/malafronte/doc-info-quarta-23-24/blob/main/LICENSE"
+description = "Sito didattico per il corso di informatica degli studenti di quarta dell'Istituto Alessandro Greppi di Monticello Brianza"
+homepage = "https://github.com/malafronte/doc-info-quarta-23-24/"
+demosite = "https://malafronte.github.io/doc-info-quarta-23-24/"
 tags = [
     "archive",
     "blog",
@@ -19,5 +19,5 @@ tags = [
 ]
 features = ["search", "flexible", "modular"]
 [author]
-name = "HB Framework Authors"
-homepage = "https://hbstack.dev/"
+name = "Gennaro Malafronte"
+homepage = "https://github.com/malafronte/"

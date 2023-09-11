@@ -1,9 +1,12 @@
-baseURL: https://theme.hbstack.dev/
-title: HB Starter Theme Template
+baseURL: https://malafronte.github.io/doc-info-quarta-23-24/
+title: Corso di Informatica per la quarta
 # Copyright, the {year} is the placeholder of this year.
-copyright: "Copyright © 2022-{year} [Hugo Modules](https://hugomods.com/) and [HB Framework](https://hbstack.dev/). All Rights Reserved."
-defaultContentLanguage: en
-defaultContentLanguageInSubdir: true # disable this to remove the default language code from URL, i.e. /en/docs -> /docs.
+copyright: "Copyright © 2022-{year} [Gennaro Malafronte](https://github.com/malafronte/). All Rights Reserved."
+defaultContentLanguage: it
+defaultContentLanguageInSubdir: false # disable this to remove the default language code from URL, i.e. /en/docs -> /docs.
+disableLanguages:
+  - "en"
+  - "zh-hans"
 enableRobotsTXT: true
 timeout: 120s # images processing takes a long time, it's recommended to commit the resources folder for improve the build performance.
 enableEmoji: true
@@ -37,7 +40,7 @@ module:
     - path: github.com/hbstack/blog/modules/sidebar/taxonomies
 
     # blog comments engine
-    - path: github.com/hbstack/blog/modules/giscus
+    #- path: github.com/hbstack/blog/modules/giscus
     # - path: github.com/hbstack/blog/modules/disqus
     # - path: github.com/hbstack/blog/modules/utterances
 
@@ -48,7 +51,7 @@ module:
     - path: github.com/hbstack/blog/modules/content-panel
 
     # docs comments engine
-    - path: github.com/hbstack/docs/modules/giscus
+    #- path: github.com/hbstack/docs/modules/giscus
     # - path: github.com/hbstack/docs/modules/utterances
     # - path: github.com/hbstack/docs/modules/disqus
 
@@ -57,7 +60,9 @@ module:
 
     # docs content panel
     - path: github.com/hbstack/docs/modules/content-panel
-
+    # banner modules
+    - path: github.com/hbstack/header/modules/banner
+    - path: github.com/hugomods/aos
     # other modules
     # - path: github.com/hugomods/google-analytics
     # - path: github.com/hugomods/google-adsense
@@ -87,6 +92,10 @@ build:
 
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
     renderer:
       unsafe: true
   highlight:

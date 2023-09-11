@@ -1,21 +1,24 @@
-description: The starter theme template of HB (Hugo Bootstrap) Framework.
+description: Appunti delle lezioni per gli studenti dell'Istituto "Alessandro Greppi" di Monticello Brianza.
 
 hb:
   # js_bundle_name: main # the JS bundle name.
   # css_bundle_name: main # the CSS bundle name.
+  styles:
+    primary: "#7952b3"
   header:
-    brand: HB # the brand name, leave it empty to use site's title.
-    logo_bg: '#712cf9' # logo background color, used by logo with transparent background.
+    brand: Informatica in quarta # the brand name, leave it empty to use site's title.
+    #logo_bg: '#712cf9' # logo background color, used by logo with transparent background.
     # see https://hbstack.dev/en/docs/modules/socials/.
     socials:
-      github: hbstack
-      twitter: razonyang
+      github: malafronte
+      #twitter: genmalafronte
   footer:
-    # see https://hbstack.dev/en/docs/modules/socials/.
+    powered_by: false
+    #see https://hbstack.dev/en/docs/modules/socials/.
     socials:
       _color: true # when false, remove the color of social icons.
-      github: hbstack
-      twitter: razonyang
+      github: malafronte
+      #twitter: genmalafronte
   blog:
     full_width: false # when true, the blog layout takes full width.
     sidebar:
@@ -26,7 +29,7 @@ hb:
         count: true # whether to show the number of posts associated to the item.
         limit: 10 # the maximum number of the item.
     paginate: 12 # paginate.
-    post_thumbnail_placeholder: HB THEME # the text of thumbnail placeholder, default to site title.
+    post_thumbnail_placeholder: Info # the text of thumbnail placeholder, default to site title.
     # post_thumbnail: false # whether to show the thumbnails.
     # post_date_format: ":date_long" # see https://gohugo.io/functions/dateformat/#datetime-formatting-layouts.
     home: # homepage settings.
@@ -36,19 +39,20 @@ hb:
         - docs
         - blog
         - tutorials
-    giscus:
-      repo: hbstack/theme
-      repo_id: R_kgDOJP3qtA
-      category_id: DIC_kwDOJP3qtM4CVavM
+    # giscus:
+    #   repo: hbstack/theme
+    #   repo_id: R_kgDOJP3qtA
+    #   category_id: DIC_kwDOJP3qtM4CVavM
   docs:
-    giscus:
-      repo: hbstack/theme
-      repo_id: R_kgDOJP3qtA
-      category_id: DIC_kwDOJP3qtM4CVavM
+    comments: false
+    # giscus:
+    #   repo: hbstack/theme
+    #   repo_id: R_kgDOJP3qtA
+    #   category_id: DIC_kwDOJP3qtM4CVavM
   content_panel:
     repo:
       service: github # github or gitlab.
-      repo: hbstack/theme
+      repo: malafronte/doc-info-quarta-23-24
       branch: main
       # subpath: exampleSite
   # gallery:
@@ -64,7 +68,7 @@ pwa:
   manifest:
     background_color: '#712cf9'
     theme_color: '#712cf9'
-    short_name: 'HB Theme'
+    short_name: 'Corso Info Quarta'
 
 # see https://hugomods.com/en/docs/search/#site-parameters
 search:

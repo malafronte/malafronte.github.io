@@ -1,12 +1,13 @@
 ---
 title: Docs
+comments: false
 menu:
   main:
-    weight: 1
+    weight: 2
     params:
       icon:
         vendor: bs
         name: book
 ---
 
-The example of Docs layout.
+Guida di riferimento per il corso di Informatica nella classe quarta.
