@@ -301,7 +301,6 @@ You can declare a variable in the expression body to use it anywhere in
 the expression body, as below:
 
 ```cs
-
 namespace ArgomentiAvanzati
 {
     public class Program
