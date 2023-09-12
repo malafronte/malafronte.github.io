@@ -32,6 +32,9 @@ featured: true
 #         name: book
 #         color: '#e24d0e'
 ---
+<sub>Attribuzione immagine[^1]</sub>
+[^1]:Image designed by [Freepik](http://www.freepik.com)
+
 In questa guida vedremo come installare e configurare alcuni strumenti necessari per lo sviluppo software. Alcuni strumenti non sono strettamente necessari, altri invece sono indispensabili per le attività di laboratorio. In particolare, vedremo:
 
 * La differenza tra il Command Prompt (CMD), Windows PowerShell e PowerShell
@@ -41,7 +44,7 @@ In questa guida vedremo come installare e configurare alcuni strumenti necessari
 * Abilitare Windows Sandbox. Non essenziale, ma utile in alcuni contesti
 * La personalizzazione di PowerShell mediante OhMyPosh. Non essenziale, ma interessante per coloro che vogliono una personalizzazione accattivante del proprio terminale.
 * Installazione di Git. Fondamentale per qualunque sviluppatore di codice.
-* Installazione di Visual Studio Community 2022 con i workload necessari per lo sviluppo di ASP.NET Core e di .NET Maui. Importante per gli argomenti sviluppati durante il corso
+* Installazione di Visual Studio Community 2022 con i workload necessari per lo sviluppo di ASP.NET Core e di .NET MAUI. Importante per gli argomenti sviluppati durante il corso
 <!--more-->
 
 ## Il Command Prompt (CMD)
