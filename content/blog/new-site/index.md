@@ -4,7 +4,7 @@ date: 2023-09-11T08:50:16+02:00
 draft: false
 description: "Il nuovo sito per il corso di informatica è pronto!"
 noindex: false
-pinned: true
+featured: true
 nav_weight: 10
 # nav_icon:
 #   vendor: bootstrap
