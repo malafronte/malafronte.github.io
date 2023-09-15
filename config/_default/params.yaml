@@ -83,8 +83,7 @@ mermaid:
   # replace it with other CDNs or self-hosted URLs.
   js_url: https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs
 code_block_panel:
-    max_lines: 100
-    wrap: true
+    max_lines: 25
     line_nos: false
 hugopress:
   modules:

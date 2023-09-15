@@ -9,7 +9,7 @@ header:
      Informatica <br/>al Greppi
       { .text-uppercase .mb-5 data-aos="fade-up" }
     description: |
-      Impara a programmare e costruisci applicazioni **moderne** con le tecnologie allo stato dell'arte 
+      Impara a sviluppare applicazioni **moderne** con le tecnologie allo stato dell'arte 
       { .mb-5 data-aos="fade-up" data-aos-delay="200" }
 
       {{< html/div
