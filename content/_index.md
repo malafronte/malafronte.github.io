@@ -6,7 +6,7 @@ header:
     alignment: center
     img: /images/banners/home.svg
     title: |
-     Informatica al Greppi
+     Informatica <br/>al Greppi
       { .text-uppercase .mb-5 data-aos="fade-up" }
     description: |
       Impara a programmare e costruisci applicazioni **moderne** con le tecnologie allo stato dell'arte 
@@ -17,13 +17,13 @@ header:
         data-aos-delay="300"
         class="d-grid gap-3 d-sm-flex justify-content-sm-center flex-wrap" >}}
         {{< bs/btn-link style=primary size=lg class="py-3" url="/docs-terza" >}}
-          {{< icons/icon vendor=bootstrap name=building-gear className="me-1" >}} Docs terza
+          {{< icons/icon vendor=bootstrap name=building-gear className="me-1" >}} Guida per terza
         {{< /bs/btn-link >}}
         {{< bs/btn-link style=light size=lg class="py-3" url="/docs-quarta" >}}
-          {{< icons/icon vendor=bootstrap name=phone-flip className="me-1" >}} Docs Quarta
+          {{< icons/icon vendor=bootstrap name=phone-flip className="me-1" >}} Guida per quarta
         {{< /bs/btn-link >}}
         {{< bs/btn-link style=danger size=lg class="py-3" url="/docs-quinta" >}}
-          {{< icons/icon vendor=bootstrap name=globe className="me-1" >}} Docs Quinta
+          {{< icons/icon vendor=bootstrap name=globe className="me-1" >}} Guida per quinta
         {{< /bs/btn-link >}}
       {{< /html/div >}}
       
