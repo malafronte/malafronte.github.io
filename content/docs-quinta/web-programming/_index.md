@@ -1,9 +1,10 @@
 ---
-title: "Advanced C#"
+title: "Web Programming"
 # linkTitle:
 date: 2023-09-10T18:58:33+02:00
+type: docs
 draft: false
-description: "Programmazione avanzata in C#"
+description: "Programmazione web, basi di dati, servizi di rete"
 noindex: false
 comments: false
 nav_weight: 1000

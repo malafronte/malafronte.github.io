@@ -2,6 +2,7 @@
 title: "Development Tools"
 # linkTitle:
 date: 2023-09-12T19:13:12+02:00
+type: docs
 draft: false
 description: "Development Environment Setup"
 noindex: false
@@ -32,6 +33,7 @@ featured: true
 #         name: book
 #         color: '#e24d0e'
 ---
+<style>body {text-align: justify}</style>
 <sub>Attribuzione immagine[^1]</sub>
 [^1]:Image designed by [Freepik](http://www.freepik.com)
 
@@ -151,26 +153,83 @@ Per installare Windows Sandbox occorre:
 
 Per i dettagli sull'installazione di Windows SandBox si rimanda alla [documentazione Microsoft](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview#installation).
 
-## Abbellire e personalizzare la shell con OhMyPosh
+## OhMyPosh, la shell con stile
 
 [OhMyPosh](https://ohmyposh.dev/) è una utility che permette un elevato grado di personalizzazione della propria shell (sia per Windows che per Linux).
 
 L'installazione di OhMyPosh si può fare seguendo la documentazione ufficiale, oppure seguendo gli ottimi tutorial di Scott Hanselman, in particolare quello intitolato "[My Ultimate PowerShell prompt with Oh My Posh and the Windows Terminal](https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal)" e quello intitolato "[Adding Predictive IntelliSense to my Windows Terminal PowerShell Prompt with PSReadline](https://www.hanselman.com/blog/adding-predictive-intellisense-to-my-windows-terminal-powershell-prompt-with-psreadline)".
 Nel primo viene mostrata, passo passo la procedura per installare e configurare OhMyPosh; nel secondo viene abilitata una funzione di predizione della shel che suggerisce il completamento dei comandi. La personalizzazione della console passa anche attraverso l'adozione di font particolari come [Nerd Fonts](https://www.nerdfonts.com/font-downloads).
 
-## Installare Git
+## Installazione di Visual Studio Code
 
-<https://git-scm.com/download/win>
+Visual Studio Code è un ottimo editor di testo, che grazie alla miriade di plugin disponibili, si può trasformare in un IDE completo per tantissimi linguaggi di programmazione. Visual Studio Code può essere scaricato gratuitamente dal link: <https://code.visualstudio.com/download>. Visual Studio Code, oltre che essere uno degli IDE più usati in assoluto per sviluppare applicazioni web, può essere usato anche per programmare in ambiente .NET e come editor di testo integrato in Git (vedi sotto). L'installazione di Visual Studio Code è molto semplice e non richiede particolari accorgimenti, tuttavia si consiglia di accettare le impostazioni che consentono di aggiungere al menù contestuale del File Explorer la possibilità di aprire un file e una cortella con Visual Studio Code.
 
-Per l'installazione si può scaricare l'installer, oppure utilizzare winget:
+![Schermata Installer VS Code](installerVSCode1.png)
+
+## Installazione di Git
+
+*Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.*
+Il sito ufficiale di Git è <https://git-scm.com/>.
+
+Per installare Git su Windows si può utilizzare il comando winget:
 
 ```ps1
 winget install --id Git.Git -e --source winget
 ```
 
-Dopo aver installato Git chiudiamo il terminale e ne riapriamo un altro per fare in modo che il comando git sia riconosciuto nella shell.
+Tuttavia, l'installazione eseguta tramite winget installa Git con le impostazioni di default, senza dare la possibilità all'utente di scegliere tra le varie opzioni disponibili. Questa opzione è indicata per utenti esperti che successivamente sanno modificare le impostazioni di funzionamento di Git con i comandi opportuni.
 
-Digitiamo il comando git version per conoscere la versione di Git installata
+Per utenti principianti è più opprtuno usare l'installer per Windows, scaricabile da <https://git-scm.com/download/win>, oppure da <https://gitforwindows.org/> e seguire i passaggi richiesti dell'installer. In particolare, è utile soffermarsi su alcuni punti dell'installazione per essere sicuri di aver configurato Git nel modo più utile per un utente inesperto su Windows:
+
+1. Scaricare l'installer di Git for Windows a 64 bit
+2. Far partire l'installer accettando le condizioni di default, ma selezionare anche i componenti opzionali per Windows.
+
+    ![Schermata Installer Git](installerGit1.png)
+
+3. Proseguire nell'installazione e, arrivati al punto in cui l'installer chiede di scegliere il default editor, selezionare Visual Studio Code.
+
+    ![Schermata Installer Git 2](installerGit2.png)
+
+4. Impostare `main` come nome di default del branch principale per i nuovi repository
+
+    ![Schermata Installer Git 3](installerGit3.png)
+
+5. Impostare il path in modo che Git sia richiamabile dalla command line e anche da software di terze parti 
+
+    ![Schermata Installer 4](installerGit4.png)
+
+6. Utilizzare OpenSSL per l'encryption
+
+   ![Scheramata Installer Git 5](installerGit5.png)
+
+7. Impostare l'opzione core.autocrlf a true. Questa configurazione è quella raccomandata per utenti Windows che lavorano su progetti cross platform
+
+   ![Schermata Installer Git 6](installerGit6.png)
+
+8. Usare MinTTY come emulatore di terminale per la Git Bash
+
+    ![Schermata Installer Git 7](installerGit7.png)
+
+9. Lasciare come opzione di default del `git pull` il fast-forward o la merge
+
+    ![Schermata Installer Git 8](installerGit8.png)
+
+10. <mark>Importante!</mark> Utilizzare il cross platform Credential Manager per l'accesso autenticato ai repository remoti.  
+Questa opzione permetterà di effettuare l'accesso remoto con il protocollo https e di memorizzare in maniera permanente le credenziali di accesso.
+
+    ![Schermata Installer Git 9](installerGit9.png)
+
+11. Abilitare il file system caching
+
+    ![Schermata Installer Git 10 ](installerGit10.png)
+
+12. Procedere con l'installazione
+
+    ![Schermata Installer Git 11 ](installerGit11.png)
+
+Dopo aver installato Git, chiudiamo il terminale e ne riapriamo un altro per fare in modo che il comando git sia riconosciuto nella shell.
+
+Digitiamo il comando `git version` per conoscere la versione di Git installata
 
 ## Configurazione di Git
 
@@ -180,32 +239,36 @@ Per la configurazione di Git ci sono diverse guide, tra cui quelle riportate nei
 
 <https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git>
 
-[[https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration]{.mark}](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+[<mark>https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration</mark>](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
-Apriamo la Git Bash, oppure Powershell e digitiamo il comando seguente per configurare il <mark>nome utente</mark>:
+Apriamo la Git Bash, oppure Powershell e digitiamo il comando seguente per configurare il `nome utente`:
 
 ```sh
 git config --global user.name "Mona Lisa"
 ```
 
-Configuriamo la e-mail (la stessa usata per l'account di GitHub):
+Configuriamo la `e-mail` (la stessa usata per l'account di GitHub):
 
 ```sh
 git config --global user.email "YOUR_EMAIL"
 ```
 
-Per la scelta dell'indirizzo di posta elettronica da usare con GitHub ci sono diverse opzioni se si vuole tutelare la privacy del proprio indirizzo di posta. Gli aspetti più importanti sono riassunti nei link:
+Per la scelta dell'indirizzo di posta elettronica da usare con GitHub ci sono diverse opzioni se si vuole tutelare la privacy del proprio indirizzo di posta. Gli aspetti più importanti sono riassunti nei link seguenti:
 
 <https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address>
 
 <https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-email-address-for-every-repository-on-your-computer>
 
-Per la configurazione di GitHub basta utilizzare la mail della scuola.
+Per le attività di laboratorio è sufficiente utilizzare la mail della scuola.
 
-## Installare Visual Studio con i work load necesari
+Il completamento della configurazione di Git verrà mostrato nella guida relativa all'utilizzo di Git.
 
-L'installazione di Visual Studio Community 2022 passa attraverso l'installazione dell'Installer di Visual Studio e poi attraverso la configurazione dei workload. L'installer è disponibile a questo indirizzo: <https://visualstudio.microsoft.com/it/vs/community/>
+## Installazione di Visual Studio
 
-I workload necessari per le attività di quarta sono ASP.NET and web development e .NET Multi-Platform App UI development
+L'installazione di Visual Studio Community 2022 passa attraverso l'installazione dell'Installer di Visual Studio e poi attraverso la configurazione dei workload. L'installer è disponibile a questo indirizzo: <https://visualstudio.microsoft.com/it/vs/community/>  
+
+Il workload richiesto per le attività di terza è .NET desktop development  
+
+I workload necessari per le attività di quarta e quinta sono ASP.NET and web development e .NET Multi-Platform App UI development
 
 ![Installazione di Visual Studio](image4.png)

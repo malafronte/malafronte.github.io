@@ -2,6 +2,7 @@
 title: "Delegates"
 # linkTitle:
 date: 2023-09-10T19:00:29+02:00
+type: docs
 draft: false
 # type: docs
 description: "Functions delegates"
@@ -33,6 +34,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
+<style>body {text-align: justify}</style>
 A function can have one or more parameters of different data types, but what if you want to pass a function itself as a parameter? How does C# handle the callback functions or event handler? The answer is - **delegate**.
 
 A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method. All the delegates are implicitly derived from System.Delegate class.
@@ -50,61 +52,37 @@ In C#, delegates form the basic building blocks for events. A delegate is a type
 
 ## Primo esempio
 
-```cs
+{{< highlight cs >}}
 class Program
-
 {
-
     // declare delegate
-
     public delegate void Print(intvalue);
-
         static void Main(string[] args)
-
     {
-
     // Print delegate points to PrintNumber
-
     Print printDel = PrintNumber;
-
     // or
-
     // Print printDel = new Print(PrintNumber);
-
     printDel(100000);
-
     printDel(200);
-
     // Print delegate points to PrintMoney
-
     printDel = PrintMoney;
-
     printDel(10000);
-
     printDel(200);
-
     Console.ReadLine();
-
     }
 
     public static void PrintNumber(int num)
-
     {
-
         Console.WriteLine("Number: {0,-12:N0}",num);
-
     }
 
     public static void PrintMoney(int money)
-
     {
-
         Console.WriteLine("Money: {0:C}", money);
-
     }
-
 }
-```
+{{< /highlight >}}
 
 In the above example, we have declared Print delegate that accepts _int_ type parameter and returns void. In the Main() method, a variable of Print type is declared and assigned a PrintNumber method name. Now, invoking Print delegate will in-turn invoke PrintNumber method. In the same way, if the Print delegate variable is assigned to the PrintMoney method, then it will invoke the PrintMoney method.
 
@@ -124,11 +102,8 @@ The delegate can be invoked like a method because it is a reference to a method.
 
 ```cs
 Print printDel = PrintNumber;
-
 printDel.Invoke(10000);
-
 //or
-
 printDel(10000);
 
 ```
@@ -137,51 +112,30 @@ printDel(10000);
 
 ```cs
 class Program
-
 {
-
     public delegate double MathDelegate(double value1, double value2);
-
     public static double Add(double value1, double value2)
-
     {
-
         return value1 + value2;
-
     }
 
     public static double Subtract(double value1, double value2)
-
     {
-
         return value1 - value2;
-
     }
 
     public static void Main()
-
     {
-
         MathDelegate mathDelegate = Add;
-
         var result = mathDelegate(5, 2);
-
         Console.WriteLine(result);
-
         // output: 7
-
         mathDelegate = Subtract;
-
         result = mathDelegate(5, 2);
-
         Console.WriteLine(result);
-
         // output: 3
-
         Console.ReadLine();
-
     }
-
 }
 ```
 
@@ -200,121 +154,63 @@ Another great feature of delegates is that you can combine them together. This i
 ```cs
 
 class Program
-
 {
-
     static void Hello(string s)
-
     {
-
         Console.WriteLine(" Hello, {0}!", s);
-
     }
 
     static void Goodbye(string s)
-
     {
-
         Console.WriteLine(" Goodbye, {0}!", s);
-
     }
 
     delegate void Del(string s);
-
     staticvoid Main()
-
     {
-
     Del a, b, c, d, k;
-
     // Create the delegate object a that references
-
     // the method Hello:
-
     a = new Del(Hello);
-
     // Create the delegate object b that references
-
     // the method Goodbye:
-
     b = Goodbye;
-
     // The two delegates, a and b, are composed to form c:
-
     c = a + b;
-
     //allo stesso modo possiamo inizializzare una variabile delegate Del a null
-
     //e usare += per aggiungere un metodo
-
     k = null;
-
     //aggiungo un metodo
-
     k += a;
-
     //aggiungo un altro metodo
-
     k += b;
-
     // Remove a from the composed delegate, leaving d,
-
     // which calls only the method Goodbye:
-
     d = c - a;
-
     Console.WriteLine("Invoking delegate a:");
-
     a("A");
-
     Console.WriteLine("Invoking delegate b:");
-
     b("B");
-
     Console.WriteLine("Invoking delegate c:");
-
     c("C");
-
     Console.WriteLine("Invoking delegate d:");
-
     d("D");
-
     Console.WriteLine("Invoking delegate k:");
-
     k("K");
-
     // Output:
-
-    Invoking delegate a:
-
-    Hello, A!
-
-    Invoking delegate b:
-
-    Goodbye, B!
-
-    Invoking delegate c:
-
-    Hello, C!
-
-    Goodbye, C!
-
-    Invoking delegate d:
-
-    Goodbye, D!
-
-    Invoking delegate k:
-
-    Hello, K!
-
-    Goodbye, K!
-
-    //Output
-
+    // Invoking delegate a:
+    // Hello, A!
+    // Invoking delegate b:
+    // Goodbye, B!
+    // Invoking delegate c:
+    // Hello, C!
+    // Invoking delegate d:
+    // Goodbye, D!
+    // Invoking delegate k:
+    // Hello, K!
+    // Goodbye, K!
     Console.ReadLine();
-
     }
-
 }
 
 ```
@@ -342,27 +238,18 @@ Here is an example of covariance:
 class Program
 
 {
-
     public delegate TextWriter CovarianceDel();
-
     public static StreamWriter MethodStream() { returnnull; }
-
     public static StringWriter MethodString() { returnnull; }
 
     staticvoid Main()
 
     {
-
         CovarianceDel del;
-
         del = MethodStream;
-
         del = MethodString;
-
         Console.ReadLine();
-
     }
-
 }
 ```
 
@@ -377,21 +264,14 @@ Below is an example of contravariance.
 class Program
 
 {
-
     public static void DoSomething(TextWriter textWriter) { }
-
     public delegate void ContravarianceDel(StreamWriter streamWriter);
 
     staticvoid Main()
-
     {
-
         ContravarianceDel del = DoSomething;
-
         Console.ReadLine();
-
     }
-
 }
 ```
 

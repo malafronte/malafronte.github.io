@@ -1,9 +1,9 @@
-name = "Corso di Informatica per la quarta"
+name = "Informatica al Greppi"
 license = "MIT"
-licenselink = "https://github.com/malafronte/doc-info-quarta-23-24/blob/main/LICENSE"
-description = "Sito didattico per il corso di informatica degli studenti di quarta dell'Istituto Alessandro Greppi di Monticello Brianza"
-homepage = "https://github.com/malafronte/doc-info-quarta-23-24/"
-demosite = "https://malafronte.github.io/doc-info-quarta-23-24/"
+licenselink = "https://github.com/malafronte/malafronte.github.io/blob/main/LICENSE"
+description = "Sito didattico per il corso di informatica degli studenti del triennio dell'Istituto Alessandro Greppi di Monticello Brianza"
+homepage = "https://github.com/malafronte/malafronte.github.io/"
+demosite = "https://malafronte.github.io/malafronte.github.io/"
 tags = [
     "archive",
     "blog",

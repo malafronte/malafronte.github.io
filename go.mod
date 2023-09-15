@@ -1,4 +1,4 @@
-module github.com/malafronte/doc-info-quarta-23-24
+module github.com/malafronte/malafronte.github.io
 
 go 1.19
 
@@ -36,6 +36,7 @@ require (
 	github.com/hbstack/gallery/modules/breadcrumb v0.1.0 // indirect
 	github.com/hbstack/hb v0.7.1 // indirect
 	github.com/hbstack/header v0.9.0 // indirect
+	github.com/hbstack/header/modules/banner v0.5.3 // indirect
 	github.com/hbstack/header/modules/language-picker v0.1.14 // indirect
 	github.com/hbstack/header/modules/search v0.1.24 // indirect
 	github.com/hbstack/header/modules/socials v0.1.19 // indirect
@@ -56,7 +57,41 @@ require (
 	github.com/hbstack/search v0.1.7 // indirect
 	github.com/hbstack/slide v0.2.0 // indirect
 	github.com/hbstack/syntax-highlighting v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/algol v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/borland v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/catppuccin-macchiato v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/catppuccin-mocha v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/colorful v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/doom-one v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/doom-one2 v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/dracula v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/emacs v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/fruity v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/github v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/github-dark v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/gruvbox v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/gruvbox-light v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/hrdark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/lovelace v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/modus-operandi v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/modus-vivendi v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/monokai v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/monokailight v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/murphy v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/nord v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/onedark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/rrt v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/solarized-dark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/tango v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/vim v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/vs v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/vulcan v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/witchhazel v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/xcode-dark v0.1.0 // indirect
+	github.com/hugomods/aos v0.1.0 // indirect
 	github.com/hugomods/bootstrap v0.11.3 // indirect
 	github.com/hugomods/fuse-js v0.1.0 // indirect
 	github.com/hugomods/giscus v0.1.0 // indirect
@@ -76,6 +111,4 @@ require (
 	github.com/hugomods/snackbar v0.1.2 // indirect
 	github.com/hugomods/workbox v0.1.0 // indirect
 	github.com/jakearchibald/idb v7.1.1+incompatible // indirect
-	github.com/hbstack/header/modules/banner v0.5.3 // indirect
-	github.com/hugomods/aos v0.1.0 // indirect
 )

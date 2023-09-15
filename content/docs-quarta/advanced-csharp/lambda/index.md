@@ -2,6 +2,7 @@
 title: "Lambda"
 # linkTitle:
 date: 2023-09-10T19:00:44+02:00
+type: docs
 draft: false
 description: "Lambda expressions"
 noindex: false
@@ -31,6 +32,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
+<style>body {text-align: justify}</style>
 Sometimes the whole signature of a method can be more code than the body
 of a method. There are also situations in which you need to create an
 entire method only to use it in a delegate.
@@ -164,7 +166,7 @@ The Lambda expression evolves from anonymous method by first removing
 the delegate keyword and parameter type and adding a lambda operator
 =\>.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-1.png](vertopal_af4db340ca1a4f09a95b92bc9896ea85/media/image1.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-1.png](image1.png)
 
 Lambda Expression from Anonymous Method
 
@@ -174,7 +176,7 @@ returns a value. So we can eliminate it.
 
 Also, we can remove parenthesis (), if we have only one parameter.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-2.png](vertopal_af4db340ca1a4f09a95b92bc9896ea85/media/image2.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-2.png](image2.png)
 
 Lambda Expression from Anonymous Method
 
@@ -182,7 +184,7 @@ Thus, we got the lambda expression: s =\> s.Age \> 12 && s.Age \<
 20 where **s** is a parameter, **=\>** is the lambda operator
 and **s.Age \> 12 && s.Age \< 20** is the body expression:
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-structure.png](vertopal_af4db340ca1a4f09a95b92bc9896ea85/media/image3.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-structure.png](image3.png)
 
 Lambda Expression Structure in C#
 
@@ -396,7 +398,7 @@ parameter to be of Student type and the return type to be boolean. The
 lambda expression s =\> s.age \> 12 && s.age \< 20 satisfies the
 Func\<Student, bool\> delegate requirement, as shown below:
 
-![https://www.tutorialsteacher.com/Content/images/linq/func-with-lambda-expression.png](vertopal_af4db340ca1a4f09a95b92bc9896ea85/media/image4.png)
+![https://www.tutorialsteacher.com/Content/images/linq/func-with-lambda-expression.png](image4.png)
 
 Func delegate with Lambda Expression
 
@@ -449,24 +451,23 @@ Esempio con le lambda expressions:
 ```cs
 
 namespace ArgomentiAvanzati
-
 {
     public class Program
     {
         public static void Main()
         {
-        Action<Student> PrintStudentDetail = s => Console.WriteLine("Name:{0}, Age: {1}", s.Name, s.Age");
-        Student std = new Student() { Name = "Bill", Age = 21 };
-        PrintStudentDetail(std);
-        Console.ReadLine();
+            Action<Student> PrintStudentDetail = s => Console.WriteLine("Name:{0}, Age: {1}", s.Name, s.Age");
+            Student std = new Student() { Name = "Bill", Age = 21 };
+            PrintStudentDetail(std);
+            Console.ReadLine();
         }
     }
 
     public class Student
     {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public int Age { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
 ```
@@ -544,21 +545,21 @@ of scope. Consider this code:
 
 class Program
 {
-delegate void MyAction();
-static MyAction GetAction()
-{
-int x = 0;
-MyAction a = delegate { Console.WriteLine(x); };
-x = 1;
-return a;
-}
+    delegate void MyAction();
+    static MyAction GetAction()
+    {
+        int x = 0;
+        MyAction a = delegate { Console.WriteLine(x); };
+        x = 1;
+        return a;
+    }
 
-static void Main(string[] args)
-{
-MyAction a = GetAction();
-a();
-Console.ReadLine();
-}
+    static void Main(string[] args)
+    {
+        MyAction a = GetAction();
+        a();
+        Console.ReadLine();
+    }
 }
 ```
 
