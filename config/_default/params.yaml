@@ -4,7 +4,11 @@ hb:
   # js_bundle_name: main # the JS bundle name.
   # css_bundle_name: main # the CSS bundle name.
   styles:
-    primary: "#AA09C6"
+    primary: "#07a5a8"
+    #"#26a9ab"
+    #"#AA09C6"
+    #"#26a9ab"
+    #"#AA09C6"
     #"#7952b3"
   header:
     brand: Informatica al Greppi # the brand name, leave it empty to use site's title.
@@ -83,7 +87,7 @@ mermaid:
   # replace it with other CDNs or self-hosted URLs.
   js_url: https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs
 code_block_panel:
-    max_lines: 25
+    max_lines: 80
     line_nos: false
 hugopress:
   modules:

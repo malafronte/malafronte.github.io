@@ -3,5 +3,17 @@
 /*! purgecss start ignore */
 
 /*! PUT YOU STYLE HERE TO AVOID GETTING REMOVING BY PURGECSS. */
+ .highlight pre::-webkit-scrollbar {
+     display: none;
+}
+.highlight pre {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+.highlight pre {
+    max-height: 2500px;
+}
 
 /*! purgecss end ignore */
