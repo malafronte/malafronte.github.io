@@ -7,7 +7,7 @@ type: docs
 description: "Programmazione avanzata in C#"
 noindex: false
 comments: false
-nav_weight: 1000
+nav_weight: 10
 nav_icon:
   vendor: bootstrap
   name: stack

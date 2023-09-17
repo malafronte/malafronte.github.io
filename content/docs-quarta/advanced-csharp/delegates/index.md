@@ -8,7 +8,7 @@ draft: false
 description: "Functions delegates"
 noindex: false
 comments: false
-nav_weight: 10
+nav_weight: 20
 # nav_icon:
 #   vendor: bootstrap
 #   name: toggles
@@ -34,7 +34,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
-<style>body {text-align: justify}</style>
+<style>p {text-align: justify}</style>
 A function can have one or more parameters of different data types, but what if you want to pass a function itself as a parameter? How does C# handle the callback functions or event handler? The answer is - **delegate**.
 
 A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method. All the delegates are implicitly derived from System.Delegate class.

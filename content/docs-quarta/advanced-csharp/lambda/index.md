@@ -32,7 +32,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
-<style>body {text-align: justify}</style>
+<style>p {text-align: justify}</style>
 Sometimes the whole signature of a method can be more code than the body
 of a method. There are also situations in which you need to create an
 entire method only to use it in a delegate.
@@ -166,7 +166,7 @@ The Lambda expression evolves from anonymous method by first removing
 the delegate keyword and parameter type and adding a lambda operator
 =\>.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-1.png](image1.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-1.png](image1.png#center)
 
 Lambda Expression from Anonymous Method
 
@@ -176,7 +176,7 @@ returns a value. So we can eliminate it.
 
 Also, we can remove parenthesis (), if we have only one parameter.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-2.png](image2.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-2.png](image2.png#center)
 
 Lambda Expression from Anonymous Method
 
@@ -184,7 +184,7 @@ Thus, we got the lambda expression: s =\> s.Age \> 12 && s.Age \<
 20 where **s** is a parameter, **=\>** is the lambda operator
 and **s.Age \> 12 && s.Age \< 20** is the body expression:
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-structure.png](image3.png)
+![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-structure.png](image3.png#center)
 
 Lambda Expression Structure in C#
 
@@ -398,7 +398,7 @@ parameter to be of Student type and the return type to be boolean. The
 lambda expression s =\> s.age \> 12 && s.age \< 20 satisfies the
 Func\<Student, bool\> delegate requirement, as shown below:
 
-![https://www.tutorialsteacher.com/Content/images/linq/func-with-lambda-expression.png](image4.png)
+![https://www.tutorialsteacher.com/Content/images/linq/func-with-lambda-expression.png](image4.png#center)
 
 Func delegate with Lambda Expression
 

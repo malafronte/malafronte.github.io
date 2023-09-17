@@ -1,5 +1,5 @@
 main:
-  - name: Docs
+  - name: Appunti
     identifier: docs
     weight: 1
 # main:

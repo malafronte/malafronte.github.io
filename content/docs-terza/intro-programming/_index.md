@@ -29,7 +29,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
-
+<style>p {text-align: justify}</style>
 Summary.
 
 <!--more-->

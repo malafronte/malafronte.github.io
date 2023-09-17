@@ -1,17 +1,19 @@
 ---
-title: "Web Programming"
+title: "Git Basics"
 # linkTitle:
-date: 2023-09-10T18:58:33+02:00
-type: docs
+date: 2023-09-17T20:02:50+02:00
 draft: false
-description: "Programmazione web, basi di dati, servizi di rete"
+type: docs
+description: " " 
 noindex: false
 comments: false
-nav_weight: 1000
-nav_icon:
-  vendor: bootstrap
-  name: stack
-  color: '#e24d0e'
+nav_weight: 30
+# nav_icon:
+#   vendor: bootstrap
+#   name: toggles
+#   color: '#e24d0e'
+authors:
+  - malafronte
 series:
   - Docs
 categories:
@@ -29,3 +31,5 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
+<style>p {text-align: justify}</style>
+Primi passi con Git

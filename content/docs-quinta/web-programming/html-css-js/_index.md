@@ -1,10 +1,10 @@
 ---
-title: "Web Programming"
-# linkTitle:
+title: "HTML, CSS, and JavaScript for Web Developers"
+linkTitle : "HTML, CSS, and JS for Web Dev"
 date: 2023-09-10T18:58:33+02:00
 type: docs
 draft: false
-description: "Programmazione web, basi di dati, servizi di rete"
+description: "Programmazione web, sviluppo di pagine in HTML5, CSS3, JavaScript"
 noindex: false
 comments: false
 nav_weight: 1000
@@ -29,3 +29,9 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
+
+Summary.
+
+<!--more-->
+
+Content.

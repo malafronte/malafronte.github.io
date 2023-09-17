@@ -1,5 +1,5 @@
 ---
-title: Guida per la terza
+title: Appunti per la terza
 type: docs
 nav_weight: 1
 comments: false

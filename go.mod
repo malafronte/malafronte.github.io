@@ -57,8 +57,15 @@ require (
 	github.com/hbstack/search v0.1.7 // indirect
 	github.com/hbstack/slide v0.2.0 // indirect
 	github.com/hbstack/syntax-highlighting v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/abap v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/algol v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/arduino v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/autumn v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/average v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/base16-snazzy v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/borland v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/catppuccin-frappe v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/catppuccin-latte v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/catppuccin-macchiato v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/catppuccin-mocha v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/colorful v0.1.0 // indirect

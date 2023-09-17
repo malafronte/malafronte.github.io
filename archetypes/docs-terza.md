@@ -1,17 +1,19 @@
 ---
-title: "Web Programming"
+title: "{{ replace .Name "-" " " | title }}"
 # linkTitle:
-date: 2023-09-10T18:58:33+02:00
-type: docs
+date: {{ .Date }}
 draft: false
-description: "Programmazione web, basi di dati, servizi di rete"
+type: docs
+description: 
 noindex: false
 comments: false
 nav_weight: 1000
-nav_icon:
-  vendor: bootstrap
-  name: stack
-  color: '#e24d0e'
+# nav_icon:
+#   vendor: bootstrap
+#   name: toggles
+#   color: '#e24d0e'
+authors:
+  - malafronte
 series:
   - Docs
 categories:
@@ -29,3 +31,9 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
+
+Summary.
+
+<!--more-->
+
+Content.
