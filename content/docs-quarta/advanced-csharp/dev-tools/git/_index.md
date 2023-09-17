@@ -1,10 +1,10 @@
 ---
-title: "Introduzione all'uso di Git"
-linkTitle: "Git per principianti"
+title: "Git per principianti"
+#linkTitle: " "
 date: 2023-09-17T17:25:18+02:00
 draft: false
 type: docs
-description: "Guida a Git per principianti"
+description: " "
 noindex: false
 comments: false
 nav_weight: 60
@@ -32,5 +32,5 @@ images:
 #         color: '#e24d0e'
 ---
 <style>p {text-align: justify}</style>
-In questa sezione vedremo come muovere i primi passi con Git e GitHub.
+In questa sezione si vedrà come muovere i primi passi con Git e GitHub.
 

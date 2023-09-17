@@ -43,12 +43,12 @@ Per installare Git su Windows si può utilizzare il comando winget:
 ```ps1
 winget install --id Git.Git -e --source winget
 ```
+
 {{< bs/alert >}}
 {{< markdownify >}}
 L'installazione eseguta tramite winget installa Git con le impostazioni di default, senza dare la possibilità all'utente di scegliere tra le varie opzioni disponibili. Questa opzione è indicata per utenti esperti che successivamente sanno modificare le impostazioni di funzionamento di Git con i comandi opportuni.
 {{< /markdownify >}}
 {{< /bs/alert >}}
-
 
 Per utenti principianti è più opprtuno usare l'installer per Windows, scaricabile da <https://git-scm.com/download/win>, oppure da <https://gitforwindows.org/> e seguire i passaggi richiesti dell'installer. In particolare, è utile soffermarsi su alcuni punti dell'installazione per essere sicuri di aver configurato Git nel modo più utile per un utente inesperto su Windows:
 
@@ -98,6 +98,6 @@ Questa opzione permetterà di effettuare l'accesso remoto con il protocollo http
 
     ![Schermata Installer Git 11 ](installerGit11.png)
 
-Dopo aver installato Git, chiudiamo il terminale e ne riapriamo un altro per fare in modo che il comando git sia riconosciuto nella shell.
+Dopo aver installato Git, si chiuda il terminale e se ne riapra un altro per fare in modo che il comando git sia riconosciuto nella shell.
 
-Digitiamo il comando `git version` per conoscere la versione di Git installata
+Si digiti il comando `git version` per conoscere la versione di Git installata

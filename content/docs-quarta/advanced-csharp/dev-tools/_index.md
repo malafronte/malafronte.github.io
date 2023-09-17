@@ -46,16 +46,3 @@ In questa sezione si mostrerà come installare, configurare e utilizzare alcuni 
 * La personalizzazione di PowerShell mediante OhMyPosh. Non essenziale, ma interessante per coloro che vogliono una personalizzazione accattivante del proprio terminale.
 * L'installazione di Visual Studio Community 2022 con i workload necessari per lo sviluppo di ASP.NET Core e di .NET MAUI. Importante per gli argomenti sviluppati durante il corso
 * Git. Fondamentale per qualunque sviluppatore di codice.
-
-
-
-
-
-
-
-
-
-
-
-
-

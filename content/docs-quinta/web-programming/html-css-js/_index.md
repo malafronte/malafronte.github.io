@@ -7,7 +7,7 @@ draft: false
 description: "Programmazione web, sviluppo di pagine in HTML5, CSS3, JavaScript"
 noindex: false
 comments: false
-nav_weight: 1000
+nav_weight: 10
 nav_icon:
   vendor: bootstrap
   name: stack
@@ -29,9 +29,3 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
-
-Summary.
-
-<!--more-->
-
-Content.

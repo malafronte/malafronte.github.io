@@ -43,13 +43,13 @@ Per la configurazione di Git ci sono diverse guide, tra cui quelle riportate nei
 
 [<mark>https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration</mark>](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
-Apriamo la Git Bash, oppure Powershell e digitiamo il comando seguente per configurare il `nome utente`:
+Si apra la Git Bash, oppure Powershell e si digiti il comando seguente per configurare il `nome utente`:
 
 ```sh
 git config --global user.name "Mona Lisa"
 ```
 
-Configuriamo la `e-mail` (la stessa usata per l'account di GitHub):
+Si configuri la `e-mail` (la stessa usata per l'account di GitHub):
 
 ```sh
 git config --global user.email "YOUR_EMAIL"
@@ -95,8 +95,8 @@ Le impostazioni di Git possono essere salvate su variabili di tre livelli, come 
    È possibile passare queste variabili a git con l'opzione `--global`.
 3. **Local**: Le variabili locali contengono impostazioni valide solo per il progetto corrente e sono memmorizzate in
 
-    `[gitrepo]/.git/config`
-    Example: C:/Users/MyProject/.git/config
+    `[gitrepo]/.git/config`  
+    Esempio: C:/Users/MyProject/.git/config
 
     È possibile passare queste variabili a git con l'opzione `--local`.
 
