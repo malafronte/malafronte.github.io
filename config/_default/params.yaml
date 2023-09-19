@@ -4,7 +4,7 @@ hb:
   # js_bundle_name: main # the JS bundle name.
   # css_bundle_name: main # the CSS bundle name.
   styles:
-    primary: "#09b3c6"
+    primary: "#2ea6b3"
     #"#07a5a8"
     #"#26a9ab"
     #"#AA09C6"

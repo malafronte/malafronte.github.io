@@ -7,7 +7,7 @@ type: docs
 description: " "
 noindex: false
 comments: false
-nav_weight: 1000
+nav_weight: 10
 nav_icon:
   vendor: bootstrap
   name: tools
@@ -34,4 +34,6 @@ images:
 <style>p {text-align: justify}</style>
 In questa sezione sono elencati gli argomenti trattati al corso relativamente agli strumenti utili per lo sviluppo web:
 
-1. tutto quanto riportato [qui]({{< ref "/docs-quarta/advanced-csharp/dev-tools" >}} "Developmento Tools") (ambienti di svilippo, Git, etc.)
+1. Tutto quanto riportato [qui]({{< ref "/docs-quarta/dev-tools" >}} "Developmento Tools") ed in particolare  
+      1. gli ambienti di svilippo (Visual Studio Code e Visual Studio)  
+      2. Git - tutti i comandi di base trattati a lezione e operatività con GitHub

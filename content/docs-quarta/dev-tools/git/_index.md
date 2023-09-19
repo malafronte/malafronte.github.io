@@ -33,4 +33,3 @@ images:
 ---
 <style>p {text-align: justify}</style>
 In questa sezione si vedrà come muovere i primi passi con Git e GitHub.
-

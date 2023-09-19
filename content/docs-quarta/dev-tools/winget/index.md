@@ -1,5 +1,5 @@
 ---
-title: "Winget"
+title: "winget"
 # linkTitle:
 date: 2023-09-17T18:01:19+02:00
 draft: false
