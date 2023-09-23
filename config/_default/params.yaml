@@ -4,7 +4,9 @@ hb:
   # js_bundle_name: main # the JS bundle name.
   # css_bundle_name: main # the CSS bundle name.
   styles:
-    primary: "#2ea6b3"
+    primary: "#0daebf"
+    #"#0daebf"
+    #"#2ea6b3"
     #"#07a5a8"
     #"#26a9ab"
     #"#AA09C6"
@@ -54,11 +56,12 @@ hb:
     #   repo: hbstack/theme
     #   repo_id: R_kgDOJP3qtA
     #   category_id: DIC_kwDOJP3qtM4CVavM
-  content_panel:
-    repo:
-      service: github # github or gitlab.
-      repo: malafronte/malafronte.github.io
-      branch: main
+  # il content_panel permette di abilitare il pannello che mostra i dettagli del codice del sito su GitHub
+  # content_panel:
+  #   repo:
+  #     service: github # github or gitlab.
+  #     repo: malafronte/malafronte.github.io
+  #     branch: main
       # subpath: exampleSite
   # gallery:
   #   thumbnail_size: "x640"
