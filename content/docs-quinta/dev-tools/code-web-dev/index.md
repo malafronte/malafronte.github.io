@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio Code Front-end Web Development"
+title: "VS Code Front-end Web Development"
 linkTitle: "VS Code Front-end Web Dev"
 date: 2023-09-17T16:37:46+02:00
 draft: false
@@ -87,7 +87,7 @@ Workspace Settings - Settings stored inside your workspace and only apply when t
 
 La configurazione delle impostazioni (Settings) si può fare con:  
 Settings Editor: **File** > **Preferences** > **Settings**, oppure con la scorciatoia (`Ctrl+,`).  
-Aprendo direttamente il file `settings.json`:  **Command Palette** (`Ctrl+Shift+P`).
+Aprendo direttamente il file `settings.json`:  **Command Palette** (`Ctrl+Shift+P`) e poi scrivendo `Preferences: Open User Settings (JSON)`
 
 ## Configurazione di Visual Studio Code per lo sviluppo web
 
@@ -281,7 +281,7 @@ I dettagli della configurazione sono ben descritti nella sezione [launch configu
 ![Run or Debug in VS Code](RunDebugInVSCode.png#center)
 
 Cliccando sul pulsante a forma di freccia verde (pulsante di debug), oppure premendo il tasto F5 della tastiera, viene aperto il browser Chrome con la pagina `index.html`.  
-> **Nota:** Digitando il tasto `ctrl +F5` viene avviato il Run al posto del Debug. La differenza tra Run e Debug è la stessa già vista con Visual Studio:
+> **Nota:** digitando il tasto `ctrl +F5` viene avviato il Run al posto del Debug. La differenza tra Run e Debug è la stessa già vista con Visual Studio:
 >
 >* il Debug fa partire l'applicazione e la connette al debugger con la possibilità di fermare l'esecuzione del codice in un punto, vedere lo stato delle variabili, etc.
 >* il Run fa partire l'applicazione, senza collegarla al debugger.
@@ -296,7 +296,7 @@ La configurazione appena mostrata permette di eseguire il debug del file `index.
 
 * Se il file `launch.json` esiste già, si clicca sul pulsante **Add Configuration** e poi si scrive il tipo di configurazione che si vuole ottenere. Per esempio, per eseguire i file HTML, CSS e JS in Chrome, basta scrivere `chrome` e poi accettare lo snippet di configurazione con il tasto `tab`.
   ![Add Configuration in launch.json file of VS Code](AddConfInLaunchJsonFileVSCode.png#center)
-Il risultato è un file `json` con i seguenti valori:
+  Il risultato è un file `json` con i seguenti valori:
 
   ```json
   {
@@ -322,73 +322,73 @@ Il risultato è un file `json` con i seguenti valori:
   }
   ```
 
-Come si vede, è stata aggiunta una configurazione di nome `Launch Chrome` e se si prova a mandare in debug l'applicazione si vedrà che ci sono due possibilità:  
+  Come si vede, è stata aggiunta una configurazione di nome `Launch Chrome` e se si prova a mandare in debug l'applicazione si vedrà che ci sono due possibilità:  
 
-![Multiple launch configurations in VS Code](MultipleLaunchConfigurationsInVSCode.png)
+  ![Multiple launch configurations in VS Code](MultipleLaunchConfigurationsInVSCode.png)
 
-Se si lancia la configurazione `Launch Chrome` si vedrà che in realtà la pagina corrispondente a `index.html` non viene comunque caricata.
+  Se si lancia la configurazione `Launch Chrome` si vedrà che in realtà la pagina corrispondente a `index.html` non viene comunque caricata.
 
-![Page not loaded in VS Code](PageNotLoadedInVSCode.png#center)
+  ![Page not loaded in VS Code](PageNotLoadedInVSCode.png#center)
 
-Il motivo del mancato caricamento sta nel fatto che con la configurazione utilizzata il file `index.html` non è caricato dal file system, ma attraverso l'url `http://localhost:8080`. Ciò presuppone che ci sia un HTTP Server che risponda sul `localhost` alla porta `8080`. Per far funzionare questa configurazione occorre che ci sia un HTTP Server in ascolto sulla porta indicata nel file `launch.json`. Ci sono diverse soluzioni che si possono utilizzare, ma la più semplice è quella di attivare il **Live Server** che permette di servire in http le pagine direttamente dal workspace di VS Code.  
-Quando **Live Server** parte, è in ascolto sulla porta 5500 per impostazione predefinita, ma è possibile configurarlo per mettersi in ascolto su un numero di porta differente, oppure per fare in modo che ogni volta scelga una porta a caso. Di seguito si riportano le schermate relative alla configurazione di **Live Server**:  
+  Il motivo del mancato caricamento sta nel fatto che con la configurazione utilizzata il file `index.html` non è caricato dal file system, ma attraverso l'url `http://localhost:8080`. Ciò presuppone che ci sia un HTTP Server che risponda sul `localhost` alla porta `8080`. Per far funzionare questa configurazione occorre che ci sia un HTTP Server in ascolto sulla porta indicata nel file `launch.json`. Ci sono diverse soluzioni che si possono utilizzare, ma la più semplice è quella di attivare il **Live Server** che permette di servire in http le pagine direttamente dal workspace di VS Code.  
+  Quando **Live Server** parte, è in ascolto sulla porta 5500 per impostazione predefinita, ma è possibile configurarlo per mettersi in ascolto su un numero di porta differente, oppure per fare in modo che ogni volta scelga una porta a caso. Di seguito si riportano le schermate relative alla configurazione di **Live Server**:  
 
-![Live Server Configuration in VS Code - fig. 1](LiveServerConfigurationInVSCode1.png#center)
+  ![Live Server Configuration in VS Code - fig. 1](LiveServerConfigurationInVSCode1.png#center)
 
-![Live Server Configuration in VS Code - fig. 2](LiveServerConfigurationInVSCode2.png#center)
+  ![Live Server Configuration in VS Code - fig. 2](LiveServerConfigurationInVSCode2.png#center)
 
-Supponendo di voler scrivere una configurazione di debug che permetta di eseguire il debug di una qualsiasi pagina HTML, CSS, JS all'interno del workspace, avendo come server HTTP il **LIve Server** in ascolto sulla porta 5500, il file `launch.json` diventa:
+  Supponendo di voler scrivere una configurazione di debug che permetta di eseguire il debug di una qualsiasi pagina HTML, CSS, JS all'interno del workspace, avendo come server HTTP il **LIve Server** in ascolto sulla porta 5500, il file `launch.json` diventa:
 
-```json
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "chrome",
-            "url": "http://localhost:5500",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
-}
-```
+  ```json
+  {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "Launch Chrome",
+              "request": "launch",
+              "type": "chrome",
+              "url": "http://localhost:5500",
+              "webRoot": "${workspaceFolder}"
+          }
+      ]
+  }
+  ```
 
-Con questa configurazione, quando il **Live Server** è in ascolto sulla porta `5500` e si lancia la configurazione di debug `Launch Chrome` la pagina `index.html` verrà correttamente messa in debug, e se fossero presenti dei breakpoint nel codice JavaScript, l'esecuzione si fermerà proprio sul primo breakpoint quando l'esecuzione arriverà all'istruzione corrispondente.  
+  Con questa configurazione, quando il **Live Server** è in ascolto sulla porta `5500` e si lancia la configurazione di debug `Launch Chrome` la pagina `index.html` verrà correttamente messa in debug, e se fossero presenti dei breakpoint nel codice JavaScript, l'esecuzione si fermerà proprio sul primo breakpoint quando l'esecuzione arriverà all'istruzione corrispondente.  
 
-![Successful execution of a page in Chrome](SuccessfulExecutionOfPageInChromeVSCode.png#center)
+  ![Successful execution of a page in Chrome](SuccessfulExecutionOfPageInChromeVSCode.png#center)
 
-Esiste anche una configurazione specifica per Edge:
+  Esiste anche una configurazione specifica per Edge:
 
-```json
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch Edge",
-            "request": "launch",
-            "type": "edge",
-            "url": "http://localhost:5500",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "chrome",
-            "url": "http://localhost:5500",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
-}
-```
+  ```json
+  {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "Launch Edge",
+              "request": "launch",
+              "type": "edge",
+              "url": "http://localhost:5500",
+              "webRoot": "${workspaceFolder}"
+          },
+          {
+              "name": "Launch Chrome",
+              "request": "launch",
+              "type": "chrome",
+              "url": "http://localhost:5500",
+              "webRoot": "${workspaceFolder}"
+          }
+      ]
+  }
+  ```
 
-Se il file `launch.json` non è ancora stato creato nella cartella `.vscode`, è possibile crearlo digitando la combinazione di tasti `Ctrl+p`, e scrivendo il termine `debug`. Apparirà un elenco di possibili configurazioni. Cliccando su `Add Configuration` è possibile creare un file di configurazione in `.vscode/launch.json`. Ad esempio, selezionando `Chrome` verrà creata la stessa configurazione vista nelle sezioni precedenti.
+* Se il file `launch.json` non è ancora stato creato nella cartella `.vscode`, è possibile crearlo digitando la combinazione di tasti `Ctrl+p`, e scrivendo il termine `debug`. Apparirà un elenco di possibili configurazioni. Cliccando su `Add Configuration` è possibile creare un file di configurazione in `.vscode/launch.json`. Ad esempio, selezionando `Chrome` verrà creata la stessa configurazione vista nelle sezioni precedenti.
 
 ## Debug di codice Javascript con Node.js
 
