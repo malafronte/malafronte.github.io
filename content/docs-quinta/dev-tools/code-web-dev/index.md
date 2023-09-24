@@ -328,7 +328,7 @@ Come si vede, è stata aggiunta una configurazione di nome `Launch Chrome` e se 
 
 Se si lancia la configurazione `Launch Chrome` si vedrà che in realtà la pagina corrispondente a `index.html` non viene comunque caricata.
 
-![Page not loaded in VS Code](PageNotLoadedInVSCode.png)
+![Page not loaded in VS Code](PageNotLoadedInVSCode.png#center)
 
 Il motivo del mancato caricamento sta nel fatto che con la configurazione utilizzata il file `index.html` non è caricato dal file system, ma attraverso l'url `http://localhost:8080`. Ciò presuppone che ci sia un HTTP Server che risponda sul `localhost` alla porta `8080`. Per far funzionare questa configurazione occorre che ci sia un HTTP Server in ascolto sulla porta indicata nel file `launch.json`. Ci sono diverse soluzioni che si possono utilizzare, ma la più semplice è quella di attivare il **Live Server** che permette di servire in http le pagine direttamente dal workspace di VS Code.  
 Quando **Live Server** parte, è in ascolto sulla porta 5500 per impostazione predefinita, ma è possibile configurarlo per mettersi in ascolto su un numero di porta differente, oppure per fare in modo che ogni volta scelga una porta a caso. Di seguito si riportano le schermate relative alla configurazione di **Live Server**:  
