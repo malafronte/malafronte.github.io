@@ -40,4 +40,4 @@ header:
 
 ## Ultimi articoli {.text-center .mb-5}
 
-{{< bs/article-cards >}}
+{{< bs/article-cards limit=6 >}}
