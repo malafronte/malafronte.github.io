@@ -1,6 +1,6 @@
 ---
-title: "HTML, CSS, and JavaScript for Web Developers"
-linkTitle : "HTML, CSS, and JS for Web Dev"
+title: "HTML, CSS, and JavaScript"
+linkTitle : "HTML, CSS, and JS"
 date: 2023-09-10T18:58:33+02:00
 type: docs
 draft: false

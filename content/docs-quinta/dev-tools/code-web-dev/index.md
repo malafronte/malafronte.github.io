@@ -108,7 +108,7 @@ L'installazione di Node.js si effettua facilmente scaricando l'installer dalla [
 
 ## Ciao Mondo! da una pagina web in VS Code
 
-Si supponga di voler creare un progetto web (con HTML, CSS e JS) in una cartella chiamata esempio1. È possibile creare la cartella direttamente da VS Code, oppure crearla dalla console e poi richiamare VS Code come indicato negli [esempi di utilizzo di VS Code dalla command line](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-line) della documentazione.  
+Si supponga di voler creare un progetto web (con HTML, CSS e JS) in una cartella chiamata `esempio1`. È possibile creare la cartella direttamente da VS Code, oppure crearla dalla console e poi richiamare VS Code come indicato negli [esempi di utilizzo di VS Code dalla command line](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-line) della documentazione.  
 
 ![Start VS Code from PowerShell](RunVSCodeFromConsole.png#center)
 
@@ -244,9 +244,9 @@ if (uno == true) {
 
 Per effettuare il debug del codice si può procedere come segue:  
 
-* Si seleziona il file html che si intende lanciare, `index.html` nell'esempio.
-* Si seleziona nel menu principale di VS Code il tab relativo al debug e si clicca sul pulsante **Run and Debug**
-* La prima volta che si clicca sul pulsante **Run and Debug** viene chiesto quale browser utilizzare; le volte successive viene ricordata la scelta precedente. Ad esempio, se si sceglie Chrome, il file HTML verrà aperto in nel browser selezionato.
+1. Si seleziona il file html che si intende lanciare, `index.html` nell'esempio.  
+2. Si seleziona nel menu principale di VS Code il tab relativo al debug e si clicca sul pulsante **Run and Debug**.  
+   La prima volta che si clicca sul pulsante **Run and Debug** viene chiesto quale browser utilizzare; le volte successive viene ricordata la scelta precedente. Ad esempio, se si sceglie Chrome, il file HTML verrà aperto in nel browser selezionato.
 
 Per effettuare il debug in maniera efficiente conviene creare una configurazione di debug.
 
@@ -292,9 +292,9 @@ Cliccando sul pulsante a forma di ingranaggio nella sezione Run and Debug è pos
 
 ![Add configurations in VS Code](AddConfigurationsInVSCode.png#center)
 
-La configurazione appena mostrata permette di eseguire il debug del file `index.html` all'interno del browser Chrome, tuttavia è specifica per un singolo file. Per realizzare una configurazione che permetta di effettuare il Run e Debug di un qualunque file all'interno del workspace, occorre procedere diversamente:
+La configurazione appena mostrata permette di eseguire il debug del file `index.html` all'interno del browser Chrome, tuttavia è specifica per un singolo file. Per realizzare una configurazione che permetta di effettuare il **Run e Debug** di un qualunque file all'interno del workspace, occorre procedere diversamente:
 
-* Se il file `launch.json` esiste già, si clicca sul pulsante **Add Configuration** e poi si scrive il tipo di configurazione che si vuole ottenere. Per esempio, per eseguire i file HTML, CSS e JS in Chrome, basta scrivere `chrome` e poi accettare lo snippet di configurazione con il tasto `tab`.
+* Se il file `launch.json` esiste già, come nell'esempio mostrato in figura, si clicca sul pulsante **Add Configuration** e poi si scrive il tipo di configurazione che si vuole ottenere. Per esempio, per eseguire i file HTML, CSS e JS in Chrome, basta scrivere `chrome` e poi accettare lo snippet di configurazione con il tasto `tab`.
   ![Add Configuration in launch.json file of VS Code](AddConfInLaunchJsonFileVSCode.png#center)
   Il risultato è un file `json` con i seguenti valori:
 
