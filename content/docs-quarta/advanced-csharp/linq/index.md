@@ -532,6 +532,12 @@ Standard Query Operators can be classified based on the functionality they provi
 
 Gli esempi di tutte le funzioni presenti nella tabella precedente sono reperibili [qui](https://www.tutorialsteacher.com/linq/linq-standard-query-operators)
 
+### Points to Remember on LINQ Method Syntax
+
+1. As name suggest, Method Syntax is like calling extension method.
+2. LINQ Method Syntax aka Fluent syntax because it allows series of extension methods call.
+3. Implicitly typed variable `var` can be used to hold the result of the LINQ query.
+
 ## Alcuni esempi di codice LINQ
 
 ```cs
@@ -611,7 +617,7 @@ namespace LINQgym
             new Student() { StudentID = 18, StudentName = "Alexander2",Age = 18, MediaVoti = 9},
             };
 
-            List<Student> studentLinst1 = studentArray1.ToList();
+            List<Student> studentList1 = studentArray1.ToList();
 
             //Studiamo la clausola Where
 
@@ -632,14 +638,14 @@ namespace LINQgym
             //trovare tutti gli studenti che hanno età compresa tra 18 e 25 anni, caso dell'array
             studentResultArray = studentArray1.Where(s => s.Age >= 18 && s.Age <= 25).ToArray();
             //trovare tutti gli studenti che hanno età compresa tra 18 e 25 anni, caso della lista
-            studentResultList = studentLinst1.Where(s => s.Age >= 18 && s.Age <= 25).ToList();
+            studentResultList = studentList1.Where(s => s.Age >= 18 && s.Age <= 25).ToList();
             //uso di delegati o di metodi 
             //https://stackoverflow.com/questions/1906787/cast-delegate-to-func-in-c-sharp
             studentResultArray = studentArray1.Where(new Func<Student, bool>(condizioneDiRicerca2)).ToArray();
-            studentResultList = studentLinst1.Where(condizioneDiRicerca).ToList();
+            studentResultList = studentList1.Where(condizioneDiRicerca).ToList();
             //oppure 
             studentResultArray = studentArray1.Where(new Func<Student, bool>(condizioneDiRicerca3)).ToArray();
-            studentResultList = studentLinst1.Where(VerificaCondizione).ToList();
+            studentResultList = studentList1.Where(VerificaCondizione).ToList();
 
             Console.WriteLine("stampa su Array con Action");
             Array.ForEach(studentResultArray, AzioneSuElemento);
@@ -651,7 +657,7 @@ namespace LINQgym
             //USO DELLA VERSIONE CON INDICE DELLA WHERE
 
             //il metodo Where ha anche una versione con l'indice della collection
-            //in questro esempio prendiamo solo quelli che verificano la condizione sull'età e hanno indice pari
+            //in questo esempio prendiamo solo quelli che verificano la condizione sull'età e hanno indice pari
             Console.WriteLine("selezioniamo solo quelli che verificano la condizione e hanno indice pari");
 
             studentResultArray = studentArray1.Where(
@@ -659,7 +665,7 @@ namespace LINQgym
             Console.WriteLine("stampa su array");
             Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = studentLinst1.Where(
+            studentResultList = studentList1.Where(
                 (s, i) => (s.Age >= 18 && s.Age <= 25) && i % 2 == 0).ToList();
             Console.WriteLine("stampa su list");
             studentResultList.
@@ -667,7 +673,7 @@ namespace LINQgym
 
             //E' possibile anche far applicare più volte la where per ottenere filtraggi multipli
             Console.WriteLine("doppia where: quelli che verificano la condizione e che hanno ID>3");
-            studentResultList = studentLinst1.
+            studentResultList = studentList1.
                 Where(s => s.Age >= 18 && s.Age <= 25).
                 Where(s => s.StudentID > 3).ToList();
             studentResultList.
@@ -690,7 +696,7 @@ namespace LINQgym
             //{
             //    Console.WriteLine(elem);
             //}
-            //Console.WriteLine(studentLinst1);
+            //Console.WriteLine(studentList1);
 
             //Studiamo la clausola OfType
 
@@ -723,7 +729,7 @@ namespace LINQgym
             Console.WriteLine("stampa su array");
             Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = studentLinst1.OrderBy(s => s.Age).ToList();
+            studentResultList = studentList1.OrderBy(s => s.Age).ToList();
             Console.WriteLine("\nstampa su list");
             studentResultList.
                 ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
@@ -735,7 +741,7 @@ namespace LINQgym
             Console.WriteLine("stampa su array");
             Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = (from s in studentLinst1
+            studentResultList = (from s in studentList1
                                  orderby s.Age
                                  select s).ToList();
             Console.WriteLine("\nstampa su list");
@@ -748,7 +754,7 @@ namespace LINQgym
             Console.WriteLine("stampa su array");
             Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = studentLinst1.OrderBy(s => s.Age).ThenBy(s => s.StudentName).ToList();
+            studentResultList = studentList1.OrderBy(s => s.Age).ThenBy(s => s.StudentName).ToList();
             Console.WriteLine("\nstampa su list");
             studentResultList.
                 ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
@@ -760,7 +766,7 @@ namespace LINQgym
             Console.WriteLine("stampa su array");
             Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = (from s in studentLinst1
+            studentResultList = (from s in studentList1
                                  orderby s.Age, s.StudentName descending
                                  select s).ToList();
             Console.WriteLine("\nstampa su list");
@@ -776,7 +782,7 @@ namespace LINQgym
                 Select(s => new { Nome = s.StudentName, Eta = s.Age }).
                 ToArray(),
                 Console.WriteLine);
-            studentLinst1.
+            studentList1.
                 Select(s => new { Nome = s.StudentName, Eta = s.Age }).
                 ToList().
                 ForEach(p => Console.WriteLine(p.Nome));
@@ -788,7 +794,7 @@ namespace LINQgym
             Array.ForEach(personaResultArray, s => Console.WriteLine(s.Nome + " " + s.Eta));
 
             List<Persona> personaResultList =
-                studentLinst1.
+                studentList1.
                 Select(s => new Persona() { Nome = s.StudentName, Eta = s.Age }).
                 ToList();
             personaResultList.ForEach(p => Console.WriteLine(p));
@@ -797,13 +803,13 @@ namespace LINQgym
             var studentNames = (from s in studentArray1
                                 select new { Nome = s.StudentName }).ToArray();
             Array.ForEach(studentNames, s => Console.WriteLine(s));
-            var personNamesList = (from s in studentLinst1
+            var personNamesList = (from s in studentList1
                                    select new Persona() { Nome = s.StudentName, Eta = s.Age }).ToList();
             personNamesList.ForEach(p => Console.WriteLine(p.Nome + " " + p.Eta));
 
             //Group By
             //IEnumerable<IGrouping< int, Student>>
-            var groupedResult = studentLinst1.GroupBy(s => s.Age);
+            var groupedResult = studentList1.GroupBy(s => s.Age);
 
             foreach (var group in groupedResult)
             {
@@ -826,7 +832,7 @@ namespace LINQgym
 
             }
             Console.WriteLine("STAMPA RAGGRUPPAMENTO PER NOME");
-            var groupedResult2 = studentLinst1.GroupBy(s => s.StudentName);
+            var groupedResult2 = studentList1.GroupBy(s => s.StudentName);
 
             foreach (var group in groupedResult2)
             {
@@ -853,7 +859,7 @@ namespace LINQgym
             };
             //vogliamo riportare il nome dello studente e le date delle sue assenze 
             //facciamo una join tra la lista degli studenti e la lista delle assenze degli studenti e poi facciamo la proiezione del risultato su un nuovo oggetto
-            var innerJoinStudentiAssenze = studentLinst1.Join(assenzeList1,
+            var innerJoinStudentiAssenze = studentList1.Join(assenzeList1,
                 s => s.StudentID,
                 a => a.StudentID,
                 (s, a) => new { ID = s.StudentID, Nome = s.StudentName, GiornoAssenza = a.Giorno });
@@ -962,7 +968,7 @@ using System.Text;
 IList<Artista> artisti = new List<Artista>()
             {
                 new Artista(){Id=1, Cognome="Picasso", Nome="Pablo", Nazionalita="Spagna"},
-                new Artista(){Id=2, Cognome="Dalì", Nome="Salvator", Nazionalita="Spagna"},
+                new Artista(){Id=2, Cognome="Dalì", Nome="Salvador", Nazionalita="Spagna"},
                 new Artista(){Id=3, Cognome="De Chirico", Nome="Giorgio", Nazionalita="Italia"},
                 new Artista(){Id=4, Cognome="Guttuso", Nome="Renato", Nazionalita="Italia"}
             };
@@ -1216,10 +1222,3 @@ foreach (var item in opereConMaxNumeroPersonaggi)
 }
 
 ```
-
-### Points to Remember on LINQ
-
-1. As name suggest,Method Syntax is like calling extension method.
-2. LINQ Method Syntax aka Fluent syntax because it allows series of extension methods call.
-3. Implicitly typed variable -var can be used to hold the result of the LINQ query.
-

@@ -301,6 +301,8 @@ github.com/hbstack/syntax-highlighting/styles/base16-snazzy v0.1.0 h1:hDjoHh3EE0
 github.com/hbstack/syntax-highlighting/styles/base16-snazzy v0.1.0/go.mod h1:HI38VUl7BWJZsvC2pwmJaAN4Q2w2VvZNuFJzk22jTGk=
 github.com/hbstack/syntax-highlighting/styles/borland v0.1.0 h1:J5kJcjRSD42+n5wOxjcJcv3JLIH/fquaf7Q6WRuiTWo=
 github.com/hbstack/syntax-highlighting/styles/borland v0.1.0/go.mod h1:9ZdZL42niJrst2hr2VxeZFD9aKhGfHNsy/uOqDHg4oc=
+github.com/hbstack/syntax-highlighting/styles/bw v0.1.0 h1:cVYHKpio/1nprO9hMMKxE4zumOY9a1tyv6iyhdBmyno=
+github.com/hbstack/syntax-highlighting/styles/bw v0.1.0/go.mod h1:jY2QtQUFOqD/aiTdnMlMl/LQWeeFK/XJtXVah+MEc8M=
 github.com/hbstack/syntax-highlighting/styles/catppuccin-frappe v0.1.0 h1:hDlk7pjoyIHUFwiAX0KKfMJnlD520ujOOBWjb8ENlE0=
 github.com/hbstack/syntax-highlighting/styles/catppuccin-frappe v0.1.0/go.mod h1:1O/pXPu5l8lI/bR6xgjx/swdMU2kvTtwhrC9o7jqR/A=
 github.com/hbstack/syntax-highlighting/styles/catppuccin-latte v0.1.0 h1:4kn95XCbahdFZ1CzY05nfgIx2sWBkFQwxwtxDFKgRX8=
@@ -343,12 +345,18 @@ github.com/hbstack/syntax-highlighting/styles/monokailight v0.1.0 h1:lE5u8XEu/3X
 github.com/hbstack/syntax-highlighting/styles/monokailight v0.1.0/go.mod h1:IVuWfDM8ma5iyaNq63I0rBINtAc89xSl1ioxPd0Vl7s=
 github.com/hbstack/syntax-highlighting/styles/murphy v0.1.0 h1:sW6mVtNrz+kKLR9QxrxaP70R2tOhk17251nchH20zgU=
 github.com/hbstack/syntax-highlighting/styles/murphy v0.1.0/go.mod h1:EHZoHSSrlV5NujuMs7Th+nsLqpagqLxlNaqwM742W1A=
+github.com/hbstack/syntax-highlighting/styles/native v0.1.0 h1:RLuIMdxpA3pu4yUHPUr7F4GaUdIKUdaKpdpe6ygXXaQ=
+github.com/hbstack/syntax-highlighting/styles/native v0.1.0/go.mod h1:smhBpJ3B9yyDGk2PA9okcSAfqp371fO66aT+XW/ulPU=
 github.com/hbstack/syntax-highlighting/styles/nord v0.1.0 h1:n4fAY4z1OPxDTSViI1U4VTg6oTMAOJVCwc70neIXuYA=
 github.com/hbstack/syntax-highlighting/styles/nord v0.1.0/go.mod h1:zhQGvBxoOdeemr4F6E9An/vhVes7SE06+GZDpQpW4tI=
 github.com/hbstack/syntax-highlighting/styles/onedark v0.1.0 h1:Ptw0VR1aaeJHoh+y9OVyF/tF56amBUu5CT+Umts8NVo=
 github.com/hbstack/syntax-highlighting/styles/onedark v0.1.0/go.mod h1:UlwWi/GdtkwmqKP7JqYtwJtJ6XdXZIXAX6zhVH7G6r8=
+github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0 h1:6Wr6O/jF3Jt/Gj1iZTgCKsebzSIy23+Qo2PoMAkRnCQ=
+github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0/go.mod h1:CiZ2beNsbXHSnL7s13iWdlEImLn9AT8gu3Bij7xM3mA=
 github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0 h1:zErMvNbueRcI77h+B0KJjRi5+MezPb4CiurNJBHOK9A=
 github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0/go.mod h1:PJUfVaWd8bVn445MBSFF+Xt719mocKuMHq1INtXis3g=
+github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0 h1:ZlCosq9nOGsvSpzRMGHdqktZg1yf0R0TP4eIGPmhwkA=
+github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0/go.mod h1:I4pbyfLF5OBjyC3My4Xu9OiYH+5wTHVkssxBau9lUA4=
 github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0 h1:Qxw6AANYL/O5Jg8wIKoiRhr4Aqm2j0jHybZXo+cZHOw=
 github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0/go.mod h1:WrM5xfzY6mEleBl2xwMF0Hiv57GBDzoi6uDajQeCmqo=
 github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0 h1:lqAUJsyt5Qwnp1PecmTB5WtP12g/Fa40XFEWrVnYFfM=

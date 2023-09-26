@@ -64,6 +64,7 @@ require (
 	github.com/hbstack/syntax-highlighting/styles/average v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/base16-snazzy v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/borland v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/bw v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/catppuccin-frappe v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/catppuccin-latte v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/catppuccin-macchiato v0.1.0 // indirect
@@ -85,9 +86,12 @@ require (
 	github.com/hbstack/syntax-highlighting/styles/monokai v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/monokailight v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/murphy v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/native v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/nord v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/onedark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/rrt v0.1.0 // indirect
