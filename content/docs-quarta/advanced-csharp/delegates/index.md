@@ -8,7 +8,7 @@ draft: false
 description: "Functions delegates"
 noindex: false
 comments: false
-nav_weight: 20
+nav_weight: 10
 # nav_icon:
 #   vendor: bootstrap
 #   name: toggles
@@ -40,8 +40,6 @@ A function can have one or more parameters of different data types, but what if 
 A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method. All the delegates are implicitly derived from System.Delegate class.
 <!--more-->
 
-[https://kudchikarsk.com/delegates-and-events-in-csharp/](https://kudchikarsk.com/delegates-and-events-in-csharp/)
-
 [https://www.tutorialsteacher.com/csharp/csharp-delegates](https://www.tutorialsteacher.com/csharp/csharp-delegates)
 
 A delegate can be declared using **delegate** keyword followed by a function signature as shown below.
@@ -52,11 +50,11 @@ In C#, delegates form the basic building blocks for events. A delegate is a type
 
 ## Primo esempio
 
-{{< highlight cs >}}
+```cs
 class Program
 {
     // declare delegate
-    public delegate void Print(intvalue);
+    public delegate void Print(int value);
         static void Main(string[] args)
     {
     // Print delegate points to PrintNumber
@@ -82,7 +80,7 @@ class Program
         Console.WriteLine("Money: {0:C}", money);
     }
 }
-{{< /highlight >}}
+```
 
 In the above example, we have declared Print delegate that accepts _int_ type parameter and returns void. In the Main() method, a variable of Print type is declared and assigned a PrintNumber method name. Now, invoking Print delegate will in-turn invoke PrintNumber method. In the same way, if the Print delegate variable is assigned to the PrintMoney method, then it will invoke the PrintMoney method.
 
@@ -90,15 +88,15 @@ The following image illustrates the delegate.
 
 ![image](Picture1.png#center)
 
-Optionaly, a delegate object can be created using the new operator and specify a method name, as shown below:
+Optionally, a delegate object can be created using the new operator and specify a method name, as shown below:
 
 ```cs
 Print printDel = new Print(PrintNumber);
-```
+    ```
 
 ## Invoking Delegate
 
-The delegate can be invoked like a method because it is a reference to a method. Invoking a delegate will in-turn invoke a method which id refered to. The delegate can be invoked by two ways: using () operator or using the Invoke() method of delegate as shown below.
+The delegate can be invoked like a method because it is a reference to a method. Invoking a delegate will in-turn invoke a method which id referred to. The delegate can be invoked by two ways: using () operator or using the Invoke() method of delegate as shown below.
 
 ```cs
 Print printDel = PrintNumber;
@@ -149,7 +147,7 @@ An instantiated delegate is an object; you can pass it around and give it as an 
 
 ## Multicast Delegates
 
-Another great feature of delegates is that you can combine them together. This is called multicasting. You can use the + or += operator to add another method to the invocation list of an existing delegate instance. Similarly, you can also remove a method from an invocation list by using the decrement assignment operator (- or -=). This feature forms the base for events in C#. Below is a multicast delegate example.
+Another great feature of delegates is that you can combine them together. This is called multicast. You can use the + or += operator to add another method to the invocation list of an existing delegate instance. Similarly, you can also remove a method from an invocation list by using the decrement assignment operator (- or -=). This feature forms the base for events in C#. Below is a multicast delegate example.
 
 ```cs
 
@@ -166,7 +164,7 @@ class Program
     }
 
     delegate void Del(string s);
-    staticvoid Main()
+    static void Main()
     {
     Del a, b, c, d, k;
     // Create the delegate object a that references
@@ -239,10 +237,10 @@ class Program
 
 {
     public delegate TextWriter CovarianceDel();
-    public static StreamWriter MethodStream() { returnnull; }
-    public static StringWriter MethodString() { returnnull; }
+    public static StreamWriter MethodStream() { return null; }
+    public static StringWriter MethodString() { return null; }
 
-    staticvoid Main()
+    static void Main()
 
     {
         CovarianceDel del;
@@ -267,7 +265,7 @@ class Program
     public static void DoSomething(TextWriter textWriter) { }
     public delegate void ContravarianceDel(StreamWriter streamWriter);
 
-    staticvoid Main()
+    static void Main()
     {
         ContravarianceDel del = DoSomething;
         Console.ReadLine();
@@ -288,4 +286,3 @@ You can learn more about this concept [here](https://docs.microsoft.com/en-us/do
 5. Multiple methods can be assigned to the delegate using "+" operator. It is called multicast delegate.
 
 Delegate is also used with [Event](https://www.tutorialsteacher.com/csharp/csharp-event), [Anonymous method](https://www.tutorialsteacher.com/csharp/csharp-anonymous-method), [Func delegate](https://www.tutorialsteacher.com/csharp/csharp-func-delegate), [Action delegate](https://www.tutorialsteacher.com/csharp/csharp-action-delegate).
-

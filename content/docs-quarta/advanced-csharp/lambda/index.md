@@ -46,8 +46,6 @@ when writing new code.
 
 <https://www.tutorialsteacher.com/linq/linq-lambda-expression>
 
-<https://kudchikarsk.com/delegates-and-events-in-csharp/#lambda-expressions-in-csharp>
-
 Below is an example of newer lambda syntax.
 
 ```cs
@@ -224,7 +222,7 @@ namespace ArgomentiAvanzati
 You can also give type of each parameters if parameters are confusing:
 
 ```cs
-(Student s,int youngAge) => s.Age >= youngage;
+(Student s,int youngAge) => s.Age >= youngAge;
 ```
 
 It is not necessary to have at least one parameter in a lambda
@@ -232,14 +230,12 @@ expression. The lambda expression can be specify without any parameter
 also.
 
 ```cs
-
 () => Console.WriteLine("Parameter less lambda expression")
 ```
 
 Ad esempio:
 
 ```cs
-
 namespace ArgomentiAvanzati
 {
     public class Program
@@ -269,11 +265,9 @@ one statement in the body:
 Ad esempio:
 
 ```cs
-
 namespace ArgomentiAvanzati
 {
     public class Student
-
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -374,7 +368,7 @@ class Program
 
 The Func\<\...\> types can be found in the System namespace and they
 represent delegates that return a type and take 0 to 16 parameters. All
-those types inherit from System.MulticaseDelegate so you can add
+those types inherit from System.Multicast.Delegate so you can add
 multiple methods to the invocation list.
 
 The lambda expression can be assigned to Func\<in T, out TResult\> type
@@ -387,7 +381,6 @@ Consider the following lambda expression to find out whether a student
 is a teenager or not.
 
 ```cs
-
 Func<Student, bool> isStudentTeenAger = s => s.Age > 12 && s.Age <20;
 Student std = new Student() { age = 21 };
 bool isTeen = isStudentTeenAger(std);// returns false
@@ -449,7 +442,6 @@ class Program
 Esempio con le lambda expressions:
 
 ```cs
-
 namespace ArgomentiAvanzati
 {
     public class Program
@@ -542,7 +534,6 @@ fact, this reference to \"x\" will be persisted even if \"x\" goes out
 of scope. Consider this code:
 
 ```cs
-
 class Program
 {
     delegate void MyAction();

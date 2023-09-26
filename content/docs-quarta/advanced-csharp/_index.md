@@ -30,8 +30,4 @@ images:
 #         color: '#e24d0e'
 ---
 
-Summary.
-
-<!--more-->
-
-Content.
+Approfondimenti di C#. Delegates, Lambda, Events, LINQ, SQLite, EF Core, Programmazione concorrente, Semafori, MultiThreading, Task, Programmazione di rete, REST API, Minimal API .NET  
