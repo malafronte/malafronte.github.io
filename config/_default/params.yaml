@@ -52,6 +52,7 @@ hb:
     #   category_id: DIC_kwDOJP3qtM4CVavM
   docs:
     comments: false
+    
     # giscus:
     #   repo: hbstack/theme
     #   repo_id: R_kgDOJP3qtA
@@ -65,7 +66,6 @@ hb:
       # subpath: exampleSite
   # gallery:
   #   thumbnail_size: "x640"
-
 seo:
   favicons: # see https://hugomods.com/en/docs/seo/#favicons-module
     icon: images/logo.png # use logo as favicon.
@@ -116,3 +116,4 @@ hugopress:
       hooks:
         hb-blog-sidebar:
           weight: 2
+

@@ -46,11 +46,11 @@ winget install --id Git.Git -e --source winget
 
 {{< bs/alert >}}
 {{< markdownify >}}
-L'installazione eseguta tramite winget installa Git con le impostazioni di default, senza dare la possibilità all'utente di scegliere tra le varie opzioni disponibili. Questa opzione è indicata per utenti esperti che successivamente sanno modificare le impostazioni di funzionamento di Git con i comandi opportuni.
+L'installazione eseguita tramite winget installa Git con le impostazioni di default, senza dare la possibilità all'utente di scegliere tra le varie opzioni disponibili. Questa opzione è indicata per utenti esperti che successivamente sanno modificare le impostazioni di funzionamento di Git con i comandi opportuni.
 {{< /markdownify >}}
 {{< /bs/alert >}}
 
-Per utenti principianti è più opprtuno usare l'installer per Windows, scaricabile da <https://git-scm.com/download/win>, oppure da <https://gitforwindows.org/> e seguire i passaggi richiesti dell'installer. In particolare, è utile soffermarsi su alcuni punti dell'installazione per essere sicuri di aver configurato Git nel modo più utile per un utente inesperto su Windows:
+Per utenti principianti è più opportuno usare l'installer per Windows, scaricabile da <https://git-scm.com/download/win>, oppure da <https://gitforwindows.org/> e seguire i passaggi richiesti dell'installer. In particolare, è utile soffermarsi su alcuni punti dell'installazione per essere sicuri di aver configurato Git nel modo più utile per un utente inesperto su Windows:
 
 1. Scaricare l'installer di Git for Windows a 64 bit
 2. Far partire l'installer accettando le condizioni di default, ma selezionare anche i componenti opzionali per Windows.
@@ -71,7 +71,7 @@ Per utenti principianti è più opprtuno usare l'installer per Windows, scaricab
 
 6. Utilizzare OpenSSL per l'encryption
 
-   ![Scheramata Installer Git 5](installerGit5.png)
+   ![Schermata Installer Git 5](installerGit5.png)
 
 7. Impostare l'opzione core.autocrlf a true. Questa configurazione è quella raccomandata per utenti Windows che lavorano su progetti cross platform. Si veda per approfondimento anche la [guida su GitHub](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings).
 

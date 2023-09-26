@@ -51,11 +51,11 @@ In C#, delegates form the basic building blocks for events. A delegate is a type
 ## Primo esempio
 
 ```cs
-class Program
+internal class Program
 {
     // declare delegate
     public delegate void Print(int value);
-        static void Main(string[] args)
+    static void Main(string[] args)
     {
     // Print delegate points to PrintNumber
     Print printDel = PrintNumber;
@@ -64,6 +64,8 @@ class Program
     printDel(100000);
     printDel(200);
     // Print delegate points to PrintMoney
+    // Print delegate points to PrintMoney
+    Console.OutputEncoding = Encoding.UTF8;
     printDel = PrintMoney;
     printDel(10000);
     printDel(200);
@@ -82,7 +84,7 @@ class Program
 }
 ```
 
-In the above example, we have declared Print delegate that accepts _int_ type parameter and returns void. In the Main() method, a variable of Print type is declared and assigned a PrintNumber method name. Now, invoking Print delegate will in-turn invoke PrintNumber method. In the same way, if the Print delegate variable is assigned to the PrintMoney method, then it will invoke the PrintMoney method.
+In the above example, we have declared Print delegate that accepts `int` type parameter and returns void. In the Main() method, a variable of Print type is declared and assigned a PrintNumber method name. Now, invoking Print delegate will in-turn invoke PrintNumber method. In the same way, if the Print delegate variable is assigned to the PrintMoney method, then it will invoke the PrintMoney method.
 
 The following image illustrates the delegate.
 
@@ -92,7 +94,7 @@ Optionally, a delegate object can be created using the new operator and specify 
 
 ```cs
 Print printDel = new Print(PrintNumber);
-    ```
+```
 
 ## Invoking Delegate
 
@@ -103,13 +105,12 @@ Print printDel = PrintNumber;
 printDel.Invoke(10000);
 //or
 printDel(10000);
-
 ```
 
 ## Secondo esempio
 
 ```cs
-class Program
+internal class Program
 {
     public delegate double MathDelegate(double value1, double value2);
     public static double Add(double value1, double value2)
@@ -122,7 +123,7 @@ class Program
         return value1 - value2;
     }
 
-    public static void Main()
+    static void Main(string[] args)
     {
         MathDelegate mathDelegate = Add;
         var result = mathDelegate(5, 2);
@@ -141,7 +142,9 @@ As you can see, we use the delegate keyword to tell the compiler that we are cre
 
 You can also use the new keyword method of instantiating a delegate
 
+```cs
 MathDelegate mathDelegate = new MathDelegate(Add);
+```
 
 An instantiated delegate is an object; you can pass it around and give it as an argument to other methods.
 
@@ -150,8 +153,7 @@ An instantiated delegate is an object; you can pass it around and give it as an 
 Another great feature of delegates is that you can combine them together. This is called multicast. You can use the + or += operator to add another method to the invocation list of an existing delegate instance. Similarly, you can also remove a method from an invocation list by using the decrement assignment operator (- or -=). This feature forms the base for events in C#. Below is a multicast delegate example.
 
 ```cs
-
-class Program
+internal class Program
 {
     static void Hello(string s)
     {
@@ -164,53 +166,58 @@ class Program
     }
 
     delegate void Del(string s);
-    static void Main()
+    static void Main(string[] args)
     {
-    Del a, b, c, d, k;
-    // Create the delegate object a that references
-    // the method Hello:
-    a = new Del(Hello);
-    // Create the delegate object b that references
-    // the method Goodbye:
-    b = Goodbye;
-    // The two delegates, a and b, are composed to form c:
-    c = a + b;
-    //allo stesso modo possiamo inizializzare una variabile delegate Del a null
-    //e usare += per aggiungere un metodo
-    k = null;
-    //aggiungo un metodo
-    k += a;
-    //aggiungo un altro metodo
-    k += b;
-    // Remove a from the composed delegate, leaving d,
-    // which calls only the method Goodbye:
-    d = c - a;
-    Console.WriteLine("Invoking delegate a:");
-    a("A");
-    Console.WriteLine("Invoking delegate b:");
-    b("B");
-    Console.WriteLine("Invoking delegate c:");
-    c("C");
-    Console.WriteLine("Invoking delegate d:");
-    d("D");
-    Console.WriteLine("Invoking delegate k:");
-    k("K");
-    // Output:
-    // Invoking delegate a:
-    // Hello, A!
-    // Invoking delegate b:
-    // Goodbye, B!
-    // Invoking delegate c:
-    // Hello, C!
-    // Invoking delegate d:
-    // Goodbye, D!
-    // Invoking delegate k:
-    // Hello, K!
-    // Goodbye, K!
-    Console.ReadLine();
+        Del a, b, c;
+        Del? d, k;
+        // Create the delegate object a that references
+        // the method Hello:
+        a = new Del(Hello);
+        // Create the delegate object b that references
+        // the method Goodbye:
+        b = Goodbye;
+
+        // The two delegates, a and b, are composed to form c:
+        c = a + b;
+        //allo stesso modo possiamo inizializzare una variabile delegate Del a null
+        //e usare += per aggiungere un metodo
+        k = null;
+        //aggiungo un metodo
+        k += a;
+        //aggiungo un altro metodo
+        k += b;
+        // Remove a from the composed delegate, leaving d,
+        // which calls only the method Goodbye:
+        d = c - a;
+        Console.WriteLine("Invoking delegate a:");
+        a("A");
+        Console.WriteLine("Invoking delegate b:");
+        b("B");
+        Console.WriteLine("Invoking delegate c:");
+        c("C");
+        Console.WriteLine("Invoking delegate d:");
+        d("D");
+        Console.WriteLine("Invoking delegate k:");
+        k("K");
+        // Output:
+        // Invoking delegate a:
+        // Hello, A!
+        // Invoking delegate b:
+        // Goodbye, B!
+        // Invoking delegate c:
+        // Hello, C!
+        // Invoking delegate d:
+        // Goodbye, D!
+        // Invoking delegate k:
+        // Hello, K!
+        // Goodbye, K!
+        //quanti sono i delegati associati a a k?
+        Console.WriteLine("quanti sono i delegati associati a k?");
+        int invocationCount = k.GetInvocationList().GetLength(0);
+        Console.WriteLine($"Sono esattamente {invocationCount}");
+        Console.ReadLine();
     }
 }
-
 ```
 
 All this is possible because delegates inherit from the System.MulticastDelegate class that in turn inherits from System.Delegate. Because of this, you can use the members that are defined in those base classes on your delegates.
@@ -218,9 +225,7 @@ All this is possible because delegates inherit from the System.MulticastDelegate
 For example, to find out how many methods a multicast delegate is going to call, you can use the following code:
 
 ```cs
-
 int invocationCount = d.GetInvocationList().GetLength(0);
-
 ```
 
 ### Covariance and Contravariance
@@ -232,16 +237,13 @@ When you assign a method to a delegate, the method signature does not have to ma
 Here is an example of covariance:
 
 ```cs
-
 class Program
-
 {
     public delegate TextWriter CovarianceDel();
     public static StreamWriter MethodStream() { return null; }
     public static StringWriter MethodString() { return null; }
 
-    static void Main()
-
+    static void Main(string[] args)
     {
         CovarianceDel del;
         del = MethodStream;
@@ -258,14 +260,12 @@ Because both StreamWriter and StringWriter inherit from TextWriter, you can use 
 Below is an example of contravariance.
 
 ```cs
-
-class Program
-
+internal class Program
 {
     public static void DoSomething(TextWriter textWriter) { }
     public delegate void ContravarianceDel(StreamWriter streamWriter);
 
-    static void Main()
+    static void Main(string[] args)
     {
         ContravarianceDel del = DoSomething;
         Console.ReadLine();

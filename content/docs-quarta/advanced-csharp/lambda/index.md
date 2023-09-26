@@ -49,12 +49,10 @@ when writing new code.
 Below is an example of newer lambda syntax.
 
 ```cs
-
-class Program
-
+internal class Program
 {
     public delegate double MathDelegate(double value1, double value2);
-    public static void Main()
+    static void Main(string[] args)
     {
         MathDelegate mathDelegate = (x, y) => x + y;
         var result = mathDelegate(5, 2);
@@ -84,13 +82,11 @@ adding curly braces around the statements that form the lambda as below
 example shows.
 
 ```cs
-
 MathDelegate mathDelegate = (x, y) =>
 {
     Console.WriteLine("Add");
     return x + y;
 };
-
 ```
 
 You can learn more about .NET built-in delegates
@@ -106,28 +102,25 @@ funzione anonima a lambda expression
 Si consideri il seguente esempio di delegato con funzione anonima:
 
 ```cs
-
-namespace ArgomentiAvanzati
-
+public class Student
 {
-    public class Program
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
+}
+internal class Program
+{
+    delegate bool IsTeenAger(Student stud);
+    static void Main(string[] args)
     {
-        delegate bool IsTeenAger(Student stud);
-        public static void Main()
+        IsTeenAger isTeenAger = delegate (Student s)
         {
-            IsTeenAger isTeenAger = delegate (Student s) { return s.Age > 12 &&
-            s.Age < 20;};
-            Student stud = new Student() { Age = 25 };
-            Console.WriteLine(isTeenAger(stud));
-            Console.ReadLine();
-        }
-    }
-
-    public class Student
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+            return s.Age > 12 &&
+        s.Age < 20;
+        };
+        Student stud = new Student() { Age = 25 };
+        Console.WriteLine(isTeenAger(stud));
+        Console.ReadLine();
     }
 }
 ```
@@ -135,25 +128,21 @@ namespace ArgomentiAvanzati
 Lo stesso risultato si può ottenere con il seguente costrutto lambda
 
 ```cs
-
-namespace ArgomentiAvanzati
+public class Student
 {
-    public class Program
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
+}
+internal class Program
+{
+    delegate bool IsTeenAger(Student stud);
+    static void Main(string[] args)
     {
-        delegate bool IsTeenAger(Student stud);
-        public static void Main()
-        {
-            IsTeenAger isTeenAger = s => s.Age > 12 && s.Age < 20;
-            Student stud = new Student() { Age = 25 };
-            Console.WriteLine(isTeenAger(stud));
-            Console.ReadLine();
-        }
-    }
-        public class Student
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+        IsTeenAger isTeenAger = s =>  s.Age > 12 && s.Age<20;
+        Student stud = new Student() { Age = 25 };
+        Console.WriteLine(isTeenAger(stud));
+        Console.ReadLine();
     }
 }
 ```
@@ -190,32 +179,25 @@ You can wrap the parameters in parenthesis if you need to pass more than
 one parameter, as below:
 
 ```cs
-namespace ArgomentiAvanzati
-
+public class Student
 {
-    public class Program
-
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
+}
+internal class Program
+{
+    delegate bool IsTeenAger(Student stud);
+    static void Main(string[] args)
     {
-
-        delegate bool IsYoungerThan(Student stud, int youngAge);
-        public static void Main()
+        IsTeenAger isTeenAger = delegate (Student s)
         {
-            IsYoungerThan isYoungerThan = (s, youngAge) => s.Age < youngAge;
-            Student stud = new Student() { Age = 25 };
-            Console.WriteLine(isYoungerThan(stud, 26));
+            return s.Age > 12 && s.Age < 20;
+        };
+        Student stud = new Student() { Age = 25 };
+        Console.WriteLine(isTeenAger(stud));
             Console.ReadLine();
-        }
-
     }
-
-    public class Student
-
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-
 }
 ```
 
@@ -236,17 +218,14 @@ also.
 Ad esempio:
 
 ```cs
-namespace ArgomentiAvanzati
+internal class Program
 {
-    public class Program
+    delegate void Print();
+    static void Main(string[] args)
     {
-        delegate void Print();
-        public static void Main()
-        {
-            Print print = () => Console.WriteLine("This is parameter less lambda expression");
-            print();
-            Console.ReadLine();
-        }
+        Print print = () => Console.WriteLine("This is parameter less lambda expression");
+        print();
+        Console.ReadLine();
     }
 }
 ```
@@ -255,40 +234,30 @@ You can wrap expressions in curly braces if you want to have more than
 one statement in the body:
 
 ```cs
-
 (s, youngAge) =>
 {
     Console.WriteLine("Lambda expression with multiple statements in the body");
     return s.Age >= youngAge;
 }
+```
 
-Ad esempio:
+Altro esempio: lambda expression con due parametri
 
 ```cs
-namespace ArgomentiAvanzati
+public class Student
 {
-    public class Student
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
+}
+internal class Program
+{
+    delegate bool IsYoungerThan(Student stud, int youngAge);
+    static void Main(string[] args)
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-
-    public class Program
-    {
-        delegate bool IsYoungerThan(Student stud, int youngAge);
-        public static void Main()
-        {
-            IsYoungerThan isYoungerThan = (s, youngAge) => 
-            {
-                Console.WriteLine("Lambda expression with multiple statements in the body");
-                return s.Age < youngAge;
-
-            };
+        IsYoungerThan isYoungerThan = (s, i) => s.Age < i;
         Student stud = new Student() { Age = 25 };
-        Console.WriteLine(isYoungerThan(stud, 26));
-        Console.ReadLine();
-        }                           
+        Console.WriteLine(isYoungerThan(stud, 30));
     }
 }
 ```
@@ -297,56 +266,47 @@ You can declare a variable in the expression body to use it anywhere in
 the expression body, as below:
 
 ```cs
-namespace ArgomentiAvanzati
+internal class Program
 {
-    public class Program
+    delegate bool IsAdult(Student stud);
+    static void Main(string[] args)
     {
-        delegate bool IsAdult(Student stud);
-        public static void Main()
+        IsAdult isAdult = (s) => 
         {
-            IsAdult isAdult = (s) => 
-            {
-                int adultAge = 18;
-                Console.WriteLine("Lambda expression with multiple statements in the body");
-                return s.Age >= adultAge;
-            };
-            Student stud = new Student() { Age = 25 };
-            Console.WriteLine(isAdult(stud));
-            Console.ReadLine();
-        }
+            int adultAge = 18;
+            Console.WriteLine("Lambda expression with multiple statements in the body");
+            return s.Age >= adultAge;
+        };
+        Student stud = new Student() { Age = 25 };
+        Console.WriteLine(isAdult(stud));
+        Console.ReadLine();
     }
+}
 
-    public class Student
-
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-
+public class Student
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
 }
 ```
 
 ### Function Delegate and its use with lambda
 
-The .NET Framework has a couple of built-in delegates types that you can
-use when declaring delegates.
+.NET  has a couple of built-in delegates types that you can use when declaring delegates.
+For the MathDelegate examples, you have used the following delegate: public delegate double MathDelegate(double value1, double value2); You can replace this delegate with one of the built-in types namely:
 
-For the MathDelegate examples, you have used the following delegate:
-
-public delegate double MathDelegate(double value1, double value2);
-
-You can replace this delegate with one of the built-in types namely
-Func\<int, int, int\>.
+```cs
+Func<int, int, int>
+```
 
 like this,
 
 ```cs
 
-class Program
-
+internal class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
         //modalità alternativa per definire un delegato
         Func<int, int, int> mathDelegate = (x, y) =>
@@ -399,7 +359,6 @@ The Func\<\> delegate shown above, would turn out to be a function as
 shown below.
 
 ```cs
-
 bool isStudentTeenAger(Student s)
 {
     return s.Age > 12 && s.Age < 20;
@@ -420,10 +379,9 @@ don't return a value.
 Here is an example of using the Action type
 
 ```cs
-
-class Program
+internal class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
         Action<int, int> mathDelegate = (x, y) =>
         {
@@ -442,25 +400,22 @@ class Program
 Esempio con le lambda expressions:
 
 ```cs
-namespace ArgomentiAvanzati
+internal class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        public static void Main()
-        {
-            Action<Student> PrintStudentDetail = s => Console.WriteLine("Name:{0}, Age: {1}", s.Name, s.Age");
-            Student std = new Student() { Name = "Bill", Age = 21 };
-            PrintStudentDetail(std);
-            Console.ReadLine();
-        }
+        Action<Student> PrintStudentDetail = s => Console.WriteLine("Name:{0}, Age: {1}", s.Name, s.Age");
+        Student std = new Student() { Name = "Bill", Age = 21 };
+        PrintStudentDetail(std);
+        Console.ReadLine();
     }
+}
 
-    public class Student
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
+public class Student
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
 }
 ```
 
@@ -475,7 +430,7 @@ delegate. This is called a closure.
 You can learn more about
 closure [here](https://web.archive.org/web/20150707082707/http:/diditwith.net/PermaLink,guid,235646ae-3476-4893-899d-105e4d48c25b.aspx).
 
-## What\'s a Closure?
+## Closure
 
 A closure is a function that is bound to the environment in which it is
 declared. Thus, the function can reference elements from the environment
@@ -486,7 +441,7 @@ referenced within the anonymous method\'s body. So, this code prints 0
 to the console as expected:
 
 ```cs
-class Program
+internal class Program
 {
     delegate void MyAction();
     static void Main(string[] args)
@@ -507,7 +462,7 @@ of \"x\" (0) is printed to the console. The rub occurs when the code is
 changed like this:
 
 ```cs
-class Program
+internal class Program
 {
     delegate void MyAction();
     static void Main(string[] args)
@@ -524,17 +479,17 @@ class Program
 Now, \"x\" is reassigned to a value of 1 before \"a\" is called. What
 will be output to the console?
 
-It turns out that the answer is 1, not 0. The reason for this is that
+It turns out that the answer is 1, not 0. **The reason for this is that
 the anonymous method is a closure and is bound to its parenting method
 body and the local variables in it. The important distinction is that it
-is bound to variables, not to values. In other words, the value of \"x\"
+is bound to variables, not to values**. In other words, the value of \"x\"
 is not copied in when \"a\" is declared. Instead, a reference to \"x\"
 is used so that \"a\" will always use the most recent value of \"x\". In
 fact, this reference to \"x\" will be persisted even if \"x\" goes out
 of scope. Consider this code:
 
 ```cs
-class Program
+internal class Program
 {
     delegate void MyAction();
     static MyAction GetAction()

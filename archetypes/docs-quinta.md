@@ -4,7 +4,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
 type: docs
-description: 
+description: " "
 noindex: false
 comments: false
 nav_weight: 1000
