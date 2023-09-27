@@ -4,7 +4,7 @@ title: "Learning Path"
 date: 2023-09-18T00:37:19+02:00
 draft: false
 type: docs
-description: " "
+description: "Descrizione del percorso didattico nel corso di quinta"
 noindex: false
 comments: false
 nav_weight: 20

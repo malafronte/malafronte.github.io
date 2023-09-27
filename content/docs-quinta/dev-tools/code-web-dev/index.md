@@ -1,10 +1,10 @@
 ---
-title: "VS Code Front-end Web Development"
-linkTitle: "VS Code Front-end Web Dev"
+title: "VS Code Front-end Web Dev"
+#linkTitle: "VS Code Front-end Web Dev"
 date: 2023-09-17T16:37:46+02:00
 draft: false
 type: docs
-description: " "
+description: "Configurazione di VS Code per lo sviluppo web"
 noindex: false
 comments: false
 nav_weight: 40

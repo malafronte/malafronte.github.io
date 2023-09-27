@@ -1,5 +1,5 @@
 ---
-title: "Linq"
+title: "LINQ"
 # linkTitle:
 date: 2023-09-26T19:06:49+02:00
 draft: false
@@ -284,17 +284,17 @@ LINQ queries uses extension methods for classes that implement IEnumerable or IQ
 
 ### System.Linq.Enumerable
 
-The Enumerable class includes extension methods for the classes that implement `IEnumerable<T>` interface, for example all the built-in collection classes implement `IEnumerable<T>` interface and so we can write LINQ queries to retrieve data from the built-in collections.
+The [System.Linq.Enumerable](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable) class includes extension methods for the classes that implement `IEnumerable<T>` interface, for example all the built-in collection classes implement `IEnumerable<T>` interface and so we can write LINQ queries to retrieve data from the built-in collections.
 
 ### System.Linq.Queryable
 
-The `Queryable` class includes extension methods for classes that implement `IQueryable<t>` interface. The `IQueryable<T>` interface is used to provide querying capabilities against a specific data source where the type of the data is known. For example, Entity Framework api implements `IQueryable<T>` interface to support LINQ queries with underlying databases such as MS SQL Server.
+The [System.Linq.Queryable](https://learn.microsoft.com/en-us/dotnet/api/system.linq.queryable) class includes extension methods for classes that implement `IQueryable<t>` interface. The `IQueryable<T>` interface is used to provide querying capabilities against a specific data source where the type of the data is known. For example, Entity Framework api implements `IQueryable<T>` interface to support LINQ queries with underlying databases such as MS SQL Server.
 Also, there are APIs available to access third party data; for example, LINQ to Amazon provides the ability to use LINQ with Amazon web services to search for books and other items. This can be achieved by implementing the IQueryable interface for Amazon.
 The following figure shows the extension methods available in the Queryable class can be used with various native or third party data providers.
 
 ## Come usare LINQ?
 
-Ci sono due modi per usare LINQ: mediante l’uso delle “LINQ query” oppure mediante l’uso dei “LINQ methods”.
+Ci sono due modi per usare LINQ: mediante l’uso delle "LINQ query" oppure mediante l’uso dei "LINQ methods".
 
 ### LINQ Query (Query Expression Syntax)
 
@@ -487,7 +487,8 @@ namespace ArgomentiAvanzati
 ### Standard Query Operators
 
 Standard Query Operators in LINQ are actually extension methods for the `IEnumerable<T>` and `IQueryable<T>` types. They are defined in the `System.Linq.Enumerable` and `System.Linq.Queryable` classes. There are over 50 standard query operators available in LINQ that provide different functionalities like filtering, sorting, grouping, aggregation, concatenation, etc.
-**Standard Query Operators in Query Syntax**:
+
+**Standard Query Operators in `Query Syntax`**:
 
 ```cs
 var teenAgerStudents = from s in studentList
@@ -495,7 +496,7 @@ var teenAgerStudents = from s in studentList
                                   select s;
 ```
 
-**Standard Query Operators in Method Syntax**:
+**Standard Query Operators in `Method Syntax (Fluent)`**:
 
 ```cs
 var teenAgerStudents = studentList.Where(s => s.Age > 12 && s.Age < 20)

@@ -35,18 +35,24 @@ images:
 
 ## What Are Events In C\#?[^1]
 
-[^1]:[Events in C#](https://www.tutorialsteacher.com/csharp/csharp-event)
+[^1]:[Events in C#](https://www.tutorialsteacher.com/csharp/csharp-event)  
+
+{{< bs/alert >}}
+{{% markdownify %}}
+Questa parte sugli eventi è inserita nel corso con lo scopo di fornire un meccanismo di comprensione del pattern Publisher - Subscriber nel modello ad eventi. Nel corso di quarta in genere non si svilupperà direttamente classi che implementano tale pattern. Un esempio di modello ad eventi, già visto nel corso di terza, è quello utilizzato nei Windows Forms, per i quali è utilizzato il concetto di {{< bs/alert-link "Event Handler" "https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-add-an-event-handler" >}}
+
+{{% /markdownify %}}
+{{< /bs/alert >}}
 
 In general terms, an event is something special that is going to happen. For example, Microsoft launches events for developers, to make them aware about the features of new or existing products. Microsoft notifies the developers about the event by email or other advertisement options. So in this case, Microsoft is a publisher who launches (raises) an event and notifies the developers about it and developers are the subscribers of the event and attend (handle) the event.
 
-Events in C# follow a similar concept. An event has a publisher, subscriber, notification and a handler. Generally, UI controls use events extensively. For example, the button control in a Windows form has multiple events such as click, mouseover, etc. A custom class can also have an event to notify other subscriber classes about something that has happened or is going to happen. Let's see how you can define an event and notify other classes that have event handlers.
+Events in C# follow a similar concept. **An event has a publisher, subscriber, notification and a handler. Generally, UI controls use events extensively. For example, the button control in a Windows form has multiple events such as click, mouseover, etc. A custom class can also have an event to notify other subscriber classes about something that has happened or is going to happen**. Let's see how you can define an event and notify other classes that have event handlers.
 
-An event is nothing but an encapsulated delegate. As we have learned in the previous section, a delegate is a reference type data type. You can declare the delegate as shown below:
+<mark>An event is nothing but an encapsulated delegate</mark>. As we have learned in the previous section, a delegate is a reference type data type. You can declare the delegate as shown below:
 
 An event can be used to provide notifications. You can subscribe to an event if you are interested in those notifications. You can also create your own events and raise them to provide notifications when something interesting happens. The .NET Framework offers built-in types that you can use to create events. By using delegates, lambda expressions, and anonymous methods, you can create and use events in a comfortable way.
 
-A popular design pattern is application development is that of **publish-subscribe: you can subscribe to an event and then you are notified when the publisher of the event raises a new event**. This is used to establish loose coupling between components in an application.  
-> Note: Delegate form the basis for the event system in C#
+A popular design pattern is application development is that of **publish-subscribe: you can subscribe to an event and then you are notified when the publisher of the event raises a new event**. This is used to establish loose coupling between components in an application. **Delegate form the basis for the event system in C#**
 
 An event is a special kind of delegate that facilitates event-driven programming. Events are class members that cannot be called outside of the class regardless of its access specifier. So, for example, an event declared to be public would allow other classes the use of `+=` and `-=` on the event, but firing the event (i.e. invoking the delegate) is only allowed in the class containing the event. Let’s see an example,
 To declare an event, use the event keyword before declaring a variable of delegate type, as below:
@@ -131,6 +137,7 @@ When you run the above program, your code creates a new instance of Pub, subscri
 
 ## A more complex example
 
+>Nota: questo esempio è riportato a solo scopo informativo.
 ```cs
 public class Student
 {

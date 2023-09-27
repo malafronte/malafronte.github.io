@@ -43,8 +43,9 @@ expressions were added. Lambda expression is the preferred way to go
 when writing new code.
 
 <!--more-->
+## Introduction to Lambda Expressions[^1]
 
-<https://www.tutorialsteacher.com/linq/linq-lambda-expression>
+[^1]: [TutorialsTeacher.com](https://www.tutorialsteacher.com/linq/linq-lambda-expression)
 
 Below is an example of newer lambda syntax.
 
@@ -67,9 +68,9 @@ internal class Program
 }
 ```
 
-When reading this code, you can say go or goes to for the special lambda
+When reading this code, you can say *"go or goes"* to for the special lambda
 syntax. For example, the first lambda expression in the above example is
-read as "x and y goes to adding x and y".
+read as *"x and y goes to adding x and y"*.
 
 The lambda function has no specific name as the methods. Because of
 this, lambda functions are called anonymous functions. You also don't
@@ -93,8 +94,6 @@ You can learn more about .NET built-in delegates
 [here](https://www.c-sharpcorner.com/blogs/c-sharp-generic-delegates-func-action-and-predicate).
 
 ## Lambda examples
-
-<https://www.tutorialsteacher.com/linq/linq-lambda-expression>
 
 Si riportano di seguito alcuni esempi che spiegano il passaggio da
 funzione anonima a lambda expression
@@ -293,8 +292,7 @@ public class Student
 
 ### Function Delegate and its use with lambda
 
-.NET  has a couple of built-in delegates types that you can use when declaring delegates.
-For the MathDelegate examples, you have used the following delegate: public delegate double MathDelegate(double value1, double value2); You can replace this delegate with one of the built-in types namely:
+.NET has a couple of built-in delegates types that you can use when declaring delegates.For the `MathDelegate` examples, you have used the following delegate: `public delegate double MathDelegate(double value1, double value2);` You can replace this delegate with one of the built-in types namely:
 
 ```cs
 Func<int, int, int>
@@ -326,12 +324,12 @@ internal class Program
 }
 ```
 
-The Func\<\...\> types can be found in the System namespace and they
+The `Func<...>` types can be found in the System namespace and they
 represent delegates that return a type and take 0 to 16 parameters. All
-those types inherit from System.Multicast.Delegate so you can add
+those types inherit from [MulticastDelegate](https://learn.microsoft.com/en-us/dotnet/api/system.multicastdelegate) so you can add
 multiple methods to the invocation list.
 
-The lambda expression can be assigned to Func\<in T, out TResult\> type
+The lambda expression can be assigned to `Func<in T, out TResult>` type
 delegate. The last parameter type in a Func delegate is the return type
 and rest are input parameters. Visit [Func
 delegate](https://www.tutorialsteacher.com/csharp/csharp-func-delegate)
@@ -351,11 +349,11 @@ parameter to be of Student type and the return type to be boolean. The
 lambda expression s =\> s.age \> 12 && s.age \< 20 satisfies the
 Func\<Student, bool\> delegate requirement, as shown below:
 
-![https://www.tutorialsteacher.com/Content/images/linq/func-with-lambda-expression.png](image4.png#center)
+![func with lambda expression image](image4.png#center)
 
 Func delegate with Lambda Expression
 
-The Func\<\> delegate shown above, would turn out to be a function as
+The `Func<>` delegate shown above, would turn out to be a function as
 shown below.
 
 ```cs
@@ -368,9 +366,8 @@ bool isStudentTeenAger(Student s)
 ### Action Delegate and its use with lambda
 
 Unlike the Func delegate, an Action delegate can only have input
-parameters. Use the [Action
-delegate](https://www.tutorialsteacher.com/csharp/csharp-action-delegate)
-type when you don\'t need to return any value from lambda expression.
+parameters. Use the [Action delegate](https://www.tutorialsteacher.com/csharp/csharp-action-delegate)
+type when you don't need to return any value from lambda expression.
 
 If you want a delegate type that doesn't return a value, you can use the
 System.Action types. They can also take 0 to 16 parameters, but they
@@ -427,14 +424,11 @@ local variable. To fix this, the compiler generates code that makes the
 life of the captured variable at least as long as the longest-living
 delegate. This is called a closure.
 
-You can learn more about
-closure [here](https://web.archive.org/web/20150707082707/http:/diditwith.net/PermaLink,guid,235646ae-3476-4893-899d-105e4d48c25b.aspx).
-
 ## Closure
 
 A closure is a function that is bound to the environment in which it is
 declared. Thus, the function can reference elements from the environment
-within it\'s body. In the case of a C# 2.0 anonymous method, the
+within it's body. In the case of a C# 2.0 anonymous method, the
 environment to which it is bound is its parenting method body. This
 means that local variables from the parenting method body can be
 referenced within the anonymous method\'s body. So, this code prints 0
@@ -476,16 +470,16 @@ internal class Program
 }
 ```
 
-Now, \"x\" is reassigned to a value of 1 before \"a\" is called. What
+Now, `x` is reassigned to a value of 1 before `a` is called. What
 will be output to the console?
 
 It turns out that the answer is 1, not 0. **The reason for this is that
 the anonymous method is a closure and is bound to its parenting method
 body and the local variables in it. The important distinction is that it
-is bound to variables, not to values**. In other words, the value of \"x\"
-is not copied in when \"a\" is declared. Instead, a reference to \"x\"
-is used so that \"a\" will always use the most recent value of \"x\". In
-fact, this reference to \"x\" will be persisted even if \"x\" goes out
+is bound to variables, not to values**. In other words, the value of `x`
+is not copied in when `a` is declared. Instead, a reference to `x`
+is used so that `a` will always use the most recent value of`x`. In
+fact, this reference to `x` will be persisted even if`x` goes out
 of scope. Consider this code:
 
 ```cs
@@ -509,9 +503,9 @@ internal class Program
 }
 ```
 
-That will still print 1 to the console even though \"x\" is out of scope
-by the time that \"a\" is called. So, how is this achieved? Well, the
-good news is that this is handled through compiler magic. There isn\'t
+That will still print 1 to the console even though `x` is out of scope
+by the time that `a` is called. So, how is this achieved? Well, the
+good news is that this is handled through compiler magic. There isn't
 any runtime support for closures. That means that you could use the same
 techniques to create a closure without using an anonymous method.
 
@@ -519,7 +513,7 @@ techniques to create a closure without using an anonymous method.
 
 1. Lambda Expression is a shorter way of representing anonymous method.
 
-2. Lambda Expression syntax: *parameters =\> body expression*
+2. Lambda Expression syntax: *`parameters => body expression`*
 
 3. Lambda Expression can have zero parameter.
 
