@@ -51,3 +51,5 @@ Altre risorse molto utili per lo studio degli argomenti di questa parte del prog
 
 * [w3schools](https://www.w3schools.com/)
 * [Mozilla MDN](https://developer.mozilla.org/en-US/)
+
+In particolare per lo studio delle tecnologie HTML, CSS e JS verrà estensivamente utilizzata la [guida di Mozilla MDN per il web development](https://developer.mozilla.org/en-US/docs/Learn).

@@ -32,7 +32,9 @@ images:
 #         color: '#e24d0e'
 ---
 <style>p {text-align: justify}</style>
-Le basi dell'HTML sono ben descritte nei video e negli esempi del [corso del Prof. Yaakov Chaikin su Coursera](https://www.coursera.org/learn/html-css-javascript-for-web-developers/). Un approccio analogo è seguito nella documentazione di [Mozilla MDN](https://developer.mozilla.org/en-US/), ed in particolare nelle sezioni introduttive del profilo [Front-end web developer](https://developer.mozilla.org/en-US/docs/Learn) che si riportano di seguito.
+Le basi dell'HTML sono ben descritte nei video e negli esempi del [corso del Prof. Yaakov Chaikin su Coursera](https://www.coursera.org/learn/html-css-javascript-for-web-developers/). Un approccio analogo è seguito nella documentazione di [Mozilla MDN](https://developer.mozilla.org/en-US/), ed in particolare nelle sezioni introduttive del profilo [Front-end web developer](https://developer.mozilla.org/en-US/docs/Learn) che si riportano di seguito.  
+Per uno studio proficuo occorre studiare i tutorial indicati in questi appunti in maniera attiva, assia, non limitandosi a leggere le pagine delle guide, ma svolgendo gli esempi proposti sia nelle guide che nelle lezioni del corso a scuola.  
+Lo studio delle varie componenti del web (HTML, CSS, JS) è presentato in maniera incrementale: prima sono proposti i concetti di base con semplici esempi e poi successivamente gli stessi argomenti sono approfonditi con sempre maggior dettaglio. Per questo motivo è importante seguire nell'ordine proposto i tutorial di Mozilla MDN e di W3schools.
 
 ## Getting started tutorials  
 
@@ -54,6 +56,9 @@ Per lo sviluppo web è sempre utile guardare la [guida di riferimento per gli el
 
 ## Introduction to HTML
 
-È da studiare la sezione:
+È da studiare il tutorial:
 
-* [Structuring the web with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)
+* [Structuring the web with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML) con le sezioni:
+  * [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) con [codice di esempio su GitHub](https://github.com/mdn/learning-area/tree/main/html/introduction-to-html).
+  * [Multimedia and embedding](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding) con [codice di esempio su GitHub](https://github.com/mdn/learning-area/tree/main/html/multimedia-and-embedding)
+  * [HTML tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables) con [codice di esempio du GitHub](https://github.com/mdn/learning-area/tree/main/html/tables)

@@ -53,7 +53,8 @@ Esistono diversi server HTTP utilizzati nelle applicazioni commerciali e, tra qu
   
 * [NGINX](https://www.nginx.com/)
 
-Si tratta di software che trovano utilizzo in un numero altissimo di siti web, come si può vedere dalle statistiche di utilizzo descritte nel [NetCraft Survey](https://www.netcraft.com/resources/?topic=web-server-survey).
+Si tratta di software che trovano utilizzo in un numero altissimo di siti web, come si può vedere dalle statistiche di utilizzo descritte nel [NetCraft Survey](https://www.netcraft.com/resources/?topic=web-server-survey).  
+Ulteriori chiarimenti su [come funziona Internet](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work) e [come funziona il web](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works) si trovano nelle [guide di Mozilla MDN](https://developer.mozilla.org/en-US/docs/Learn).
 
 [^1]:[Wikipedia](https://it.wikipedia.org/wiki/Browser): *In informatica il browser Web (o semplicemente browser /ˈbraʊzə(r)/), in italian navigatore Web,è un'applicazione per l'acquisizione, la presentazione e la navigazione di risorse sul Web. Tali risorse (come pagine web, immagini o video) sono messe a disposizione sul World Wide Web (la rete globale che si appoggia su Internet), su una rete locale o sullo stesso computer dove il browser è in esecuzione. Il programma implementa da un lato le funzionalità di client per il protocollo HTTP, che regola il download delle risorse dai server web a partire dal loro indirizzo URL; dall'altro quelle di visualizzazione dei contenuti ipertestuali (solitamente all'interno di documenti HTML) e di riproduzione di contenuti multimediali (rendering). Tra i browser più utilizzati vi sono Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera e Internet Explorer.*  
 
