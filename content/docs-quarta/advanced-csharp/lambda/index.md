@@ -152,7 +152,7 @@ The Lambda expression evolves from anonymous method by first removing
 the delegate keyword and parameter type and adding a lambda operator
 =\>.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-1.png](image1.png#center)
+![lambda-expression-1.png](image1.png#center)
 
 Lambda Expression from Anonymous Method
 
@@ -162,7 +162,7 @@ returns a value. So we can eliminate it.
 
 Also, we can remove parenthesis (), if we have only one parameter.
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-2.png](image2.png#center)
+![lambda-expression-2.png](image2.png#center)
 
 Lambda Expression from Anonymous Method
 
@@ -170,7 +170,7 @@ Thus, we got the lambda expression: s =\> s.Age \> 12 && s.Age \<
 20 where **s** is a parameter, **=\>** is the lambda operator
 and **s.Age \> 12 && s.Age \< 20** is the body expression:
 
-![https://www.tutorialsteacher.com/Content/images/linq/lambda-expression-structure.png](image3.png#center)
+![lambda-expression-structure.png](image3.png#center)
 
 Lambda Expression Structure in C#
 
@@ -331,8 +331,7 @@ multiple methods to the invocation list.
 
 The lambda expression can be assigned to `Func<in T, out TResult>` type
 delegate. The last parameter type in a Func delegate is the return type
-and rest are input parameters. Visit [Func
-delegate](https://www.tutorialsteacher.com/csharp/csharp-func-delegate)
+and rest are input parameters. Visit [Func delegate](https://www.tutorialsteacher.com/csharp/csharp-func-delegate)
 section of C# tutorials to know more about it.
 
 Consider the following lambda expression to find out whether a student

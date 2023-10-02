@@ -36,7 +36,7 @@ featured: true
 <sub>Attribuzione immagine[^1]</sub>
 [^1]:Image designed by [Freepik](http://www.freepik.com)
 
-In questa sezione si mostrerà come installare, configurare e utilizzare alcuni strumenti necessari per lo sviluppo del software in maniera professionale. Alcuni strumenti non sono strettamente necessari, altri invece, come Git, Visual Studio Code e Visual Studio sono indispensabili per le attività di laboratorio. In particolare, verranno trattati i seguenti armomenti:
+In questa sezione si mostrerà come installare, configurare e utilizzare alcuni strumenti necessari per lo sviluppo del software in maniera professionale. Alcuni strumenti non sono strettamente necessari, altri invece, come Git, Visual Studio Code e Visual Studio sono indispensabili per le attività di laboratorio. In particolare, verranno trattati i seguenti argomenti:
 
 * La differenza tra il Command Prompt (CMD), Windows PowerShell e PowerShell
 * il comando winget per l’installazione e l’aggiornamento degli applicativi di Windows.

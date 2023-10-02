@@ -4,7 +4,7 @@ title: "CSS"
 date: 2023-09-30T09:22:02+02:00
 draft: false
 type: docs
-description: " lo stile mediante il CSS"
+description: " Dare stile alle pagine web mediante i CSS (Cascading Style Sheets)"
 noindex: false
 comments: false
 nav_weight: 1000
@@ -32,7 +32,7 @@ images:
 #         color: '#e24d0e'
 ---
 <style>p {text-align: justify}</style>
-Il percorso didattico per lo studio del CSS ricalca la [guida di Mozilla MDN per il CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS). In particolare, con un approccio incrementale allo studio dei dettagli del CSS, l'argomento è prima proposto in una sezione *Getting started* in maniera sommaria e successivamente è ripreso in sezioni specifiche che trattano diversi aspetti fondamentali.
+Il percorso didattico per lo studio del CSS ricalca la [guida di Mozilla MDN per il CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS). In particolare, seguendo un approccio incrementale allo studio del CSS, l'argomento è prima proposto in una sezione ***Getting started*** in maniera sommaria e successivamente è ripreso in sezioni specifiche che trattano diversi aspetti fondamentali nell'ambito dello sviluppo web.
 
 ## Getting started tutorials
 

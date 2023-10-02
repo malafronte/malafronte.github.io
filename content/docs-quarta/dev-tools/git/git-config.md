@@ -75,7 +75,7 @@ Esiste anche una versione estesa del comando precedente:
 git config --list --show-origin --show-scope
 ```
 
-Questa versione del comando `git config --list` permette di ottenere informazioni aggiuntive importanti. L'opzione `--show-origin` mostra dove si trova il file che contine le impostazioni di Git. L'opzione `--show-scope` mostra l'ambito di validità dell'impostazione. Per maggiori dettagli si rimanda alla [sezione specifica](https://git-scm.com/docs/git-config) manuale di Git e al link su Stakoverflow [where is the global git config data stored](https://stackoverflow.com/a/2115116).
+Questa versione del comando `git config --list` permette di ottenere informazioni aggiuntive importanti. L'opzione `--show-origin` mostra dove si trova il file che contiene le impostazioni di Git. L'opzione `--show-scope` mostra l'ambito di validità dell'impostazione. Per maggiori dettagli si rimanda alla [sezione specifica](https://git-scm.com/docs/git-config) manuale di Git e al link su StackOverflow [where is the global git config data stored](https://stackoverflow.com/a/2115116).
 
 Le impostazioni di Git possono essere salvate su variabili di tre livelli, come descritto [qui](https://stackoverflow.com/a/66108560):
 
@@ -93,7 +93,7 @@ Le impostazioni di Git possono essere salvate su variabili di tre livelli, come 
     Esempio: C:/Users/Username/.gitconfig
 
    È possibile passare queste variabili a git con l'opzione `--global`.
-3. **Local**: Le variabili locali contengono impostazioni valide solo per il progetto corrente e sono memmorizzate in
+3. **Local**: Le variabili locali contengono impostazioni valide solo per il progetto corrente e sono memorizzate in
 
     `[gitrepo]/.git/config`  
     Esempio: C:/Users/MyProject/.git/config

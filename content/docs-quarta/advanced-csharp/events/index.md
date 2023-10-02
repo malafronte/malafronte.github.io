@@ -38,10 +38,9 @@ images:
 [^1]:[Events in C#](https://www.tutorialsteacher.com/csharp/csharp-event)  
 
 {{< bs/alert >}}
-{{% markdownify %}}
-Questa parte sugli eventi è inserita nel corso con lo scopo di fornire un meccanismo di comprensione del pattern Publisher - Subscriber nel modello ad eventi. Nel corso di quarta in genere non si svilupperà direttamente classi che implementano tale pattern. Un esempio di modello ad eventi, già visto nel corso di terza, è quello utilizzato nei Windows Forms, per i quali è utilizzato il concetto di {{< bs/alert-link "Event Handler" "https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-add-an-event-handler" >}}
-
-{{% /markdownify %}}
+{{< markdownify >}}
+Questa parte sugli eventi è inserita nel corso con lo scopo di fornire un meccanismo di comprensione del pattern Publisher - Subscriber nel modello ad eventi. Nel corso di quarta in genere non si svilupperà direttamente classi che implementano tale pattern. Un esempio di modello ad eventi, già visto nel corso di terza, è quello utilizzato nei Windows Forms, per i quali è utilizzato il concetto di [Event Handler](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-add-an-event-handler)
+{{< /markdownify >}}
 {{< /bs/alert >}}
 
 In general terms, an event is something special that is going to happen. For example, Microsoft launches events for developers, to make them aware about the features of new or existing products. Microsoft notifies the developers about the event by email or other advertisement options. So in this case, Microsoft is a publisher who launches (raises) an event and notifies the developers about it and developers are the subscribers of the event and attend (handle) the event.
@@ -138,6 +137,7 @@ When you run the above program, your code creates a new instance of Pub, subscri
 ## A more complex example
 
 >Nota: questo esempio è riportato a solo scopo informativo.
+
 ```cs
 public class Student
 {

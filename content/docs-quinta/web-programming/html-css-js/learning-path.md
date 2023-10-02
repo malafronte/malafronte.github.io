@@ -35,21 +35,9 @@ images:
 
 ## Lo studio di HTML, CSS e JavaScript
 
-Per lo studio delle tecnologie web esistono eccellenti tutorial e guide online. Tali guide, tuttavia, pur essendo validissime, talvolta rischiano di essere troppo vaste e dispersive. Per questo motivo, oltre ad avere delle guide di riferimento per approfondimenti e per gestire casi non visti al corso, è opportuno avere un corso scolastico di riferimento che permetta di comprendere velocemente i concetti di base per poi potersi muovere autonomamente nelle varie guide online. Tra i vari corsi disponibili gratuitamente, quello che è maggiormente focalizzato sul programma del corso di informatica è il corso “HTML, CSS, and Javascript for Web Developers” del Prof. Yaakov Chaikin, disponibile sulla piattaforma [Coursera](https://www.coursera.org/) a questo [link](https://www.coursera.org/learn/html-css-javascript-for-web-developers/) (con iscrizione gratuita).
-Il corso è organizzato in cinque moduli:
+I concetti chiave di HTML, CSS e JavaScript  sono ben descritte nei video e negli esempi del [corso del Prof. Yaakov Chaikin su Coursera](https://www.coursera.org/learn/html-css-javascript-for-web-developers/). Gli esempi di codice e le slide del corso sono disponibili sul [repository del corso](https://github.com/jhu-ep-coursera/fullstack-course4) del Prof. Chaikin.  
+Un approccio analogo è seguito nella documentazione di [Mozilla MDN](https://developer.mozilla.org/en-US/), ed in particolare nelle sezioni introduttive del profilo [Front-end web developer](https://developer.mozilla.org/en-US/docs/Learn) che si utilizzeranno in questo corso di informatica.  
+Per uno studio proficuo occorre leggere principalmente i tutorial di [Mozilla MDN](https://developer.mozilla.org/en-US/) e di [W3schools](https://www.w3schools.com/) indicati in questi appunti del corso. Il corso del Prof. Yaakov Chaikin su Coursera è da considerarsi una risorsa aggiuntiva, in quanto contiene video e materiali che spiegano gli stessi argomenti trattati a lezione e negli altri tutorial indicati.  
+In generale, lo studio deve essere attivo ed accompagnato dallo svolgimento degli esempi e degli esercizi proposti, sia nelle guide online, che nelle lezioni del corso a scuola.
 
-* HTML5
-* CSS3
-* Un esempio di sviluppo di un sito web per un ristorante
-* Introduzione a Javascript
-* Utilizzo di Javascript per scrivere applicazioni Web (lato client)  
-
-Per il corso di informatica di quinta verrà seguita la scansione degli argomenti proposti dal corso del Prof. Chaikin, con alcuni adattamenti relativamente all’ambiente di sviluppo.  
-Gli esempi di codice e le slide del corso sono disponibili sul [repository del corso](https://github.com/jhu-ep-coursera/fullstack-course4) del Prof. Chaikin.
-
-Altre risorse molto utili per lo studio degli argomenti di questa parte del programma sono:
-
-* [w3schools](https://www.w3schools.com/)
-* [Mozilla MDN](https://developer.mozilla.org/en-US/)
-
-In particolare per lo studio delle tecnologie HTML, CSS e JS verrà estensivamente utilizzata la [guida di Mozilla MDN per il web development](https://developer.mozilla.org/en-US/docs/Learn).
+La trattazione delle varie componenti del web (HTML, CSS, JS) sarà presentata in maniera incrementale: prima saranno proposti i concetti di base con semplici esempi e poi successivamente gli stessi argomenti saranno approfonditi con sempre maggior dettaglio. Per questo motivo è importante seguire nell'ordine proposto i tutorial di Mozilla MDN e di W3schools.

@@ -37,14 +37,14 @@ images:
 <style>p {text-align: justify}</style>
 A function can have one or more parameters of different data types, but what if you want to pass a function itself as a parameter? How does C# handle the callback functions or event handler? The answer is - **delegate**.
 
-A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method. All the delegates are implicitly derived from System.Delegate class.
-<!--more-->
-
-[https://www.tutorialsteacher.com/csharp/csharp-delegates](https://www.tutorialsteacher.com/csharp/csharp-delegates)
+A delegate is like a pointer to a function. It is a reference type data type and it holds the reference of a method. All the delegates are [implicitly derived from System.Delegate class](https://www.tutorialsteacher.com/csharp/csharp-delegates).  
 
 A delegate can be declared using **delegate** keyword followed by a function signature as shown below.
 
-\<access modifier\> delegate \<return type\> \<delegate\_name\>(\<parameters\>)
+```cs
+<access_modifier> delegate <return_type> <delegate_name>(<parameters>)
+
+```
 
 In C#, delegates form the basic building blocks for events. A delegate is a type that defines a method signature. In C# you can instantiate a delegate and let it point to another method. You can invoke the method through the delegate.
 
@@ -280,7 +280,7 @@ You can learn more about this concept [here](https://docs.microsoft.com/en-us/do
 ## Points to Remember
 
 1. Delegate is a function pointer. It is reference type data type.
-2. Syntax: _public delegate void \<function name\>(\<parameters\>)_
+2. Syntax: _public delegate void `<function name>(<parameters>)`
 3. A method that is going to assign to delegate must have same signature as delegate.
 4. Delegates can be invoke like a normal function or Invoke() method.
 5. Multiple methods can be assigned to the delegate using "+" operator. It is called multicast delegate.

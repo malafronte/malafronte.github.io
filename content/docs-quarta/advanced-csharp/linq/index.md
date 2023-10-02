@@ -101,13 +101,13 @@ namespace ArgomentiAvanzati
         {
             Student[] studentArray =
             {
-            new Student() { StudentID = 1, StudentName = "John", Age = 18},
-            new Student() { StudentID = 2, StudentName = "Steve",  Age = 21},
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 25},
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 31},
-            new Student() { StudentID = 6, StudentName = "Chris",  Age = 17},
-            new Student() { StudentID = 7, StudentName = "Rob", Age = 19},
+            new () { StudentID = 1, StudentName = "John", Age = 18},
+            new () { StudentID = 2, StudentName = "Steve",  Age = 21},
+            new () { StudentID = 3, StudentName = "Bill",  Age = 25},
+            new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+            new () { StudentID = 5, StudentName = "Ron" , Age = 31},
+            new () { StudentID = 6, StudentName = "Chris",  Age = 17},
+            new () { StudentID = 7, StudentName = "Rob", Age = 19},
             };
             List<Student> students = new();
             foreach (Student std in studentArray)
@@ -166,13 +166,13 @@ namespace ArgomentiAvanzati
         {
             Student[] studentArray =
             {
-            new Student() { StudentID = 1, StudentName = "John", Age = 18},
-            new Student() { StudentID = 2, StudentName = "Steve",  Age = 21},
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 25},
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 31},
-            new Student() { StudentID = 6, StudentName = "Chris",  Age = 17},
-            new Student() { StudentID = 7, StudentName = "Rob", Age = 19},
+            new () { StudentID = 1, StudentName = "John", Age = 18},
+            new () { StudentID = 2, StudentName = "Steve",  Age = 21},
+            new () { StudentID = 3, StudentName = "Bill",  Age = 25},
+            new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+            new () { StudentID = 5, StudentName = "Ron" , Age = 31},
+            new () { StudentID = 6, StudentName = "Chris",  Age = 17},
+            new () { StudentID = 7, StudentName = "Rob", Age = 19},
         };
 
             //List<Student> students = StudentExtension.Where(studentArray, delegate (Student std)
@@ -230,13 +230,13 @@ namespace ArgomentiAvanzati
       {
           Student[] studentArray = 
           {
-            new Student() { StudentID = 1, StudentName = "John", Age = 18},
-            new Student() { StudentID = 2, StudentName = "Steve",  Age = 21},
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 25},
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 31},
-            new Student() { StudentID = 6, StudentName = "Chris",  Age = 17},
-            new Student() { StudentID = 7, StudentName = "Rob", Age = 19},
+            new () { StudentID = 1, StudentName = "John", Age = 18},
+            new () { StudentID = 2, StudentName = "Steve",  Age = 21},
+            new () { StudentID = 3, StudentName = "Bill",  Age = 25},
+            new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+            new () { StudentID = 5, StudentName = "Ron" , Age = 31},
+            new () { StudentID = 6, StudentName = "Chris",  Age = 17},
+            new () { StudentID = 7, StudentName = "Rob", Age = 19},
           };
 
           // Use LINQ to find teenager students
@@ -279,8 +279,8 @@ We can write LINQ queries for the classes that implement `IEnumerable<T>` or `IQ
 {{< bs/alert >}}
 {{< markdownify >}}
 LINQ queries uses extension methods for classes that implement IEnumerable or IQueryable interface.
-{{< /bs/alert >}}
 {{< /markdownify >}}
+{{< /bs/alert >}}
 
 ### System.Linq.Enumerable
 
@@ -363,11 +363,11 @@ namespace ArgomentiAvanzati
           // Student collection
           IList<Student> studentList = new List<Student>() 
           {
-            new Student() { StudentID = 1, StudentName = "John", Age = 13},
-            new Student() { StudentID = 2, StudentName = "Mario",  Age = 21},
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 18},
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 15}
+            new () { StudentID = 1, StudentName = "John", Age = 13},
+            new () { StudentID = 2, StudentName = "Mario",  Age = 21},
+            new () { StudentID = 3, StudentName = "Bill",  Age = 18},
+            new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+            new () { StudentID = 5, StudentName = "Ron" , Age = 15}
           };
 
           // LINQ Query Syntax to find out teenager students
@@ -419,11 +419,11 @@ The following example shows how to use LINQ method syntax query with the `IEnume
 // Student collection
 IList<Student> studentList = new List<Student>() 
     { 
-      new Student() { StudentID = 1, StudentName = "John", Age = 13},
-      new Student() { StudentID = 2, StudentName = "Mario",  Age = 21},
-      new Student() { StudentID = 3, StudentName = "Bill",  Age = 18},
-      new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-      new Student() { StudentID = 5, StudentName = "Ron" , Age = 15} 
+      new () { StudentID = 1, StudentName = "John", Age = 13},
+      new () { StudentID = 2, StudentName = "Mario",  Age = 21},
+      new () { StudentID = 3, StudentName = "Bill",  Age = 18},
+      new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+      new () { StudentID = 5, StudentName = "Ron" , Age = 15} 
     };
 
 // LINQ Method Syntax to find out teenager students
@@ -444,11 +444,11 @@ namespace ArgomentiAvanzati
           // Student collection
           IList<Student> studentList = new List<Student>() 
           {
-              new Student() { StudentID = 1, StudentName = "John", Age = 13},
-              new Student() { StudentID = 2, StudentName = "Mario",  Age = 21},
-              new Student() { StudentID = 3, StudentName = "Bill",  Age = 18},
-              new Student() { StudentID = 4, StudentName = "Ram" , Age = 20},
-              new Student() { StudentID = 5, StudentName = "Ron" , Age = 15}
+              new () { StudentID = 1, StudentName = "John", Age = 13},
+              new () { StudentID = 2, StudentName = "Mario", Age = 21},
+              new () { StudentID = 3, StudentName = "Bill", Age = 18},
+              new () { StudentID = 4, StudentName = "Ram" , Age = 20},
+              new () { StudentID = 5, StudentName = "Ron" , Age = 15}
           };
 
           Func<Student, bool> isStudentTeenAger = s => s.Age > 12 && s.Age < 20;
@@ -506,8 +506,9 @@ var teenAgerStudents = studentList.Where(s => s.Age > 12 && s.Age < 20)
 {{< bs/alert >}}
 {{< markdownify >}}
 Standard query operators in query syntax is converted into extension methods at compile time. So both are same.
-{{< /bs/alert >}}
 {{< /markdownify >}}
+{{< /bs/alert >}}
+
 Standard Query Operators can be classified based on the functionality they provide. The following table lists all the classification of Standard Query Operators:
 | **Classification** | **Standard Query Operators** |
 | --- | --- |
@@ -575,7 +576,7 @@ namespace LINQgym
 
     class Program
     {
-        //stiamo definendo un tipo di puntatore a funzione
+        //definizione di un tipo di puntatore a metodo
         delegate bool CondizioneRicerca(Student s);
 
         public static void AzioneSuElemento(Student s)
@@ -593,24 +594,23 @@ namespace LINQgym
         {
 
             Student[] studentArray1 = {
-            new Student() { StudentID = 1, StudentName = "John", Age = 18 , MediaVoti= 6.5},
-            new Student() { StudentID = 2, StudentName = "Steve",  Age = 21 , MediaVoti= 8},
-            new Student() { StudentID = 3, StudentName = "Bill",  Age = 25, MediaVoti= 7.4},
-            new Student() { StudentID = 4, StudentName = "Ram" , Age = 20, MediaVoti = 10},
-            new Student() { StudentID = 5, StudentName = "Ron" , Age = 31, MediaVoti = 9},
-            new Student() { StudentID = 6, StudentName = "Chris",  Age = 17, MediaVoti = 8.4},
-            new Student() { StudentID = 7, StudentName = "Rob",Age = 19  , MediaVoti = 7.7},
-            new Student() { StudentID = 8, StudentName = "Robert",Age = 22, MediaVoti = 8.1},
-            new Student() { StudentID = 9, StudentName = "Alexander",Age = 18, MediaVoti = 4},
-            new Student() { StudentID = 10, StudentName = "John", Age = 18 , MediaVoti = 6},
-            new Student() { StudentID = 11, StudentName = "John",  Age = 21 , MediaVoti = 8.5},
-            new Student() { StudentID = 12, StudentName = "Bill",  Age = 25, MediaVoti = 7},
-            new Student() { StudentID = 13, StudentName = "Ram" , Age = 20, MediaVoti = 9 },
-            new Student() { StudentID = 14, StudentName = "Ron" , Age = 31, MediaVoti = 9.5},
-            new Student() { StudentID = 15, StudentName = "Chris",  Age = 17, MediaVoti = 8},
-            new Student() { StudentID = 16, StudentName = "Rob2",Age = 19  , MediaVoti = 7},
-            new Student() { StudentID = 17, StudentName = "Robert2",Age = 22, MediaVoti = 8},
-            new Student() { StudentID = 18, StudentName = "Alexander2",Age = 18, MediaVoti = 9},
+            new () { StudentID = 1, StudentName = "John", Age = 18 , MediaVoti= 6.5},
+            new () { StudentID = 2, StudentName = "Steve",  Age = 21 , MediaVoti= 8},
+            new () { StudentID = 3, StudentName = "Bill",  Age = 25, MediaVoti= 7.4},
+            new () { StudentID = 4, StudentName = "Ram" , Age = 20, MediaVoti = 10},
+            new () { StudentID = 5, StudentName = "Ron" , Age = 31, MediaVoti = 9},
+            new () { StudentID = 6, StudentName = "Chris",  Age = 17, MediaVoti = 8.4},
+            new () { StudentID = 7, StudentName = "Rob",Age = 19  , MediaVoti = 7.7},
+            new () { StudentID = 8, StudentName = "Robert",Age = 22, MediaVoti = 8.1},
+            new () { StudentID = 9, StudentName = "Alexander",Age = 18, MediaVoti = 4},
+            new () { StudentID = 10, StudentName = "John", Age = 18 , MediaVoti = 6},
+            new () { StudentID = 12, StudentName = "Bill",  Age = 25, MediaVoti = 7},
+            new () { StudentID = 13, StudentName = "Ram" , Age = 20, MediaVoti = 9 },
+            new () { StudentID = 14, StudentName = "Ron" , Age = 31, MediaVoti = 9.5},
+            new () { StudentID = 15, StudentName = "Chris",  Age = 17, MediaVoti = 8},
+            new () { StudentID = 16, StudentName = "Rob2",Age = 19  , MediaVoti = 7},
+            new () { StudentID = 17, StudentName = "Robert2",Age = 22, MediaVoti = 8},
+            new () { StudentID = 18, StudentName = "Alexander2",Age = 18, MediaVoti = 9},
             };
 
             List<Student> studentList1 = studentArray1.ToList();
@@ -675,18 +675,18 @@ namespace LINQgym
             studentResultList.
                 ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age + " ID = " + s.StudentID));
 
-            //utilizzo di LINQ query
-            studentResultArray = (from s in studentArray1
-                                  where s.Age >= 18 && s.Age <= 25
-                                  select s).ToArray();
+            //utilizzo di LINQ query - per confronto con Fluent (LINQ Method)
+            // studentResultArray = (from s in studentArray1
+            //                       where s.Age >= 18 && s.Age <= 25
+            //                       select s).ToArray();
 
-            studentResultList = (from s in studentResultList
-                                 where s.Age >= 18 && s.Age <= 25
-                                 select s).ToList();
-            Console.WriteLine("Stampa del risultato con LINQ query");
-            Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
-            studentResultList.
-                ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            // studentResultList = (from s in studentResultList
+            //                      where s.Age >= 18 && s.Age <= 25
+            //                      select s).ToList();
+            // Console.WriteLine("Stampa del risultato con LINQ query");
+            // Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            // studentResultList.
+            //     ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
             //foreach(var elem in studentResult)
             //{
@@ -695,7 +695,6 @@ namespace LINQgym
             //Console.WriteLine(studentList1);
 
             //Studiamo la clausola OfType
-
             //nel caso di collection di tipo diverso è possibile trarre vantaggio dal metodo OfType
             IList mixedList = new ArrayList();
             mixedList.Add(5);
@@ -704,6 +703,7 @@ namespace LINQgym
             mixedList.Add("numero due");
             mixedList.Add(new Student() { StudentID = 10, Age = 30, StudentName = "Roberto" });
             List<string> mixedListResult = mixedList.OfType<string>().ToList();
+            //versione con LINQ Query - per confronto con Fluent (LINQ Method)
             //IList mixedListResult2 =
             //    (from s in mixedList.OfType<Student>()
             //     where s.Age > 20
@@ -729,20 +729,21 @@ namespace LINQgym
             Console.WriteLine("\nstampa su list");
             studentResultList.
                 ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            
+            // //utilizzo di LINQ query - per confronto con Fluent (LINQ Method)
+            // Console.WriteLine("\nOrdiniamo in base all'età - LINQ query");
+            // studentResultArray = (from s in studentArray1
+            //                       orderby s.Age
+            //                       select s).ToArray();
+            // Console.WriteLine("stampa su array");
+            // Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            Console.WriteLine("\nOrdiniamo in base all'età - LINQ query");
-            studentResultArray = (from s in studentArray1
-                                  orderby s.Age
-                                  select s).ToArray();
-            Console.WriteLine("stampa su array");
-            Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
-
-            studentResultList = (from s in studentList1
-                                 orderby s.Age
-                                 select s).ToList();
-            Console.WriteLine("\nstampa su list");
-            studentResultList.
-                ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            // studentResultList = (from s in studentList1
+            //                      orderby s.Age
+            //                      select s).ToList();
+            // Console.WriteLine("\nstampa su list");
+            // studentResultList.
+            //     ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
             //ordinamenti multipli
             Console.WriteLine("\nOrdinamenti multipli - LINQ method");
@@ -754,23 +755,29 @@ namespace LINQgym
             Console.WriteLine("\nstampa su list");
             studentResultList.
                 ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            // esiste anche la possibilità di effettuare l'ordinamento in ordine discendente con OrderByDescending e ThenByDescending
+            // si veda: 
+            //https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderbydescending
+            //https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.thenbydescending0
 
-            Console.WriteLine("\nOrdinamenti multipli - LINQ query");
-            studentResultArray = (from s in studentArray1
-                                  orderby s.Age, s.StudentName descending
-                                  select s).ToArray();
-            Console.WriteLine("stampa su array");
-            Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            //Versione con LINQ Query - per confronto con Fluent (LINQ Method)
+            // Console.WriteLine("\nOrdinamenti multipli - LINQ query");
+            // studentResultArray = (from s in studentArray1
+            //                       orderby s.Age, s.StudentName descending
+            //                       select s).ToArray();
+            // Console.WriteLine("stampa su array");
+            // Array.ForEach(studentResultArray, s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
-            studentResultList = (from s in studentList1
-                                 orderby s.Age, s.StudentName descending
-                                 select s).ToList();
-            Console.WriteLine("\nstampa su list");
-            studentResultList.
-                ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
+            // studentResultList = (from s in studentList1
+            //                      orderby s.Age, s.StudentName descending
+            //                      select s).ToList();
+            // Console.WriteLine("\nstampa su list");
+            // studentResultList.
+            //     ForEach(s => Console.WriteLine(s.StudentName + " age = " + s.Age));
 
             //Studiamo la clausola select - proiettiamo gli elementi della sequenza in una nuova forma
-            Console.WriteLine("\nClausola select - LINQ method");
+            //Console.WriteLine("\nClausola select - LINQ method");
+
             Console.WriteLine("\nUso di tipi anonimi");
             //uso di tipi anonimi
             Array.ForEach(
@@ -788,25 +795,24 @@ namespace LINQgym
             Persona[] personaResultArray = studentArray1.
                 Select(s => new Persona() { Nome = s.StudentName, Eta = s.Age }).ToArray();
             Array.ForEach(personaResultArray, s => Console.WriteLine(s.Nome + " " + s.Eta));
-
             List<Persona> personaResultList =
                 studentList1.
                 Select(s => new Persona() { Nome = s.StudentName, Eta = s.Age }).
                 ToList();
             personaResultList.ForEach(p => Console.WriteLine(p));
 
-            Console.WriteLine("\nClausola select - LINQ query");
-            var studentNames = (from s in studentArray1
-                                select new { Nome = s.StudentName }).ToArray();
-            Array.ForEach(studentNames, s => Console.WriteLine(s));
-            var personNamesList = (from s in studentList1
-                                   select new Persona() { Nome = s.StudentName, Eta = s.Age }).ToList();
-            personNamesList.ForEach(p => Console.WriteLine(p.Nome + " " + p.Eta));
+            //Versione con LINQ Query - per confronto con Fluent (LINQ Method)
+            // Console.WriteLine("\nClausola select - LINQ query");
+            // var studentNames = (from s in studentArray1
+            //                     select new { Nome = s.StudentName }).ToArray();
+            // Array.ForEach(studentNames, s => Console.WriteLine(s));
+            // var personNamesList = (from s in studentList1
+            //                        select new Persona() { Nome = s.StudentName, Eta = s.Age }).ToList();
+            // personNamesList.ForEach(p => Console.WriteLine(p.Nome + " " + p.Eta));
 
             //Group By
             //IEnumerable<IGrouping< int, Student>>
             var groupedResult = studentList1.GroupBy(s => s.Age);
-
             foreach (var group in groupedResult)
             {
                 Console.WriteLine("Group key(Age) = {0}", group.Key);
@@ -825,11 +831,9 @@ namespace LINQgym
                 //GroupBy carica il risultato associato a una chiave quando serve
                 //https://stackoverflow.com/questions/10215428/why-are-tolookup-and-groupby-different
                 //https://stackoverflow.com/a/10215531
-
             }
             Console.WriteLine("STAMPA RAGGRUPPAMENTO PER NOME");
             var groupedResult2 = studentList1.GroupBy(s => s.StudentName);
-
             foreach (var group in groupedResult2)
             {
                 Console.WriteLine("Chiave di raggruppamento (Nome) = " + group.Key);
@@ -839,19 +843,17 @@ namespace LINQgym
                 }
                 Console.WriteLine("Numero studenti omonimi: " + group.Count());
                 Console.WriteLine("Voto medio degli omonimi: " + group.Average(s => s.MediaVoti));
-
             }
 
             //intersezione tra due collection - Join
             //creiamo un elenco di assenze di studenti
             List<Assenza> assenzeList1 = new List<Assenza>
             {
-                new Assenza(){ID = 1, Giorno = DateTime.Today, StudentID = 1 },
-                new Assenza(){ID = 2, Giorno = DateTime.Today.AddDays(-1) ,StudentID = 1 },
-                new Assenza(){ID = 3, Giorno = DateTime.Today.AddDays(-3), StudentID = 1 },
-                new Assenza(){ID = 4, Giorno = new DateTime(2020,11,30), StudentID = 2 },
-                new Assenza(){ID = 5, Giorno = new DateTime(2020,11,8), StudentID = 3 }
-
+                new (){ID = 1, Giorno = DateTime.Today, StudentID = 1 },
+                new (){ID = 2, Giorno = DateTime.Today.AddDays(-1) ,StudentID = 1 },
+                new (){ID = 3, Giorno = DateTime.Today.AddDays(-3), StudentID = 1 },
+                new (){ID = 4, Giorno = new DateTime(2020,11,30), StudentID = 2 },
+                new (){ID = 5, Giorno = new DateTime(2020,11,8), StudentID = 3 }
             };
             //vogliamo riportare il nome dello studente e le date delle sue assenze 
             //facciamo una join tra la lista degli studenti e la lista delle assenze degli studenti e poi facciamo la proiezione del risultato su un nuovo oggetto
@@ -859,14 +861,10 @@ namespace LINQgym
                 s => s.StudentID,
                 a => a.StudentID,
                 (s, a) => new { ID = s.StudentID, Nome = s.StudentName, GiornoAssenza = a.Giorno });
-
             foreach (var obj in innerJoinStudentiAssenze)
             {
                 Console.WriteLine($"ID = {obj.ID}, Nome = {obj.Nome}, GiornoAssenza = {obj.GiornoAssenza.ToShortDateString()}");
             }
-            Console.ReadLine();
-
-
         }
     }
 }
@@ -924,15 +922,12 @@ namespace LinqAlMuseo
     {
         public int Id { get; set; }
         public string Titolo { get; set; } = null!;
-
         public decimal Quotazione { get; set; }
-
         public int FkArtista { get; set; }
         public override string ToString()
         {
             return String.Format($"[ID = {Id}, Titolo = {Titolo}, Quotazione = {Quotazione},  FkArtista = {FkArtista}]"); ;
         }
-
     }
 }
 
@@ -948,7 +943,6 @@ namespace LinqAlMuseo
         {
             return string.Format($"[ID = {Id}, Nome = {Nome}, FkOperaId = {FkOperaId}]"); ;
         }
-
     }
 }
 
@@ -960,33 +954,29 @@ using System.Text;
 
 //creazione delle collection
 //si parte da quelle che non puntano a nulla, ossia quelle che non hanno chiavi esterne
-
 IList<Artista> artisti = new List<Artista>()
             {
-                new Artista(){Id=1, Cognome="Picasso", Nome="Pablo", Nazionalita="Spagna"},
-                new Artista(){Id=2, Cognome="Dalì", Nome="Salvador", Nazionalita="Spagna"},
-                new Artista(){Id=3, Cognome="De Chirico", Nome="Giorgio", Nazionalita="Italia"},
-                new Artista(){Id=4, Cognome="Guttuso", Nome="Renato", Nazionalita="Italia"}
+                new (){Id=1, Cognome="Picasso", Nome="Pablo", Nazionalita="Spagna"},
+                new (){Id=2, Cognome="Dalì", Nome="Salvador", Nazionalita="Spagna"},
+                new (){Id=3, Cognome="De Chirico", Nome="Giorgio", Nazionalita="Italia"},
+                new (){Id=4, Cognome="Guttuso", Nome="Renato", Nazionalita="Italia"}
             };
-
 //poi le collection che hanno Fk
 IList<Opera> opere = new List<Opera>() {
-                new Opera(){Id=1, Titolo="Guernica", Quotazione=50000000.00m , FkArtista=1},//opera di Picasso
-                new Opera(){Id=2, Titolo="I tre musici", Quotazione=15000000.00m, FkArtista=1},//opera di Picasso
-                new Opera(){Id=3, Titolo="Les demoiselles d’Avignon", Quotazione=12000000.00m,  FkArtista=1},//opera di Picasso
-                new Opera(){Id=4, Titolo="La persistenza della memoria", Quotazione=16000000.00m,  FkArtista=2},//opera di Dalì
-                new Opera(){Id=5, Titolo="Metamorfosi di Narciso", Quotazione=8000000.00m, FkArtista=2},//opera di Dalì
-                new Opera(){Id=6, Titolo="Le Muse inquietanti", Quotazione=22000000.00m,  FkArtista=3},//opera di De Chirico
-
+                new (){Id=1, Titolo="Guernica", Quotazione=50000000.00m , FkArtista=1},//opera di Picasso
+                new (){Id=2, Titolo="I tre musici", Quotazione=15000000.00m, FkArtista=1},//opera di Picasso
+                new (){Id=3, Titolo="Les demoiselles d’Avignon", Quotazione=12000000.00m,  FkArtista=1},//opera di Picasso
+                new (){Id=4, Titolo="La persistenza della memoria", Quotazione=16000000.00m,  FkArtista=2},//opera di Dalì
+                new (){Id=5, Titolo="Metamorfosi di Narciso", Quotazione=8000000.00m, FkArtista=2},//opera di Dalì
+                new (){Id=6, Titolo="Le Muse inquietanti", Quotazione=22000000.00m,  FkArtista=3},//opera di De Chirico
             };
-
 IList<Personaggio> personaggi = new List<Personaggio>() {
-                new Personaggio(){Id=1, Nome="Uomo morente", FkOperaId=1},//un personaggio di Guernica 
-                new Personaggio(){Id=2, Nome="Un musicante", FkOperaId=2},
-                new Personaggio(){Id=3, Nome="una ragazza di Avignone", FkOperaId=3},
-                new Personaggio(){Id=4, Nome="una seconda ragazza di Avignone", FkOperaId=3},
-                new Personaggio(){Id=5, Nome="Narciso", FkOperaId=5},
-                new Personaggio(){Id=6, Nome="Una musa metafisica", FkOperaId=6},
+                new (){Id=1, Nome="Uomo morente", FkOperaId=1},//un personaggio di Guernica 
+                new (){Id=2, Nome="Un musicante", FkOperaId=2},
+                new (){Id=3, Nome="una ragazza di Avignone", FkOperaId=3},
+                new (){Id=4, Nome="una seconda ragazza di Avignone", FkOperaId=3},
+                new (){Id=5, Nome="Narciso", FkOperaId=5},
+                new (){Id=6, Nome="Una musa metafisica", FkOperaId=6},
             };
 
 //impostiamo la console in modo che stampi correttamente il carattere dell'euro e che utilizzi le impostazioni di cultura italiana
@@ -1057,9 +1047,8 @@ foreach (var group in artistiPerNazionalità)
     Console.WriteLine($"Nazionalità: {group.Key} Numero artisti: {group.Count()}");
 }
 
-//4)Trovare la quotazione media, minima e massima delle opere di Picasso
+//4) Trovare la quotazione media, minima e massima delle opere di Picasso
 Console.WriteLine("\n**** 4) Trovare la quotazione media, minima e massima delle opere di Picasso\n");
-
 //troviamo le opere di Picasso
 var opereDiPicasso = artisti.Where(a => a.Cognome == "Picasso")
     .Join(opere,
@@ -1074,16 +1063,14 @@ var quotazioneMassima = opereDiPicasso.Max(o => o.Quotazione);
 Console.WriteLine($"Quotazione minima = {quotazioneMinima}, " +
     $"quotazione media = {quotazioneMedia:F2}, quotazione massima = {quotazioneMassima}");
 
-//5)Trovare la quotazione media, minima e massima di ogni artista
+//5) Trovare la quotazione media, minima e massima di ogni artista
 Console.WriteLine("\n**** 5) Trovare la quotazione media, minima e massima di ogni artista\n");
-
 //raggruppiamo per artista (usando FkArtista) e poi su ogni gruppo di opere calcoliamo le funzioni di gruppo
 var operePerArtista = opere.GroupBy(o => o.FkArtista);
-
 foreach (var group in operePerArtista)
 {
     Console.Write($"Id artista = {group.Key} ");
-    //voglio conoscere i dettagli dell'artista di cui so l'id
+    //voglio conoscere i dettagli dell'artista di cui conosco l'id
     var artista = artisti.Where(a => a.Id == group.Key).FirstOrDefault();
     if (artista != null)
     {
@@ -1114,7 +1101,7 @@ foreach (var group in opereDiArtistaGroupBy)
     $" | Quotazione massima = {group.Max(t => t.o.Quotazione):C2} ");
 }
 
-//6)    Raggruppare le opere in base alla nazionalità e in base al cognome dell’artista (Raggruppamento in base a più proprietà)
+//6) Raggruppare le opere in base alla nazionalità e in base al cognome dell’artista (Raggruppamento in base a più proprietà)
 Console.WriteLine("\n**** 6) Raggruppare le opere in base alla nazionalità e in base al cognome dell’artista (Raggruppamento in base a più proprietà)\n");
 var opereDiArtistaGroupByMultiplo = artisti.Join(opere,
     a => a.Id,
@@ -1128,7 +1115,6 @@ foreach (var group in opereDiArtistaGroupByMultiplo)
     //{
     //    Console.WriteLine($"Elemento = {item}");
     //}
-
     Console.WriteLine($"{group.Key.Nazionalita} {group.Key.Cognome} ");
     foreach (var item in group)
     {

@@ -32,6 +32,17 @@ images:
 #         color: '#e24d0e'
 ---
 <style>p {text-align: justify}</style>
+
+## Il funzionamento di Internet
+
+L'infrastruttura tecnologica che ha permesso lo sviluppo dell'attuale Web è la rete Internet, il cui funzionamento è ripreso nell'articolo di Mozilla MDN intitolato [*come funziona Internet*](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work).
+
+## Come funziona il Web
+
+Il funzionamento del Web è descritto nell'articolo di Mozilla MDN intitolato e [*come funziona il web*](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works).
+
+## Architettura di riferimento per siti statici
+
 Lo sviluppo di applicazioni web coinvolge diverse tecnologie che concorrono alla creazione di contenuti e servizi. In questa guida vedremo come sono strutturati i siti web statici, ossia quei siti web che contengono pagine create staticamente e che sono realizzate mediante l'utilizzo di HTML, CSS e JavaScript.  
 
 Per prima cosa occorre chiarire lo schema di riferimento di una applicazione web (Web Application). Quando un utente di un host client (computer, dispositivo mobile, etc.) effettua una richiesta di accesso ad una pagina di un sito web, il browser [^1] dell’utente, effettua una richiesta, tramite il protocollo HTTP[^2] (o HTTPS[^3]), di quella pagina al server HTTP che gestisce il sito. Tale server può recuperare la pagina richiesta da uno storage locale (memoria di massa), se si tratta di una pagina statica, oppure può richiedere ad un'altra applicazione sul server, o su un altro host remoto, di generare dinamicamente la pagina. Quest'ultima applicazione server potrebbe essere scritta in ASP.NET, oppure con un'altra tecnologia, come NodeJS, PHP, Go, etc. Una volta che l'HTTP server ha ottenuto la pagina richiesta, la restituisce al browser del client. Il contenuto inviato al browser del client è un file di testo contenente HTML, che può essere accompagnato da altri file contenenti fogli di stile (CSS) e codice scritto tipicamente in JavaScript.  
@@ -45,7 +56,9 @@ In questa prima parte del corso verranno mostrate le tecnologie per la creazione
 * **CSS** è un linguaggio utilizzato per definire lo stile degli elementi di una pagina HTML, come ad esempio, il colore, la dimensione, il tipo di font da utilizzare etc.
   
 * **JavaScript** è un linguaggio di programmazione, che attualmente ha grande importanza nello sviluppo web. Storicamente, in passato, era usato per dare interattività alle pagine web all’interno del browser visto che HTML e CSS non sono dei linguaggi di programmazione (non possono codificare un algoritmo). Attualmente JavaScript è utilizzato anche in applicazioni cosiddette lato server, per effettuare la creazione delle pagine dinamiche sul server (si veda, ad esempio, NodeJS).  
-  
+
+## HTTP Server
+
 In questa prima parte del corso verranno illustrate le tecnologie per generare pagine web statiche che sono costituite da pagine HTML, con fogli di stile CSS e con script JavaScript eseguiti localmente nel browser dell’utente. Lo scenario tipico di utilizzo di un sito web di questo tipo prevede che l’utente richieda una determinata pagina web dal server e che il server risponda inviando al browser dell’utente la pagina HTML richiesta con anche gli elementi CSS e JavaScript necessari.
 Esistono diversi server HTTP utilizzati nelle applicazioni commerciali e, tra questi, ricoprono un ruolo preminente i seguenti:
 
@@ -54,7 +67,6 @@ Esistono diversi server HTTP utilizzati nelle applicazioni commerciali e, tra qu
 * [NGINX](https://www.nginx.com/)
 
 Si tratta di software che trovano utilizzo in un numero altissimo di siti web, come si può vedere dalle statistiche di utilizzo descritte nel [NetCraft Survey](https://www.netcraft.com/resources/?topic=web-server-survey).  
-Ulteriori chiarimenti su [come funziona Internet](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work) e [come funziona il web](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works) si trovano nelle [guide di Mozilla MDN](https://developer.mozilla.org/en-US/docs/Learn).
 
 [^1]:[Wikipedia](https://it.wikipedia.org/wiki/Browser): *In informatica il browser Web (o semplicemente browser /ˈbraʊzə(r)/), in italian navigatore Web,è un'applicazione per l'acquisizione, la presentazione e la navigazione di risorse sul Web. Tali risorse (come pagine web, immagini o video) sono messe a disposizione sul World Wide Web (la rete globale che si appoggia su Internet), su una rete locale o sullo stesso computer dove il browser è in esecuzione. Il programma implementa da un lato le funzionalità di client per il protocollo HTTP, che regola il download delle risorse dai server web a partire dal loro indirizzo URL; dall'altro quelle di visualizzazione dei contenuti ipertestuali (solitamente all'interno di documenti HTML) e di riproduzione di contenuti multimediali (rendering). Tra i browser più utilizzati vi sono Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera e Internet Explorer.*  
 
