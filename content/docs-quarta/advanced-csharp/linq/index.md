@@ -537,6 +537,12 @@ Gli esempi di tutte le funzioni presenti nella tabella precedente sono reperibil
 
 ## Alcuni esempi di codice LINQ
 
+{{< bs/alert >}}
+{{< markdownify >}}
+Negli esempi ed esercizi proposti sul LINQ si assume che in una collection non possano esserci due oggetti con lo stesso `ID`; in altri termini il campo indicato come `ID`, o `Id`, oppure come `NomeClasseID`, o `NomeClasseId`, dovrà essere considerato univoco all'interno della collection. Questo campo è ciò che si chiama **chiave primaria** per la collection o base di dati considerata.
+{{< /markdownify >}}
+{{< /bs/alert >}}
+
 ```cs
 using System.Collections;
 
