@@ -11084,8 +11084,7 @@ a img {
   /* Firefox */ }
 
 .highlight pre {
-  max-height: 2500px;
-  line-height: 1.1em; }
+  max-height: 2500px; }
 
 /*! purgecss end ignore */
 /*! purgecss start ignore */

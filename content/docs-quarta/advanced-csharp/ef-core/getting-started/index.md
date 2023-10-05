@@ -135,6 +135,8 @@ using (var db = new BloggingContext())
 
 ## EF Core Model Tutorial 1 - *Console App*
 
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/EFGetStarted" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>  
+
 *In this tutorial, you create a .NET Core console app that performs data access against a SQLite database using Entity Framework Core[^2]*.  
 
 {{< bs/alert >}}
@@ -169,7 +171,7 @@ To install EF Core, you install the package for the EF Core database provider(s)
 * **Tools > NuGet Package Manager > Package Manager Console**
 
 * Run the following commands:
-
+  
     ```ps1
     Install-Package Microsoft.EntityFrameworkCore.Sqlite
     ```
@@ -183,7 +185,6 @@ Define a context class and entity classes that make up the model.
 * Right-click on the project and select **Add > Class**
 * Enter **Model.cs** as the name and click **Add**
 * Replace the contents of the file with the following code
-
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/EFGetStarted/EFGetStarted/Model.cs" >}}
 
 EF Core can also [reverse engineer](https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/) a model from an existing database.
@@ -332,6 +333,8 @@ Cliccando sul pulsante **Browse Data** si vede che non ci sono ancora dati nel d
 
 ## EF Core Model Tutorial 2 - *Gestione Fatture e Clienti*
 
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/GestioneFattureClienti" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>  
+
 ### Creazione progetto
 
 Come nell’esempio precedente, creare in progetto **Console** `.NET Core`
@@ -357,16 +360,13 @@ Come nell’esempio precedente, creare in progetto **Console** `.NET Core`
 ### Creazione del modello
 
 * In Visual Studio creare la cartella `Model` e al suo interno aggiungere la classe `Cliente` nel file `Cliente.cs` con il seguente codice:
-
-    {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Cliente.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Cliente.cs" >}}
 
 * Aggiungere la classe `Fattura` nel file `Fattura.cs` all’interno della cartella `Model`, con dentro il seguente codice:
-
-    {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Fattura.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Fattura.cs" >}}
 
 * Creare una cartella `Data` e al suo interno aggiungere la classe `FattureClientiContext` nel file `FattureClientiContext.cs` con il codice:
-
-    {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Data/FattureClientiContext.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Data/FattureClientiContext.cs" >}}
 
 A questo punto nel progetto dovrebbe essere presente una struttura di file e cartelle come quella riportata nella figura seguente:
 
@@ -388,8 +388,7 @@ Dopo aver eseguito la migration e l’aggiornamento del database, la struttura d
 ### Interazione con la base di dati
 
 * Si scriva il codice nella classe `Program` per testare le funzionalità di EF Core con SQLite, come nell'esempio seguente:
-
-    {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Program.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Program.cs" >}}
 
 [^1]: [EF Core](https://learn.microsoft.com/en-us/ef/core/)
 [^2]: [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=visual-studio)

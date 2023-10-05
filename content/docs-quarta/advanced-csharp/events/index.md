@@ -66,65 +66,9 @@ Thus, **a delegate becomes an event using the event keyword**.
 
 ## First example
 
-```cs
-//Define publisher class as Pub
-public class Pub
-{
-    //OnChange property containing all the 
-    //list of subscribers callback methods
-    public event Action OnChange = delegate { };
-    public event Action<int> OnGetInput = delegate { };
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEventsSimple" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
 
-    public void Raise()
-    {
-        //Invoke OnChange Action
-        OnChange();
-    }
-
-    //un esempio che prende in input un parametro di tipo intero
-    public void RaiseWithInput(int p)
-    {
-        //Invoke OnGetInput Action
-        OnGetInput(p);
-    }
-}
-
-internal class Program
-{
-    static void Main(string[] args)
-    {
-        //Initialize pub class object
-        Pub p = new();
-
-        //register for OnChange event - Subscriber 1
-        p.OnChange += () => Console.WriteLine("Subscriber 1!");
-        //register for OnChange event - Subscriber 2
-        p.OnChange += () => Console.WriteLine("Subscriber 2!");
-
-        //raise the event
-        p.Raise();
-        //After this Raise() method is called
-        //all subscribers callback methods will get invoked
-
-        //definiamo una variabile locale per dimostrare il concetto di closure
-        int x = 5;
-
-        //subscriber all'evento OnGetInput: accetta in input un numero intero
-        p.OnGetInput += (q) => {
-            Console.WriteLine("OnGetInput fired");
-            q = x + 1;
-            Console.WriteLine($"parametro locale q = {q}");
-            Console.WriteLine($"riferimento esterno alla lambda expression x = {x}");
-        };
-
-        Console.WriteLine("Invochiamo RaiseWithInput");
-        //qui passiamo un valore intero che corrisponderà alla q
-        p.RaiseWithInput(6);
-        Console.WriteLine("Press enter to terminate!");
-        Console.ReadLine();
-    }
-}
-```
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/DemoEvents/DemoEventsSimple/Program.cs" >}}
 
 {{< bs/alert >}}
 {{< markdownify >}}
@@ -136,83 +80,11 @@ When you run the above program, your code creates a new instance of Pub, subscri
 
 ## A more complex example
 
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEvents" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+
 >Nota: questo esempio è riportato a solo scopo informativo.
 
-```cs
-public class Student
-{
-
-    public int Id { get; set; }
-    public string? Name { get; set; }
-    public int Age { get; set; }
-}
-
-public class Exam
-{
-    public int Id { get; set; }
-    public string? Name { get; set; }
-    public int Score { get; set; }
-}
-
-public class StudentTutor
-{
-    public event Action<Student>? OnStudentReceived;
-    public event Func<Student, Exam, int>? OnStudentTakeExam;
-
-    //metodo che solleva l'evento StudentReceived
-    public void StudentReceived(Student s)
-    {
-        OnStudentReceived?.Invoke(s);
-    }
-
-    //metodo che solleva l'evento StudentTakeExam
-    public void StudentTakeExam(Student s, Exam e)
-    {
-        //callback function che restituisce il punteggio dell'esame
-        int? score = OnStudentTakeExam?.Invoke(s, e);
-        Console.WriteLine($"Lo studente {s.Name} ha sostenuto l'esame {e.Name} con un punteggio di {score}");
-    }
-
-}
-
-internal class Program
-{
-    static Random gen = new Random();
-    static void Main(string[] args)
-    {
-        //creazione di un oggetto Publisher
-        StudentTutor tutor = new StudentTutor();
-        //creazione di un oggetto Publisher
-        tutor.OnStudentReceived += (s) => Console.WriteLine($"Benvenuto {s.Name}");
-        tutor.OnStudentTakeExam += Tutor_OnStudentTakeExam;
-
-        //creazione di studenti ed esami
-        Student marioRossi = new Student() { Id = 1, Name = "Mario Rossi", Age = 21 };
-        Exam fisica1 = new() { Id = 1, Name = "Fisica 1" };
-        Exam analisi1 = new() { Id = 2, Name = "Analisi 1" };
-
-        //attivazione eventi
-        tutor.StudentReceived(marioRossi);
-        tutor.StudentTakeExam(marioRossi, fisica1);
-        tutor.StudentTakeExam(marioRossi, analisi1);
-        tutor.StudentTakeExam(marioRossi, fisica1);
-        tutor.StudentTakeExam(marioRossi, analisi1);
-        tutor.StudentTakeExam(marioRossi, fisica1);
-        tutor.StudentTakeExam(marioRossi, analisi1);
-    }
-
-    //implementazione callback function corrispondenti agli eventi
-    private static int Tutor_OnStudentTakeExam(Student s, Exam e)
-    {
-        return gen.Next(15, 31);
-    }
-
-    private static void Tutor_OnStudentReceived(Student s)
-    {
-        Console.WriteLine($"Benvenuto {s.Name}");
-    }
-}
-```
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/DemoEvents/DemoEvents/Program.cs" >}}
 
 All the subscribers must provide a handler function, which is going to be called when a publisher raises an event.  
 The following image illustrates an event model:
