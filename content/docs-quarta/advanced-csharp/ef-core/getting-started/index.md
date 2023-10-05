@@ -325,6 +325,7 @@ Cliccando sul pulsante **Browse Data** si vede che non ci sono ancora dati nel d
     Console.WriteLine("Delete the blog");
     db.Remove(blog);
     db.SaveChanges();
+    
     ```
 
     Si può osservare che il database è ritornato ad essere vuoto.
