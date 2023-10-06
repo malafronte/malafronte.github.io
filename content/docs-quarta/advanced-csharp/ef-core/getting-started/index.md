@@ -135,7 +135,7 @@ using (var db = new BloggingContext())
 
 ## EF Core Model Tutorial 1 - *Console App*
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/EFGetStarted" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>  
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/EFGetStarted" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>  
 
 *In this tutorial, you create a .NET Core console app that performs data access against a SQLite database using Entity Framework Core[^2]*.  
 
@@ -333,7 +333,7 @@ Cliccando sul pulsante **Browse Data** si vede che non ci sono ancora dati nel d
 
 ## EF Core Model Tutorial 2 - *Gestione Fatture e Clienti*
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/GestioneFattureClienti" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>  
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/GestioneFattureClienti" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>  
 
 ### Creazione progetto
 

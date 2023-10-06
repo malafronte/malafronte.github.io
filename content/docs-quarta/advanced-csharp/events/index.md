@@ -66,7 +66,7 @@ Thus, **a delegate becomes an event using the event keyword**.
 
 ## First example
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEventsSimple" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEventsSimple" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/DemoEvents/DemoEventsSimple/Program.cs" >}}
 
@@ -80,7 +80,7 @@ When you run the above program, your code creates a new instance of Pub, subscri
 
 ## A more complex example
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEvents" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/DemoEvents/DemoEvents" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 >Nota: questo esempio è riportato a solo scopo informativo.
 

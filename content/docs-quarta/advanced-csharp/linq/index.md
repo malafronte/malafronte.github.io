@@ -81,7 +81,7 @@ Before C# 2.0, we had to use a 'foreach' or a 'for' loop to traverse the collect
 
 ### Example 1 - Use for loop to find elements from the collection
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/LINQDemo/LINQDemo/Program.cs" >}}
 
@@ -89,7 +89,7 @@ Use of for loop is cumbersome, not maintainable and readable. C# 2.0 introduced 
 
 ### Example 2 - Use Delegates to Find Elements from the Collection
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo2" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo2" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/LINQDemo/LINQDemo2/Program.cs" >}}
 
@@ -110,7 +110,7 @@ The C# team felt that they still needed to make the code even more compact and r
 
 ### Example 3 - Use LINQ to Find Elements from the Collection
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo3" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQDemo3" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/LINQDemo/LINQDemo3/Program.cs" >}}
 
@@ -391,7 +391,7 @@ Gli esempi di tutte le funzioni presenti nella tabella precedente sono reperibil
 
 ## Esercitazione guidata 1 - LINQ Gym
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQGym" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQGym" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 {{< bs/alert >}}
 {{< markdownify >}}
@@ -403,7 +403,7 @@ Negli esempi ed esercizi proposti sul LINQ si assume che in una collection non p
 
 ## Esercitazione guidata 2 – LINQ al Museo
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQAlMuseo" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}} Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/LINQDemo/LINQAlMuseo" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 Creare i seguenti [POCO](https://en.wikipedia.org/wiki/Plain_old_CLR_object):
 
@@ -415,7 +415,7 @@ Creare per ciascun POCO una collection (lista) di tali oggetti:
 
 * `artisti` è una lista di oggetti di tipo `Artista`;
 * `opere` è una lista di oggetti di tipo `Opera`;
-* `personaggi` è una lista di oggetti di tipo `Personaggio`;
+* `personaggi` è una lista di oggetti di tipo `Personaggio`;  
 Nota: le property che iniziano con `Fk` indicano una `foreign key` ossia una una property che "punta" ad una property di un altro oggetto. Ad esempio, i valori di `FkOperaId` devono corrispondere a valori dell’`Id` nella collection delle `opere`. In altri termini una foreign key è una property i cui valori devono corrispondere a valori già presenti nella collection a cui puntano.  
 
 Effettuare le seguenti query:
