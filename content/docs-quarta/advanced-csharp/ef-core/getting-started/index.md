@@ -390,7 +390,5 @@ Dopo aver eseguito la migration e l’aggiornamento del database, la struttura d
 * Si scriva il codice nella classe `Program` per testare le funzionalità di EF Core con SQLite, come nell'esempio seguente:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Program.cs" >}}
 
-Nel prossimo paragrafo verrà approfondito il concetto di DBContext.
-
 [^1]: [EF Core](https://learn.microsoft.com/en-us/ef/core/)
 [^2]: [Getting Started with EF Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=visual-studio)

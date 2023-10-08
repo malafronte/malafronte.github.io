@@ -63,7 +63,7 @@ Any column in an SQLite version 3 database, except an INTEGER PRIMARY KEY column
 
 ## DB Browser for SQLite
 
-*DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite*[^3]. Il programma *DB Browser for SQLite* fornisce un'interfaccia grafica per interagire con un database di SQLIte. L'installer può essere scaricato [qui](https://sqlitebrowser.org/dl/), scegliendo la versione appropriata per il proprio sistema operativo. Ad esempio, per le versioni più recenti di Windows la versione a 64 bit. Il programma può essere utilizzato anche senza effettuare l'installazione (versione zip), oppure si può optare per la versione *PortableApp*.
+*DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite*[^3]. Il programma *DB Browser for SQLite* fornisce un'interfaccia grafica per interagire con un database di SQLIte. L'installer può essere scaricato dalla [pagina di download](https://sqlitebrowser.org/dl/) di DB Browser for SQLite, scegliendo la versione appropriata per il proprio sistema operativo. Ad esempio, per le versioni più recenti di Windows la versione a 64 bit. Il programma può essere utilizzato anche senza effettuare l'installazione (versione zip), oppure si può optare per la versione *PortableApp*.
 
 [^1]: [SQLite](https://www.sqlite.org/index.html)
 [^2]: [SQLite Storage Classes and Datatypes](https://www.sqlite.org/datatype3.html)
