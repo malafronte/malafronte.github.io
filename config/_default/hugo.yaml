@@ -21,6 +21,9 @@ module:
 
   # The order of module is very important, precedence from top to bottom.
   imports:
+    # banner modules
+    - path: github.com/hbstack/header/modules/banner
+    - path: github.com/hugomods/aos
     # gallery modules.
     - path: github.com/hbstack/gallery
     - path: github.com/hbstack/gallery/modules/breadcrumb
@@ -40,28 +43,19 @@ module:
     # - path: github.com/hbstack/blog/modules/disqus
     # - path: github.com/hbstack/blog/modules/utterances
 
-    # blog table of contents scrollspy
-    - path: github.com/hbstack/blog/modules/toc-scrollspy
-
-    # blog content panel
     - path: github.com/hbstack/blog/modules/content-panel
+    - path: github.com/hbstack/blog/modules/toc-scrollspy
 
     # docs comments engine
     #- path: github.com/hbstack/docs/modules/giscus
     # - path: github.com/hbstack/docs/modules/utterances
     # - path: github.com/hbstack/docs/modules/disqus
 
-    # docs table of contents scrollspy
-    - path: github.com/hbstack/docs/modules/toc-scrollspy
-
-    # docs content panel
     - path: github.com/hbstack/docs/modules/content-panel
+    - path: github.com/hbstack/docs/modules/toc-scrollspy
     # syntax highlighting, see https://hbstack.dev/en/docs/modules/syntax-highlighting/.
-    # - path: github.com/hbstack/syntax-highlighting/styles/github-dark
-    - path: github.com/hbstack/syntax-highlighting/styles/monokailight
-    # banner modules
-    - path: github.com/hbstack/header/modules/banner
-    - path: github.com/hugomods/aos
+    - path: github.com/hbstack/syntax-highlighting/styles/monokai
+
     # other modules
     # - path: github.com/hugomods/google-analytics
     # - path: github.com/hugomods/google-adsense
@@ -102,6 +96,9 @@ markup:
     noClasses: false
     lineNos: true
     lineNumbersInTable: false
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2
 
 # see https://gohugo.io/content-management/related/#configure-related-content
 related:
