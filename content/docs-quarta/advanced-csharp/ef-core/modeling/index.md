@@ -72,7 +72,7 @@ public class Cliente
 }
 ```
 
-Si noti che EF Core utilizza alcune convenzioni e impostazioni di default (che possono essere modificate a patto di conoscere le caratteristiche di EF Core). Ad esempio, per creare una chiave primaria, ossia un campo che permette di identificare univocamente un’istanza di un oggetto all’interno di una tabella (ad esempio una riga all’interno della tabella dei `Clienti`) bisogna utilizzare la convenzione **NomeClasseId**. Ad esempio, il campo `ClienteId` è chiave primaria (ad auto incremento) nella tabella che memorizzerà gli oggetti di tipo `Cliente`.
+Si noti che EF Core utilizza alcune convenzioni e impostazioni di default (che possono essere modificate a patto di conoscere le caratteristiche di EF Core). Ad esempio, per creare una chiave primaria, ossia un campo che permette di identificare univocamente un’istanza di un oggetto all’interno di una tabella (ad esempio una riga all’interno della tabella dei `Clienti`) bisogna utilizzare la convenzione **NomeClasseId**, oppure solamente **Id**, oppure **ID**. Ad esempio, il campo `ClienteId` è chiave primaria (ad auto incremento) nella tabella che memorizzerà gli oggetti di tipo `Cliente`.
 Quando bisogna creare i collegamenti tra le tabelle del database occorre indicare dei legami tra gli oggetti delle classi che rappresentano le righe delle tabelle. Ad esempio, per esprimere il fatto che un cliente può avere molte fatture (una associazione 1 a molti) si è inserito all’interno della classe `Cliente` la property:  
 
 ```cs

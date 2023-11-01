@@ -321,6 +321,8 @@ github.com/hbstack/syntax-highlighting/styles/dracula v0.1.0 h1:Q+WA2GeFTHXABAy1
 github.com/hbstack/syntax-highlighting/styles/dracula v0.1.0/go.mod h1:T9T431doOQVJ+vg2YA6hzYGqWhiH3rGUUC3eisOJM/o=
 github.com/hbstack/syntax-highlighting/styles/emacs v0.1.0 h1:RssX07cfmSOr0Vl0JYVmE4AkQeUoW1CPLcCDVwlnkfU=
 github.com/hbstack/syntax-highlighting/styles/emacs v0.1.0/go.mod h1:V4VZi/Zs2oKio6htuk9RBmTlWfYHlLv6IH3BfRFlTHs=
+github.com/hbstack/syntax-highlighting/styles/friendly v0.1.0 h1:AP9ZXTOlVNFvOLX7FH/7iriZOXkhgyt4MOF8B9s4pyk=
+github.com/hbstack/syntax-highlighting/styles/friendly v0.1.0/go.mod h1:cLOHX9Zfgl0jsihD9WBdcVr49T3CJ15wmz5SCo853LU=
 github.com/hbstack/syntax-highlighting/styles/fruity v0.1.0 h1:SWfbwCXNSPUXuw7bOsBoJ+Zqg493EBs3cp8vqyNLTL4=
 github.com/hbstack/syntax-highlighting/styles/fruity v0.1.0/go.mod h1:p5A4R6eNZIoYCaP27mbWAqjxJP5eVscZYcoQ04TIhwA=
 github.com/hbstack/syntax-highlighting/styles/github v0.1.0 h1:9CpS0gvg91fkRVaRaNu6UbgSZ9jXnoGE+mdCcz1fZzM=
@@ -355,10 +357,16 @@ github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0 h1:6Wr6O/jF3
 github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0/go.mod h1:CiZ2beNsbXHSnL7s13iWdlEImLn9AT8gu3Bij7xM3mA=
 github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0 h1:zErMvNbueRcI77h+B0KJjRi5+MezPb4CiurNJBHOK9A=
 github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0/go.mod h1:PJUfVaWd8bVn445MBSFF+Xt719mocKuMHq1INtXis3g=
+github.com/hbstack/syntax-highlighting/styles/paraiso-light v0.1.0 h1:O0GrA6/lrxzv6iriNpxcXSu72GDZDg3MGhI2yA/bz/8=
+github.com/hbstack/syntax-highlighting/styles/paraiso-light v0.1.0/go.mod h1:mvAuCEW2jRweNQ10aT0sesCfwSMz9vhyaVqJ85IOtMs=
+github.com/hbstack/syntax-highlighting/styles/pastie v0.1.0 h1:P7WgKDyehjaupdS/QSZOUDxvjnB2n8VQ81Vq3C59qno=
+github.com/hbstack/syntax-highlighting/styles/pastie v0.1.0/go.mod h1:UkyhZFdC4I9Maqtej7RQlzBUhPWgaAfSHFRS/4ckGSQ=
 github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0 h1:ZlCosq9nOGsvSpzRMGHdqktZg1yf0R0TP4eIGPmhwkA=
 github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0/go.mod h1:I4pbyfLF5OBjyC3My4Xu9OiYH+5wTHVkssxBau9lUA4=
 github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0 h1:Qxw6AANYL/O5Jg8wIKoiRhr4Aqm2j0jHybZXo+cZHOw=
 github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0/go.mod h1:WrM5xfzY6mEleBl2xwMF0Hiv57GBDzoi6uDajQeCmqo=
+github.com/hbstack/syntax-highlighting/styles/rainbow-dash v0.1.0 h1:o+M7ijILB9a7tFgrYHldnhAqy0GDeeWRFvQKSvZl1Xk=
+github.com/hbstack/syntax-highlighting/styles/rainbow-dash v0.1.0/go.mod h1:fX3/CeXWhyxD5Z5jdaP0r455MCqn0h8/l6p6/8f1+vU=
 github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0 h1:lqAUJsyt5Qwnp1PecmTB5WtP12g/Fa40XFEWrVnYFfM=
 github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0/go.mod h1:OR1mprcpkL60vibJJTKqiGFigDX74GqZwKSorFue+k0=
 github.com/hbstack/syntax-highlighting/styles/rrt v0.1.0 h1:JpA0PKBYn8EU6OG0OjiLRVKCTP9vi3lHzPZ3VViA/YI=
@@ -375,6 +383,8 @@ github.com/hbstack/syntax-highlighting/styles/vulcan v0.1.0 h1:ZoQzNWu2Am/IBrose
 github.com/hbstack/syntax-highlighting/styles/vulcan v0.1.0/go.mod h1:BOQUCtCeZGrf5/3VVwb8HvAs/i6mYgAxdJhSdV6QNkA=
 github.com/hbstack/syntax-highlighting/styles/witchhazel v0.1.0 h1:911NUANlnF02UB3SNrVJLIGfrrZ/JHzraBdzVc8Yisk=
 github.com/hbstack/syntax-highlighting/styles/witchhazel v0.1.0/go.mod h1:RmD/M4sFD9PphDgyQh+lljSeh+aD/qUMC54S43nvRQM=
+github.com/hbstack/syntax-highlighting/styles/xcode v0.1.0 h1:yxQ9KUj29VTr4xlxIhgFlkyLHnFMuaebfKeEaD/Q0N4=
+github.com/hbstack/syntax-highlighting/styles/xcode v0.1.0/go.mod h1:+nMtHY6QpI9bTzBbbTH0FF3OvoRwanHmbxJHkA1/m6E=
 github.com/hbstack/syntax-highlighting/styles/xcode-dark v0.1.0 h1:kEPpIA0PydgpQj/8vrTDlLyN2iW9Ero6m3cGWAiuZWo=
 github.com/hbstack/syntax-highlighting/styles/xcode-dark v0.1.0/go.mod h1:svIKjyfCA0abfC2K5rB43LS+c0bLR/QHcOd1iR0mMPg=
 github.com/hugomods/aos v0.1.0 h1:R1NOqLbD+95R1EG0pJ7HPh/zUfM9fpdkgUMMJkOEPUs=

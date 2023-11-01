@@ -74,6 +74,7 @@ require (
 	github.com/hbstack/syntax-highlighting/styles/doom-one2 v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/dracula v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/emacs v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/friendly v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/fruity v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/github v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/github-dark v0.1.0 // indirect
@@ -91,8 +92,11 @@ require (
 	github.com/hbstack/syntax-highlighting/styles/onedark v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/onesenterprise v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/paraiso-dark v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/paraiso-light v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/pastie v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/perldoc v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/pygments v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/rainbow-dash v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/rose-pine v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/rrt v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/solarized-dark v0.1.0 // indirect
@@ -101,6 +105,7 @@ require (
 	github.com/hbstack/syntax-highlighting/styles/vs v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/vulcan v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/witchhazel v0.1.0 // indirect
+	github.com/hbstack/syntax-highlighting/styles/xcode v0.1.0 // indirect
 	github.com/hbstack/syntax-highlighting/styles/xcode-dark v0.1.0 // indirect
 	github.com/hugomods/aos v0.1.0 // indirect
 	github.com/hugomods/bootstrap v0.11.3 // indirect
