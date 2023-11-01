@@ -54,7 +54,7 @@ module:
     - path: github.com/hbstack/docs/modules/content-panel
     - path: github.com/hbstack/docs/modules/toc-scrollspy
     # syntax highlighting, see https://hbstack.dev/en/docs/modules/syntax-highlighting/.
-    - path: github.com/hbstack/syntax-highlighting/styles/monokai
+    - path: github.com/hbstack/syntax-highlighting/styles/monokailight
 
     # other modules
     # - path: github.com/hugomods/google-analytics
