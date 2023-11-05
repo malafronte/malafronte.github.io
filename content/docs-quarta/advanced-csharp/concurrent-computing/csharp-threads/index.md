@@ -274,7 +274,7 @@ public bool IsAlive { get; }
 A thread can finish its normal execution or can be shutdown in case of some special events:  
 
 **Synchronous exception**  
-Thread also gets exit if it runs into an unhandled exception. This exception is considered as synchronous exception which occurs in normal sequential program like `IndexOutOfRangeExecption`.  
+Thread also gets exit if it runs into an unhandled exception. This exception is considered as synchronous exception which occurs in normal sequential program like `IndexOutOfRangeException`.  
 **Asynchronous exception**  
 This exception is an explicit exception raised by calling thread’s `Abort` or `Interrupt` method in the running thread by some other thread which has reference to the running thread. This exception also exits thread execution. However, **this is not a recommended method to shutdown a thread as it leaves the program to some improper state**.
 
@@ -466,7 +466,7 @@ namespace ThreadPoolDemo
 
 ### Shared Resources
 
-Not all resources are meant to be used concurrently.** Resources like integers and collection must be handled carefully when accessed through multiple threads, resources that are accessed and updated within multiple threads are known as Shared Resources**. Let’s see an example:  
+Not all resources are meant to be used concurrently.Resources like integers and collection must be handled carefully when accessed through multiple threads, resources that are accessed and updated within multiple threads are known as Shared Resources**. Let’s see an example:  
 
 ```cs
 namespace SharedResources01
@@ -517,17 +517,19 @@ Race Condition is a scenario where the outcome of the program is affected becaus
 **A race condition occurs when two or more threads can access shared data and they try to change it at the same time. Because the thread scheduling algorithm can swap between threads at any time, you don’t know the order in which the threads will attempt to access the shared data. Therefore, the result of the change in data is dependent on the thread scheduling algorithm, i.e. both threads are "racing" to access/change the data.**  
 In our case, the line which is causing race condition is sum++, though this line seems to single line code and must not affect with concurrency but this single line of code gets transformed into multiline processor level instructions by JIT at the time of execution, below is the example
 
-```x86asm
+```asm
 mov eax, dword ptr [sum]
 inc eax
 mov dword ptr [sum], eax
 ```
 
 So what happens when our multiple threads execute this part of the code. Let’s assume there is this thread `X` and thread `Y`. Suppose thread `X` reads the value of some variable and store in register `X.eax` for increment but after doing increment from value 0 to 1, `X` thread got suspended by Thread scheduler and `Y` thread start executing this part of the code where `Y` thread also reads the value of variable sum in register `Y.eax` and does the increment from value 0 to 1 and now after doing this increment both thread will update `sum` variable to 1 thus its value will be 1 even though both the threads incremented the value.
-So in simple words, **it’s just the race between threads X and Y to read and update the value of variable sum and thus cause the race condition**. But we can overcome this kind of problems using some of the thread synchronization techniques that are:
-`Atomic Update`  
-`Data Partitioning`  
-`Wait-Based Technique`  
+So in simple words, **it’s just the race between threads X and Y to read and update the value of variable sum and thus cause the race condition**. But we can overcome this kind of problems using some of the thread synchronization techniques that are:  
+
+* `Atomic Update`  
+* `Data Partitioning`  
+* `Wait-Based Technique`  
+
 We will learn more about these thread synchronization techniques in the next section
 
 ## Sezione Critica
@@ -617,7 +619,6 @@ Un programma che (implicitamente od esplicitamente) basa la propria correttezza 
 velocità dei processori virtuali: ***Tutti i processori virtuali hanno una velocità finita non nulla***.   Questa assunzione è l’unica che si può fare sui processori virtuali e sulle loro velocità relative.  
 **Dato un programma multithread, quali strutture dati bisogna proteggere per garantire la thread safeness? ⇒ Tutte le strutture dati oggetto di accessi concorrenti che violano le condizioni di Bernstein**.  
 In altre parole, **le strutture dati oggetto di scritture concorrenti da parte di due o più thread**.
-
 
 [^1]: [Creating threads and passing data](https://learn.microsoft.com/en-us/dotnet/standard/threading/creating-threads-and-passing-data-at-start-time)
 [^2]: [Foreground and background threads](https://learn.microsoft.com/en-us/dotnet/standard/threading/foreground-and-background-threads)
