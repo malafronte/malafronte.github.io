@@ -115,7 +115,6 @@ I processi vengono gestiti mediante code:
 Esistono vari tipi di schedulatori:
 
 * **Schedulatore a lungo termine (long-term scheduler)** – seleziona quale processo (attualmente in memoria di massa) deve essere inserito nella coda dei processi pronti
-
   * Controlla il grado di multi-programmazione
   * Richiamato solo quando un processo abbandona il sistema (termina)
 * **Schedulatore a breve termine (Short-term scheduler)** – seleziona quale processo (in memoria) deve essere eseguito e alloca la CPU ad esso
@@ -148,14 +147,12 @@ E’ il passaggio della CPU da un processo ad un altro
 
 ### Creazione di un processo
 
-Il processo in esecuzione invoca una chiamata di sistema che
-crea e attiva un nuovo processo
+Il processo in esecuzione invoca una chiamata di sistema che crea e attiva un nuovo processo. Ad esempio, in SO Unix-like la chiamata è la `fork()`
 
-* Ad es. in SO Unix-like la chiamata `fork()`
 * Processo generante ⇒ processo padre
 * Processo generato ⇒ processo figlio
-Il processo padre crea processi figli, i quali a loro volta creano altri processi
-formando un albero di processi
+
+Il processo padre crea i processi figli, i quali a loro volta creano altri processi, formando un albero di processi
 
 ![Albero dei processi](Albero-processi.png#center)
 
@@ -171,7 +168,7 @@ Un nuovo processo può ottenere risorse in diversi modi:
 Inoltre, alla creazione, un processo figlio riceve dal padre i dati di inizializzazione  
 
 * Parametri utili per l’esecuzione del processo
-* Ad es. un processo che permette di visualizzare un'immagine riceverà dal padre il percorso del file
+* Ad esempio, un processo che permette di visualizzare un'immagine riceverà dal padre il percorso del file
 
 ### Spazio di indirizzamento
 
@@ -189,10 +186,9 @@ Ci sono due possibili scenari:
 
 Due scenari possibili:
 
-* Il padre continua l’esecuzione in modo concorrente ai figli
-  * ***modalità asincrona***
-* Il padre attende finché tutti (o alcuni) i suoi figli sono terminati
-  * ***modalità sincrona***
+* Il padre continua l’esecuzione in modo concorrente ai figli -  ***modalità asincrona***
+* Il padre attende finché tutti (o alcuni) i suoi figli sono terminati - ***modalità sincrona***  
+In entrambi i casi (sincrono e asincrono) viene invocata la funzione `fork()`, tuttavia, nel caso di modalità sincrona, la chiamata di sistema `exec`, usata dopo la `fork`, carica un nuovo programma nello spazio di memoria del processo che la esegue[^2].
 
 ![Esecuzione dei processi](Process-execution-model.png#center)
 
@@ -210,7 +206,7 @@ dei testi:
   * Thread per la rappresentazione del testo
   * Thread per la correzione ortografica
 
-Un thread[^2] è l'unità di base in cui un sistema operativo alloca il tempo del processore. Ogni thread ha una priorità di pianificazione e un insieme di strutture usate dal sistema per salvare il contesto del thread quando viene sospesa l'esecuzione del thread. Nel contesto del thread sono presenti tutte le informazioni necessarie per riprendere senza problemi l'esecuzione, incluso il set di registri della CPU del thread e lo stack. Nel contesto di un processo possono essere eseguiti più thread. Tutti i thread di un processo ne condividono lo spazio degli indirizzi virtuali. Un thread può eseguire qualsiasi parte del codice del programma, comprese le parti attualmente eseguite da un altro thread.  
+Un thread[^3] è l'unità di base in cui un sistema operativo alloca il tempo del processore. Ogni thread ha una priorità di pianificazione e un insieme di strutture usate dal sistema per salvare il contesto del thread quando viene sospesa l'esecuzione del thread. Nel contesto del thread sono presenti tutte le informazioni necessarie per riprendere senza problemi l'esecuzione, incluso il set di registri della CPU del thread e lo stack. Nel contesto di un processo possono essere eseguiti più thread. Tutti i thread di un processo ne condividono lo spazio degli indirizzi virtuali. Un thread può eseguire qualsiasi parte del codice del programma, comprese le parti attualmente eseguite da un altro thread.  
 Per impostazione predefinita, viene avviato un programma .NET con un thread singolo, spesso chiamato thread primario. Tuttavia, è possibile creare thread aggiuntivi per eseguire il codice in parallelo o contemporaneamente al thread primario. Questi thread sono spesso chiamati thread di lavoro. L'uso di più thread consente di aumentare la velocità di risposta dell'applicazione e di usare un sistema multiprocessore o multicore per aumentare la velocità effettiva dell'applicazione.  
 Si consideri un'applicazione desktop in cui il thread primario è responsabile degli elementi dell'interfaccia utente e risponde alle azioni dell'utente. Usare i thread di lavoro per eseguire operazioni che richiedono molto tempo e che altrimenti occuperebbero il thread primario e impedirebbero all'interfaccia utente di rispondere. È anche possibile usare un thread dedicato per fare in modo che la comunicazione di rete o del dispositivo sia maggiormente reattiva ai messaggi in ingresso o agli eventi.
 Se il programma esegue operazioni che possono essere eseguite in parallelo, il tempo di esecuzione totale può essere ridotto eseguendo queste operazioni in thread separati ed eseguendo il programma in un sistema multiprocessore o multicore. In un sistema di questo tipo, l'uso del multithreading potrebbe aumentare la velocità effettiva e la velocità di risposta.
@@ -234,8 +230,7 @@ Rappresentazione di più thread nella memoria centrale:
   * attributi (schedulazione, priorità)
   * descrittore di thread (tid, priorità, segnali pendenti, …)
   * memoria privata (TSD)
-* Contesto di un processo; tutto quello che è nel contesto di un
-thread, ed inoltre:
+* Contesto di un processo; tutto quello che è nel contesto di un thread, ed inoltre:
   * spazio di memoria
   * risorse private (con le corrispondenti tabelle dei descrittori)
 
@@ -254,11 +249,7 @@ In un programma concorrente, si individuano un certo numero di task da eseguire 
   * I thread quindi comunicano tramite condivisione di informazioni nella memoria del processo contenitore
   * I processi comunicano invece tramite meccanismi di scambio di messaggi messi in atto esplicitamente (dal programmatore)  
 
-  Esempio: in un editor di testo almeno 3 thread condividono lo stesso
-  file: il paginatore, il thread che legge i caratteri battuti sulla tastiera e
-  il correttore ortografico. Con 3 processi, l’effetto non sarebbe lo
-  stesso: i processi richiederebbero l’uso esclusivo del file e “cambi di
-  contesto”
+  Esempio: in un editor di testo almeno 3 thread condividono lo stesso file: il paginatore, il thread che legge i caratteri battuti sulla tastiera e il correttore ortografico. Con 3 processi, l’effetto non sarebbe lo stesso: i processi richiederebbero l’uso esclusivo del file e “cambi di contesto”
 
 * **Efficienza e scalabilità**
   * Creazione e distruzione di thread in tempi rapidi
@@ -271,8 +262,7 @@ In un programma concorrente, si individuano un certo numero di task da eseguire 
 ### Svantaggi dei Thread
 
 * Difficoltà di ottenere risorse private.  
-  * Per ottenere memoria privata all'interno di un thread esistono
-appositi meccanismi
+  * Per ottenere memoria privata all'interno di un thread esistono appositi meccanismi
 * Pericolo di interferenza maggiore
   * la condivisione delle risorse accentua il pericolo di interferenza
   * gli accessi concorrenti alle risorse del processo contenitore devono essere sincronizzati per evitare interferenze (**thread safety**)
@@ -300,9 +290,10 @@ Esistono diversi tipi di relazione tra thread a livello utente e thread a livell
 * Molti-a-molti
 * A due livelli  
 
-A titolo di esempio si riposta il caso di mapping uno a uno, utilizzato in Linux e Windows:
+A titolo di esempio si riporta il caso di mapping uno a uno, utilizzato in Linux e Windows:
 
 ![One to one thread mapping](One-to-One-ThreadMapping.png#center)
 
 [^1]: [Corso di Informatica 2 - Modulo Sistemi Operativi - Prof. Alberto Caselli e Prof.ssa Patrizia Scandurra](https://homes.di.unimi.it/ceselli/SO/slides)
-[^2]: [Threads and threading](https://docs.microsoft.com/en-us/dotnet/standard/threading/threads-and-threading)
+[^2]: [Differenze tra fork e exec](https://www.geeksforgeeks.org/difference-fork-exec/)
+[^3]: [Threads and threading](https://docs.microsoft.com/en-us/dotnet/standard/threading/threads-and-threading)

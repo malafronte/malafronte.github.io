@@ -7,7 +7,7 @@ type: docs
 description: " Dare stile alle pagine web mediante i CSS (Cascading Style Sheets)"
 noindex: false
 comments: false
-nav_weight: 1000
+nav_weight: 40
 # nav_icon:
 #   vendor: bootstrap
 #   name: toggles
