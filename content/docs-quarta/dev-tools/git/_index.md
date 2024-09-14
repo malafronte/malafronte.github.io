@@ -7,7 +7,7 @@ type: docs
 description: " "
 noindex: false
 comments: false
-nav_weight: 60
+nav_weight: 10
 # nav_icon:
 #   vendor: bootstrap
 #   name: toggles

@@ -1,10 +1,10 @@
 ---
 title: "Git Basics"
 # linkTitle:
-date: 2023-09-17T20:02:50+02:00
+date: 2024-09-13T16:26:20+02:00
 draft: false
 type: docs
-description: " " 
+description: " "
 noindex: false
 comments: false
 nav_weight: 30
@@ -35,26 +35,25 @@ images:
 
 ## Primi passi con Git
 
-In questa sezione verranno mostrati alcuni concetti e comandi di base per iniziare a lavorare con Git e GitHub. Per molti concetti si farà riferimento al corso su Udemy di Colt Steele [The Git & Github Bootcamp](https://www.udemy.com/course/git-and-github-bootcamp/) le cui slide sono liberamente accessibili su [Canva](https://www.canva.com/):
+Per il corso di quarta occorre conoscere almeno i seguenti argomenti relativi a Git:
 
-* [Introducing Git](https://www.canva.com/design/DAETQyFE6pM/mLt1oYF8gP_mqBS3ghb-BA/view?utm_content=DAETQyFE6pM&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Learning Git](https://www.canva.com/design/DAEXMu7dx04/x1kkoUK-g_j6UtObmUwbDA/view?utm_content=DAEXMu7dx04&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1)  
-* [Git Basics](https://www.canva.com/design/DAEPH_Lq4Wk/Wp_d5Rvk_OjVvgPH0xmzhg/view?utm_content=DAEPH_Lq4Wk&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)  
-* [More about committing](https://www.canva.com/design/DAEXMibkysc/4PgPWiQqZ5UwCxMruH6BmQ/view?utm_content=DAEXMibkysc&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1)
-* [Git Branching](https://www.canva.com/design/DAEPOwX2Zzs/90STrbMXNysYIkSsxUCu-g/view?utm_content=DAEPOwX2Zzs&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)  
-* [Merging Branches](https://www.canva.com/design/DAEUZEra8W0/b4I77uG1YJAu4q6UOTIG6Q/view?utm_content=DAEUZEra8W0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)  
-* [Comparisons with Git Diff](https://www.canva.com/design/DAEVUT6HslA/tbdbyITzamUidWfk-HcSug/view?utm_content=DAEVUT6HslA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Git Stashing](https://www.canva.com/design/DAEPsQa6BFE/uNs08sHSGN1XziSUt1BLHQ/view?utm_content=DAEPsQa6BFE&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Undoing Stuff & Time Traveling](https://www.canva.com/design/DAEPZZHOafo/uagxrNdvbI_wDpjfNpK_4w/view?utm_content=DAEPZZHOafo&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Github Basics](https://www.canva.com/design/DAEPtdekgz0/L9rfbid7gCFMGEZBLJcmlw/view?utm_content=DAEPtdekgz0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Fetching & Pulling](https://www.canva.com/design/DAEPyYicrxQ/EaXIXD_WWryEq7Z7YUSVlg/view?utm_content=DAEPyYicrxQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Github Odds & Ends](https://www.canva.com/design/DAEVGSMC0ew/9f6udCe20KrYAfwoD0zqHA/view?utm_content=DAEVGSMC0ew&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Git workflow (for collaboration)](https://www.canva.com/design/DAEP32iZwVc/4se77vKYGwT5_9NpxFbZoQ/view?utm_content=DAEP32iZwVc&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)  
-* [Rebasing](https://www.canva.com/design/DAEVkyNcwWI/qt8pRN3JA1lP9ckYeImxeQ/view?utm_content=DAEVkyNcwWI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Git Tags](https://www.canva.com/design/DAEV5aEpUOQ/lfUIjJz2atC6fGT9KOv2kg/view?utm_content=DAEV5aEpUOQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Git Behind The Scenes](https://www.canva.com/design/DAEV-h9bSG4/R6FyldDe8CO8Wfn8z92yRA/view?utm_content=DAEV-h9bSG4&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)  
-* [Reflogs](https://www.canva.com/design/DAEWorNx5_Q/piCbRO6BWwv9_ae_mahECA/view?utm_content=DAEWorNx5_Q&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
-* [Git Aliases](https://www.canva.com/design/DAEWcidQeSI/m6VuuSGBgvBNsRcxfweqDA/view?utm_content=DAEWcidQeSI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+* Introducing Git (informazioni generali su Git)
+* Learning Git (come installare Git)
+* Git Basics (comandi di base di Git)  
+* Committing in detail
+* Git Branching
+* Merging Branches
+* Comparisons with Git Diff
+* Git Stashing
+* Undoing Stuff & Time Traveling
+* Github Basics
+* Fetching & Pulling
+* Github Odds & Ends (repository pubblici e privati)
+* Git workflow (for collaboration)
+* Rebasing
+* Git Tags
+
+Per ciascuno di questi argomenti sono disponibli le slide net Team del corso.
 
 In aggiunta alle slide del corso di Git ci sono molte altre risorse utili alla comprensione di Git e GitHub. In particolare:
 
@@ -70,7 +69,7 @@ In aggiunta alle slide del corso di Git ci sono molte altre risorse utili alla c
   * [gestione del .gitignore file](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
   >Nota: per questo argomento vedere anche quanto riportato in questa [discussione su StackOverflow](https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
 * [The Beginner’s Guide to Git & GitHub](https://docs.github.com/en/get-started/quickstart). Guida focalizzata principalmente sulle funzionalità di GitHub, e tra queste le più interessanti sono [Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo), [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow), [Contributing to projects](https://docs.github.com/en/get-started/quickstart/contributing-to-projects)
-* [GitHub Docs](https://docs.github.com/en). La documentazione compelta di GitHub.
+* [GitHub Docs](https://docs.github.com/en). La documentazione completa di GitHub.
 
 ## Connessione a GitHub
 
@@ -83,8 +82,76 @@ Esistono diversi modi per connettere un repository locale ad un remote su GitHub
 ### Connessione a GitHub mediante SSH
 
 Utilizzando il protocollo SSH, è possibile connettersi e autenticarsi a server e servizi remoti. Con le chiavi SSH,è possibile connettersi a GitHub senza fornire il proprio nome utente e il token di accesso personale ad ogni visita. È inoltre possibile utilizzare una chiave SSH per firmare le commit.  
-Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare una coppia di chiavi (pubblica e privata) SSH, come descritto nella guida [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), successivamente bisogna aggiungere la chiave pubblica al proprio profilo GitHub, come descritto nella guida [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).  
+Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare una coppia di chiavi (pubblica e privata) SSH, come descritto nella guida [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), successivamente bisogna aggiungere la chiave pubblica al proprio profilo GitHub, come descritto nella guida [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Più nel dettaglio le procedure sono riportate di seguito con alcune variazioni rispetto alle guide ufficiali.
 
-Quando si genera una coppia di chiavi SSH viene richiesta una password per proteggere l'utilizzo della chiave da persone non autorizzate, inoltre la password va associata all'ssh agent in modo che questo possa usare la chiave corretta tutte le volte che ci si connette a GitHub. La prima volta che ci si connette a GitHub l'ssh agent chiede se ci si vuole davvero connettere a GitHub e se si vuole aggiungere l'host all'elenco degli host noti. In questo coso bisogna rispondere affermativamente. Il risultato di questa scelta è che l'ssh agent crea alcune righe nel file known_hosts con il dominio di GitHub e alcune informazioni estratte della chiave ssh utilizzata.  
+#### Generazione della coppia di chiavi
+
+1. **<cite>Open Git Bash</cite>**  
+2. **Paste the text below, replacing the email used in the example with your GitHub email address.**
+
+    ```sh
+    ssh-keygen -t ed25519 -C "nome.cognome@issgreppi.it"
+    ```
+  
+    ![Keys generation](Keygeneration1.png)
+  
+    Quando si genera una coppia di chiavi SSH viene richiesta una password per proteggere l'utilizzo della chiave da persone non autorizzate, inoltre la password viene richiesta dall'agent la prima volta che viene aggiunta la chiave privata.
+  
+    La coppia di chiavi SSH è salvata in `C:/Users/username/.ssh/`
+
+3. **<cite>Adding your SSH key to the ssh-agent</cite>**
+
+    Si noti che la procedura descritta nella guida GitHub [Adding your SSH key to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent) richiederebbe i permessi di admin <cite>"In a new admin elevated PowerShell window, ensure the ssh-agent is running..."</cite>, **ma è anche possibile aggiungere la propria chiave privata all'agent ssh, senza avere i privilegi di admin**.
+  
+    Ci sono almeno due modi per far partire l'ssh-agent e per aggiungere ad esso l'identità associata alla propria chiave privata, senza utilizzare i privilegi di admin:
+
+      * Nella Git bash (attraverso il pacchetto OpenSSH che viene distribuito con Git)
+          Si fa partire l'ssh-agent con il comando
+
+          ```sh
+           eval $(ssh-agent)
+          ```
+  
+          Si associa la chiave privata all'agent
+
+          ```sh
+           ssh-add ~/.ssh/id_ed25519
+          ```
+  
+          ![Keys generation](SSH-agent-setup.png)
+  
+      * In alternativa, nella PowerShell (oppure nel CMD), attraverso il pacchetto OpenSSH che è presente in Windows
+        Si fa partire l'ssh-agent con il comando, seguente che carica automaticamente la chiave privata in `C:/Users/username/.ssh/`
+
+          ```ps1
+           start-ssh-agent 
+          ```
+
+          ![Keys generation](SSH-agent-setup-windows.png)
+
+La prima volta che ci si connette a GitHub l'ssh agent chiede se ci si vuole davvero connettere a GitHub e se si vuole aggiungere l'host all'elenco degli host noti. In questo coso bisogna rispondere affermativamente. Il risultato di questa scelta è che l'ssh agent crea alcune righe nel file known_hosts con il dominio di GitHub e alcune informazioni estratte della chiave ssh utilizzata.  
+
 In alcune situazioni si potrebbe riscontrare un problema con la connessione SSH, con un errore del tipo `ssh: Could not resolve hostname github.com`, come descritto in questa [discussione di StackOverflow](https://stackoverflow.com/a/9393431). In questo caso, la soluzione potrebbe essere riconducibile ad un problema di funzionamento del DNS locale. Per risolvere il problema in Windows si potrebbe ricorrere ad una pulizia della cache del DNS con `ipconfig /flushdns`, oppure, se ciò non risolve il problema, rivedere la configurazione del DNS per la propria macchina, eventualmente [impostando manualmente l'indirizzo IP del DNS server](https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10).
 
+#### Aggiunta della propria chiave pubblica su GitHub
+
+1. **<cite>Copy the SSH public key to your clipboard**<cite>
+    Aprire la cartella `C:/Users/username/.ssh/` e con un editor di testo qualsiasi aprire il file corrispondente alla chiave pubblica creata (è il file con estensione .pub)
+  
+    ![Keys generation](Public-key-ssk1.png)
+  
+    Copiare tutto il contenuto del file (selezionare tutto il testo e coi copiarlo con CTRL+C)
+  
+2. **<cite>In the upper-right corner of any page on GitHub, click your profile photo, then click  Settings.</cite>**
+
+3. **<cite>In the "Access" section of the sidebar, click  SSH and GPG keys.**<cite>
+
+4. **<cite>Click New SSH key or Add SSH key.**<cite>
+
+5. **<cite>In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop".**<cite>
+
+6. **<cite>Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."**<cite>
+
+7. **<cite>In the "Key" field, paste your public key.**<cite>
+
+8. **<cite>Click Add SSH key.**<cite>
