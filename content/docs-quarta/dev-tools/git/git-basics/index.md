@@ -31,7 +31,7 @@ images:
 #         name: book
 #         color: '#e24d0e'
 ---
-<style>p {text-align: justify}</style>
+<style>p, li {text-align: justify}</style>
 
 ## Primi passi con Git
 
@@ -81,8 +81,8 @@ Esistono diversi modi per connettere un repository locale ad un remote su GitHub
 
 ### Connessione a GitHub mediante SSH
 
-Utilizzando il protocollo SSH, è possibile connettersi e autenticarsi a server e servizi remoti. Con le chiavi SSH,è possibile connettersi a GitHub senza fornire il proprio nome utente e il token di accesso personale ad ogni visita. È inoltre possibile utilizzare una chiave SSH per firmare le commit.  
-Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare una coppia di chiavi (pubblica e privata) SSH, come descritto nella guida [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), successivamente bisogna aggiungere la chiave pubblica al proprio profilo GitHub, come descritto nella guida [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Più nel dettaglio le procedure sono riportate di seguito con alcune variazioni rispetto alle guide ufficiali.
+Utilizzando il protocollo SSH è possibile connettersi e autenticarsi a server e servizi remoti. Con le chiavi SSH è possibile connettersi a GitHub senza fornire il proprio nome utente e il token di accesso personale ad ogni visita. È inoltre possibile utilizzare una chiave SSH per firmare le commit.  
+Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare una coppia di chiavi (pubblica e privata) SSH, come descritto nella guida [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent); successivamente bisogna aggiungere la chiave pubblica al proprio profilo GitHub, come descritto nella guida [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Più nel dettaglio le procedure sono riportate di seguito con alcune variazioni rispetto alle guide ufficiali.
 
 #### Generazione della coppia di chiavi
 
@@ -105,7 +105,8 @@ Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare u
   
     Ci sono almeno due modi per far partire l'ssh-agent e per aggiungere ad esso l'identità associata alla propria chiave privata, senza utilizzare i privilegi di admin:
 
-      * Nella Git bash (attraverso il pacchetto OpenSSH che viene distribuito con Git)
+      * **Primo modo**: nella Git bash (attraverso il pacchetto OpenSSH che viene distribuito con Git)
+  
           Si fa partire l'ssh-agent con il comando
 
           ```sh
@@ -120,18 +121,14 @@ Per effettuare una connessione autenticata SSH occorre, prima di tutto, creare u
   
           ![Keys generation](SSH-agent-setup.png)
   
-      * In alternativa, nella PowerShell (oppure nel CMD), attraverso il pacchetto OpenSSH che è presente in Windows
-        Si fa partire l'ssh-agent con il comando, seguente che carica automaticamente la chiave privata in `C:/Users/username/.ssh/`
+      * **Secondo modo** (alternativo al primo): nella PowerShell (oppure nel CMD), attraverso il pacchetto OpenSSH che è presente in Windows
+        Si fa partire l'ssh-agent con il comando seguente che carica automaticamente la chiave privata in `C:/Users/username/.ssh/`
 
           ```ps1
            start-ssh-agent 
           ```
 
           ![Keys generation](SSH-agent-setup-windows.png)
-
-La prima volta che ci si connette a GitHub l'ssh agent chiede se ci si vuole davvero connettere a GitHub e se si vuole aggiungere l'host all'elenco degli host noti. In questo coso bisogna rispondere affermativamente. Il risultato di questa scelta è che l'ssh agent crea alcune righe nel file known_hosts con il dominio di GitHub e alcune informazioni estratte della chiave ssh utilizzata.  
-
-In alcune situazioni si potrebbe riscontrare un problema con la connessione SSH, con un errore del tipo `ssh: Could not resolve hostname github.com`, come descritto in questa [discussione di StackOverflow](https://stackoverflow.com/a/9393431). In questo caso, la soluzione potrebbe essere riconducibile ad un problema di funzionamento del DNS locale. Per risolvere il problema in Windows si potrebbe ricorrere ad una pulizia della cache del DNS con `ipconfig /flushdns`, oppure, se ciò non risolve il problema, rivedere la configurazione del DNS per la propria macchina, eventualmente [impostando manualmente l'indirizzo IP del DNS server](https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10).
 
 #### Aggiunta della propria chiave pubblica su GitHub
 
@@ -155,3 +152,41 @@ In alcune situazioni si potrebbe riscontrare un problema con la connessione SSH,
 7. **<cite>In the "Key" field, paste your public key.**<cite>
 
 8. **<cite>Click Add SSH key.**<cite>
+
+#### Test di connessione con la propria chiave SSH
+
+Per effettuare il test della connessione a GitHub in SSH, si può provare a creare un nuovo repository localmente e poi a fare la push su GitHub, oppure se il repository locale esiste già, si può provare ad aggiungere il remote su GitHub e poi a fare la push.
+**In ogni caso occorre creare prima un repository su GitHub e dargli un nome univoco, ad esempio, `repo_name` e poi collegare il repository locale ad esso**. Ad esempio, nel caso di connessione SSH, la procedura indicata da GitHub è:
+
+**<cite>…or create a new repository on the command line</cite>**
+
+```sh
+  echo "# Just the repo title" >> README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin git@github.com:github_username/repo_name.git
+  git push -u origin main
+```
+
+**<cite>…or push an existing repository from the command line</cite>**
+
+```sh
+  git remote add origin git@github.com:github_username/repo_name.git
+  git branch -M main
+  git push -u origin main
+
+```
+
+<mark>Note:</mark>
+
+   1. l'opzione `-M` serve a forzare il rename del branch corrente in `main`
+   2. l'opzione `-u` serve per aggiungere lo <cite>upstream (tracking) reference, used by argument-less git-pull and other commands</cite>. In altri termini serve a definire il branch predefinito sul repository remoto, associato al branch locale quando si effettua la `git pull`, la `git push` e altri comandi. Una volta configurato il branch `main` con l'opzione `-u` sarà possibile effettuare una `git pull`, oppure una `git push` senza specificare l'endpoint remoto. Sarà sufficiente essere posizionati sul branch locale main.
+
+La prima volta che ci si connette a GitHub, l'ssh agent chiede se ci si vuole davvero connettere a GitHub e se si vuole aggiungere l'host all'elenco degli host noti. In questo coso bisogna rispondere affermativamente. Il risultato di questa scelta è che l'ssh agent crea alcune righe nel file known_hosts (presente in `C:/Users/username/.ssh/`) con il dominio di GitHub e alcune informazioni estratte della chiave ssh utilizzata.  
+
+In alcune situazioni si potrebbe riscontrare un problema con la connessione SSH, con un errore del tipo `ssh: Could not resolve hostname github.com`, come descritto in questa [discussione di StackOverflow](https://stackoverflow.com/a/9393431). In questo caso, la soluzione potrebbe essere riconducibile ad un problema di funzionamento del DNS locale. Per risolvere il problema in Windows si potrebbe ricorrere ad una pulizia della cache del DNS con `ipconfig /flushdns`, oppure, se ciò non risolve il problema, rivedere la configurazione del DNS per la propria macchina, eventualmente [impostando manualmente l'indirizzo IP del DNS server](https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10).
+
+Nel caso di connessione con il protocollo https la procedura di collegamento del repository locale al repository remoto su GitHub è uguale, con l'unica differenze che l'URI che identifica il repository remoto è scritto come:
+`https://github.com/github_username/repo_name.git`
