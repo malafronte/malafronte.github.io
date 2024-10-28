@@ -141,23 +141,30 @@ using (var db = new BloggingContext())
 
 {{< bs/alert >}}
 {{< markdownify >}}
-Lo svolgimento di questo esempio mostra come utilizzare Visual Studio per creare un progetto che utilizza EF Core con SQLite. La realizzazione di un progetto .NET può anche essere fatta, ricorrendo alla [.NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/), ossia ad un insieme di strumenti (`tools`) che permettono di sviluppare, compilare, eseguire e pubblicare applicazioni .NET dalla command-line. In questo corso di quarta si farà principalmente riferimento alle modalità operative di Visual Studio per la gestione di progetti in .NET, piuttosto che ai comandi della .NET CLI. Le ragioni di questa scelta sono legate al fatto che l'ambiente di sviluppo utilizzato a scuola è basato su Windows e Visual Studio. L'utilizzo della .NET CLI è invece particolarmente indicato per chi sviluppa con Visual Studio Code.
+Lo svolgimento di questo esempio mostra come utilizzare la [.NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/) con `Visual Studio Code` per creare un progetto che utilizza `EF Core` con `SQLite`. Infatti, un progetto .NET può essere sviluppato, ricorrendo alla .NET CLI, ossia ad un insieme di strumenti (`tools`) che permettono di sviluppare, compilare, eseguire e pubblicare applicazioni .NET direttamente dalla command-line (in Windows/Linux/Mac). In questo corso di quarta si farà principalmente riferimento alle modalità operative della .NET CLI per la gestione di progetti in .NET, piuttosto che alle funzionalità di Visual Studio e della Windows Powershell.
 {{< /markdownify >}}
 {{< /bs/alert >}}
 
 ### Prerequisiti
 
-Install the following software:
-[Visual Studio 2022 version 17.4 or later](https://www.visualstudio.com/downloads/) with this workload:
+Visual Studio Code con:
 
-* **.NET desktop development (under Desktop && Mobile)**
+- .NET SDK 8 o superiore
+- `C# Dev Kit`
 
-### Create a new project
+### Create a new solution with a project
 
-* Open Visual Studio
-* Click **New project**
-* Select **Console App** with the **C#** tag and click **Next**
-* Enter **EFGetStarted** for the name and click **Create**
+```ps1
+# creiamo una nuova soluzione
+dotnet new sln -o EFGetStarted
+# spostiamoci nella cartella della soluzione
+cd EFGetStarted
+# creiamo un nuovo progetto di tipo console all'interno della soluzione
+dotnet new console -o EFGetStarted
+# aggiungiamo il progetto alla soluzione
+dotnet sln add EFGetStarted\EFGetStarted.csproj
+```
+
 {{< bs/alert >}}
 {{< markdownify >}}
 In questo esempio e in altri che seguiranno verranno utilizzate alcune caratteristiche del linguaggio C# presenti a partire dalla [versione 9.0](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9) ([`Top-level statements`](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#top-level-statements)) e [versione 10.0](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10) ([`Global using directives`](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10#global-using-directives), [`File-scoped namespace declaration`](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10#file-scoped-namespace-declaration), [`Global and implicit usings`](https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/#global-and-implicit-usings))
@@ -168,23 +175,62 @@ In questo esempio e in altri che seguiranno verranno utilizzate alcune caratteri
 
 To install EF Core, you install the package for the EF Core database provider(s) you want to target. This tutorial uses SQLite because it runs on all platforms that .NET supports. For a list of available providers, see [Database Providers](https://learn.microsoft.com/en-us/ef/core/providers/).  
 
-* **Tools > NuGet Package Manager > Package Manager Console**
+```ps1
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```
 
-* Run the following commands:
+{{< bs/alert >}}
+{{< markdownify >}}
+A scuola, di solito è presente un proxy per l'accesso a Internet. Per poter far funzionare il gestore dei pacchetti di dotnet (nuget) con un proxy occorre configurare le variabili d'ambiente con i riferimenti al proxy. La configurazione di queste variabili dipende dalla shell utilizzata.
+{{< /markdownify >}}
+{{< /bs/alert >}}
+
+#### Configure the Proxy Server
+
+{{< bs/toggle name=sdk style=tabs >}}
+
+  {{< bs/toggle-item Powershell >}}
+    {{< highlight ps1 >}}
+    # per impostare il proxy a scuola
+    $env:http_proxy="proxy.intranet:3128"
+    $env:https_proxy="proxy.intranet:3128"
+    # per verificare il valore delle variabili
+    echo $env:http_proxy
+    echo $env:https_proxy
+    # le variabili impostate in questo modo sono attive per la sessione corrente
+    {{< /highlight >}}
+  {{< /bs/toggle-item >}}
+
+  {{< bs/toggle-item Bash >}}
+    {{< highlight sh >}}
+    # per impostare il proxy a scuola
+    http_proxy="proxy.intranet:3128"
+    https_proxy="proxy.intranet:3128"
+    # per verificare il valore delle variabili
+    echo $http_proxy
+    echo $https_proxy
+    {{< /highlight >}}
+  {{< /bs/toggle-item >}}
   
-    ```ps1
-    Install-Package Microsoft.EntityFrameworkCore.Sqlite
-    ```
+  {{< bs/toggle-item CMD >}}
+    {{< highlight cmd >}}
+    :: per impostare il proxy a scuola
+    set http_proxy=proxy.intranet:3128
+    set https_proxy=proxy.intranet:3128
+    :: per verificare il valore delle variabili
+    echo %http_proxy%
+    echo %https_proxy%
+    {{< /highlight >}}
+  {{< /bs/toggle-item >}}
 
->Tip: You can also install packages by right-clicking on the project and selecting **Manage NuGet Packages**
+{{< /bs/toggle >}}
 
 ### Create the model
 
 Define a context class and entity classes that make up the model.  
 
-* Right-click on the project and select **Add > Class**
-* Enter **Model.cs** as the name and click **Add**
-* Replace the contents of the file with the following code
+* In the project directory, create Model.cs with the following code
+
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/EFGetStarted/EFGetStarted/Model.cs" >}}
 
 EF Core can also [reverse engineer](https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/) a model from an existing database.
@@ -208,15 +254,26 @@ using var db = new BloggingContext();
 
 The following steps use [migrations](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/) to create a database.
 
-* Run the following commands in Package Manager Console (PMC)
+* Run the following commands in .NET CLI
   
   ```ps1
-  Install-Package Microsoft.EntityFrameworkCore.Tools
-  Add-Migration InitialCreate
-  Update-Database
+  # installiamo il pacchetto dotnet-ef a livello globale
+  dotnet tool install --global dotnet-ef
+  
+  # nel caso il pacchetto dotnet-ef fosse già installato e si volesse effettuare un aggiornamento il comando è
+  dotnet tool update --global dotnet-ef
+  
+  # installiamo il pacchetto Design
+  dotnet add package Microsoft.EntityFrameworkCore.Design
+  
+  # effettuiamo la prima migrazione
+  dotnet ef migrations add InitialCreate
+  
+  # creiamo il database a partire dalla migrazione
+  dotnet ef database update
   ```
 
-  This installs the [PMC tools for EF Core](https://learn.microsoft.com/en-us/ef/core/cli/powershell). The Add-Migration command scaffolds a migration to create the initial set of tables for the model. The Update-Database command creates the database and applies the new migration to it.  
+This installs [dotnet ef](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) and the design package which is required to run the command on a project. The `migrations` command scaffolds a migration to create the initial set of tables for the model. The `database update` command creates the database and applies the new migration to it.
 
 {{< bs/alert warning >}}
 {{< markdownify >}}
@@ -259,7 +316,7 @@ Cliccando sul pulsante **Browse Data** si vede che non ci sono ancora dati nel d
     Console.WriteLine($"blog: {blog.Url}");
     ```
 
-    Si mandi in esecuzione il progetto e si osservi il contenuto della tabella Blogs dal programma **DB Browser for SQLite**:
+    Si mandi in esecuzione il progetto (da Visual Studio Code, oppure dalla command line mediante il comando `dotnet run` eseguito nella shell posizionata sulla cartella del progetto) e si osservi il contenuto della tabella Blogs dal programma **DB Browser for SQLite**:
 
     ![First value inserted in Blogs table](First_VAlue_inserted_in_Blogs_table.png#center)
 
@@ -337,47 +394,59 @@ Cliccando sul pulsante **Browse Data** si vede che non ci sono ancora dati nel d
 
 ### Creazione progetto
 
-Come nell’esempio precedente, creare in progetto **Console** `.NET Core`
+Come nell’esempio precedente, creiamo un progetto **Console** `.NET Core`
 
-* Open Visual Studio
-* Click **New project**
-* Select **Console App** with the **C#** tag and click **Next**
-* Enter **GestioneFattureClienti** for the name and click **Create**
+```ps1
+# creiamo una nuova soluzione
+dotnet new sln -o GestioneFattureClienti
+# spostiamoci nella cartella della soluzione
+cd GestioneFattureClienti
+# creiamo un nuovo progetto di tipo console all'interno della soluzione
+dotnet new console -o GestioneFattureClienti
+# aggiungiamo il progetto alla soluzione
+dotnet sln add GestioneFattureClienti\GestioneFattureClienti.csproj
+# facciamo partire Visual Studio Code sulla soluzione
+code .
+```
 
 ### Installazione di Entity Framework Core
 
-* Enter required packages:
-  * **Tools > NuGet Package Manager > Package Manager Console**
-    Run the following commands:
+Dalla shell posizionata sulla cartella del progetto `GestioneFattureClienti`, installiamo i seguenti pacchetti nel progetto:
 
-    ```ps1
-    Install-Package Microsoft.EntityFrameworkCore.Sqlite
-    Install-Package Microsoft.EntityFrameworkCore.Tools
-    ```
+  ```ps1
+  # installiamo il pacchetto Design
+  # https://www.nuget.org/packages/microsoft.entityframeworkcore.design/
+  dotnet add package Microsoft.EntityFrameworkCore.Design
+  # installiamo il pacchetto per Sqlite
+  # https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite
+  dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+  ```
 
->Tip: You can also install packages by right-clicking on the project and selecting **Manage NuGet Packages**
+>Tip: I pacchetti possono essere installati anche ricorrendo alle funzionalità del Solution Explorer di C# Dev Kit, oppure ad un plugin di Visual Studio Code, come **NuGet Gallery** (Extension ID: `patcx.vscode-nuget-gallery`), oppure tramite .
 
 ### Creazione del modello
 
-* In Visual Studio creare la cartella `Model` e al suo interno aggiungere la classe `Cliente` nel file `Cliente.cs` con il seguente codice:
+* In Visual Studio Code, tramite C# Dev Kit, creare la cartella `Model` e al suo interno aggiungere la classe `Cliente` nel file `Cliente.cs` con il seguente codice:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Cliente.cs" >}}
 
 * Aggiungere la classe `Fattura` nel file `Fattura.cs` all’interno della cartella `Model`, con dentro il seguente codice:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Fattura.cs" >}}
 
-* Creare una cartella `Data` e al suo interno aggiungere la classe `FattureClientiContext` nel file `FattureClientiContext.cs` con il codice:
+* In Visual Studio Code, tramite C# Dev Kit, creare la cartella `Data` e al suo interno aggiungere la classe `FattureClientiContext` nel file `FattureClientiContext.cs` con il codice:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Data/FattureClientiContext.cs" >}}
 
 A questo punto nel progetto dovrebbe essere presente una struttura di file e cartelle come quella riportata nella figura seguente:
 
-![Solution Explorer Image](SolutionExplorerImage.png#center)
+![Solution Explorer Image](solution-explorer.png#center)
 
-* Salvare tutti i file da Visual Studio
-* Eseguire il seguente comando nella Package Manager Console (PMC)
+* Eseguire il seguente comando nella shell posizionata sulla cartella del progetto
   
   ```ps1
-  Add-Migration InitialCreate
-  Update-Database
+  # effettuiamo la prima migrazione
+  dotnet ef migrations add InitialCreate
+    
+  # creiamo il database a partire dalla migrazione
+  dotnet ef database update
   ```
 
 Una volta eseguita la migration e aggiornato il database, dovrebbe essere presente un file di database di SQLite `FattureClienti.db` con le tabelle corrispondenti agli oggetti `Fatture` e `Clienti` (di tipo `DBSet<Fattura>` e `DBSet<Cliente>` rispettivamente).
