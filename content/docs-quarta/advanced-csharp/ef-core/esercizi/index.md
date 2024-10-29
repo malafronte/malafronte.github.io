@@ -55,23 +55,24 @@ In questa sezione verranno mostrati alcuni esercizi completamente svolti relativ
     * `Titolo` in `Romanzo` sia di tipo `string`;  
     * `AnnoPubblicazione` in `Romanzo` sia di tipo `int`  
     * `Nome`, `Sesso`, `Ruolo` in `Personaggio` siano di tipo `string`  
-    >Nota N1: creare un progetto Console denominato `Romanzi` da Visual Studio  
-    >Nota N2: installare le librerie per l’utilizzo di EF Core con SQLite (dalla Packet Manager Console di Visual Studio):
+
+    Nota N1: creare un progetto Console denominato `Romanzi` da Visual Studio Code  
+    Nota N2: installare le librerie per l’utilizzo di EF Core con SQLite:
 
     ```ps1
-    Install-Package Microsoft.EntityFrameworkCore.Tools
-    Install-Package Microsoft.EntityFrameworkCore.Sqlite
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
     ```  
   
 2. Creare la cartella `Model` con dentro le classi del modello dei dati  
 3. Creare la cartella `Data` con al suo interno la classe `RomanziContext`  
-   >Nota N3: la classe `RomanziContext` discende da `DbContext` ed espone una property per ciascuna tabella del database, come esemplificato di seguito:  
+   Nota N3: la classe `RomanziContext` discende da `DbContext` ed espone una property per ciascuna tabella del database, come esemplificato di seguito:  
 
    ```cs
     public DbSet<NomeClasse> NomeTabella { get; set; }  
    ```
 
-   >Nota N4: la classe `RomanziContext` potrebbe, se richiesto, implementare i metodi:
+   Nota N4: la classe `RomanziContext` potrebbe, se richiesto, implementare i metodi:
 
    ```cs  
    protected override void OnConfiguring(DbContextOptionsBuilder options);  
@@ -81,8 +82,8 @@ In questa sezione verranno mostrati alcuni esercizi completamente svolti relativ
 4. Effettuare la migration del database e la creazione fisica del file di database di SQLite:  
 
    ```ps1
-    Add-Migration InitialCreate
-    Update-Database
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
    ```
 
 5. Creare un metodo `static void PopulateDB()` nella classe `Program` che inserisce:  
@@ -108,11 +109,11 @@ File `Autore.cs`:
 File `Personaggio.cs`:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Romanzi/Romanzi/Model/Personaggio.cs" >}}  
 
-Si installino i pacchetti necessari per l'utilizzo di EF Core con SQLite, utilizzando la PMC di Visual Studio:  
+Si installino i pacchetti necessari per l'utilizzo di EF Core con SQLite:  
 
 ```ps1
-    Install-Package Microsoft.EntityFrameworkCore.Tools
-    Install-Package Microsoft.EntityFrameworkCore.Sqlite
+   dotnet add package Microsoft.EntityFrameworkCore.Design
+   dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 ```  
 
 Si crei la cartella `Data` con dentro il file `RomanziContext.cs`, relativo alla definizione della classe `RomanziContext`:  
@@ -121,13 +122,14 @@ Si crei la cartella `Data` con dentro il file `RomanziContext.cs`, relativo alla
 Dalla PCM di Visual Studio si eseguano i comandi per la generazione della migrazione e la creazione del database.
 
 ```ps1
-    Add-Migration InitialCreate
-    Update-Database
+   dotnet ef migrations add InitialCreate
+   dotnet ef database update
 ```
 
 La struttura del progetto dovrebbe essere simile a quella riportata nella figura seguente:
 
 ![Struttura Progetto Romanzi](ProgettoRomanzi-Struttura-File.png#center)
+
 Si scriva nel file `Program.cs` il codice relativo a:
 
 * Popolamento del database
@@ -148,7 +150,7 @@ File `Program.cs`:
    **Utilizza**`(`<ins>`StudenteId*`</ins>`,`<ins>`ComputerId*`</ins>`,`<ins>`DataOraInizioUtilizzo`</ins>`, DataOraFineUtilizzo )`  
    **Computer**`(`<ins>`Id`</ins>`, Modello, Collocazione )`  
 
-    Dove l’attributo sottolineato rappresenta la `Primary Key`, mentre l’attributo con l’asterisco rappresenta una `Foreign Key`.  
+    Dove l'attributo sottolineato rappresenta la `Primary Key`, mentre l’attributo con l’asterisco rappresenta una `Foreign Key`.  
     Assumere che:  
 
     * Gli `Id` siano di tipo intero ad auto-incremento
@@ -157,23 +159,23 @@ File `Program.cs`:
     * `DataOraInizioUtilizzo` e `DataOraFineUtilizzo` nell'entità `Utilizza` siano di tipo `DateTime`  
     * `Modello` e `Collocazione` nell'entità `Computer` siano di tipo `string`  
   
-    >Nota N1: creare un progetto Console denominato `DbUtilizziPC` da Visual Studio  
-    >Nota N2: installare le librerie per l’utilizzo di EF Core con SQLite (dalla Packet Manager Console di Visual Studio):
+    Nota N1: creare un progetto Console denominato `DbUtilizziPC` da Visual Studio  
+    Nota N2: installare le librerie per l’utilizzo di EF Core con SQLite (dalla Packet Manager Console di Visual Studio):
 
     ```ps1
-    Install-Package Microsoft.EntityFrameworkCore.Tools
-    Install-Package Microsoft.EntityFrameworkCore.Sqlite
+   dotnet add package Microsoft.EntityFrameworkCore.Design
+   dotnet add package Microsoft.EntityFrameworkCore.Sqlite
     ```  
   
 2. Creare la cartella `Model` con dentro le classi del modello dei dati  
 3. Creare la cartella `Data` con al suo interno la classe `UtilizziPCContext`  
-   >Nota N3: la classe `UtilizziPCContext` discende da `DbContext` ed espone una property per ciascuna tabella del database, come esemplificato di seguito:  
+   Nota N3: la classe `UtilizziPCContext` discende da `DbContext` ed espone una property per ciascuna tabella del database, come esemplificato di seguito:  
 
    ```cs
     public DbSet<NomeClasse> NomeTabella { get; set; }  
    ```
 
-   >Nota N4: la classe `UtilizziPCContext` potrebbe, se richiesto, implementare i metodi:
+   Nota N4: la classe `UtilizziPCContext` potrebbe, se richiesto, implementare i metodi:
 
    ```cs  
    protected override void OnConfiguring(DbContextOptionsBuilder options);  
@@ -183,8 +185,8 @@ File `Program.cs`:
 4. Effettuare la migration del database e la creazione fisica del file di database di SQLite:  
 
    ```ps1
-    Add-Migration InitialCreate
-    Update-Database
+   dotnet ef migrations add InitialCreate
+   dotnet ef database update
    ```
 
 5. Creare un metodo `static void PopulateDB()` nella classe `Program` che inserisce:
@@ -224,7 +226,7 @@ File `Program.cs`:
 
 ## Database *Università*
 
-<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/Universit%C3%A0" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
+<a class="btn btn-primary" href="https://github.com/malafronte/malafronte-doc-samples/tree/main/samples-quarta/EFCore/Universita" role="button">{{< icons/icon vendor=bootstrap name=github height=1em width=1em >}}&nbsp; Ottieni il codice</a>
 
 Creare un’applicazione `.Net Core` per la gestione dei corsi di laurea universitari.
 Usando il framework EF Core creare il database dei corsi di laurea e degli studenti, sapendo che nel model sono previste le seguenti classi:  
@@ -245,21 +247,21 @@ Nello schema precedente si è usata la convenzione di indicare la chiave primari
 La creazione del modello e del DBContext procede in maniera del tutto analoga a quanto già visto negli esempi precedenti.  
 Per il data Model i file sono:  
 File `Corso.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/Corso.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/Corso.cs" >}}
 File `CorsoLaurea.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/CorsoLaurea.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/CorsoLaurea.cs" >}}
 File `Docente.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/Docente.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/Docente.cs" >}}
 File `Frequenta.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/Frequenta.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/Frequenta.cs" >}}
 File `SharedEnums.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/SharedEnums.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/SharedEnums.cs" >}}
 File `Studente.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Model/Studente.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Model/Studente.cs" >}}
 
 Il DbContext è definito attraverso il file `UniversitàContext.cs` relativo alla definizione della classe `UniversitàContext`:  
 File `UniversitàContext.cs`:  
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Data/Universit%C3%A0Context.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Data/UniversitaContext.cs" >}}
 
 ### Query sul database Università
 
@@ -273,4 +275,4 @@ Q6: Stampare il numero di corsi seguiti da ogni studente
 Q7: Stampare i corsi seguiti dallo studente con Nome="Piero" e Cognome ="Gallo"  
 
 File `Program.cs`:
-{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universit%C3%A0/Universit%C3%A0/Program.cs" >}}
+{{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/Universita/Universita/Program.cs" >}}

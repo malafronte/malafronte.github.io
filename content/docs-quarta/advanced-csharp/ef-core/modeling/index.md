@@ -57,17 +57,22 @@ public class Cliente
 {
     public int ClienteId { get; set; }
     public string RagioneSociale { get; set; } = null!;
-    public string PartitaIVA { get; set; }=null!;
+    public string PartitaIVA { get; set; } = null!;
     public string? Citta { get; set; }
     public string? Via { get; set; }
     public string? Civico { get; set; }
     public string? CAP { get; set; }
-    public List<Fattura> Fatture { get; } = new List<Fattura>();
+    public List<Fattura> Fatture { get; } = [];
 
     public override string ToString()
     {
-        return string.Format($"[{nameof(ClienteId)}= {ClienteId}, {nameof(RagioneSociale)} = {RagioneSociale}, " +
-            $"{nameof(PartitaIVA)} = {PartitaIVA}, {nameof(Citta)} = {Citta}, {nameof(Via)} = {Via}, {nameof(Civico)} = {Civico}, {nameof(CAP)} = {CAP}]");
+        return $"{{{nameof(ClienteId)} = {ClienteId}, " +
+            $"{nameof(RagioneSociale)} = {RagioneSociale}, " +
+            $"{nameof(PartitaIVA)} = {PartitaIVA}, " +
+            $"{nameof(Citta)} = {Citta}, " +
+            $"{nameof(Via)} = {Via}, " +
+            $"{nameof(Civico)} = {Civico}, " +
+            $"{nameof(CAP)} = {CAP}}}";
     }
 }
 ```
@@ -76,7 +81,7 @@ Si noti che EF Core utilizza alcune convenzioni e impostazioni di default (che p
 Quando bisogna creare i collegamenti tra le tabelle del database occorre indicare dei legami tra gli oggetti delle classi che rappresentano le righe delle tabelle. Ad esempio, per esprimere il fatto che un cliente può avere molte fatture (una associazione 1 a molti) si è inserito all’interno della classe `Cliente` la property:  
 
 ```cs
-public List<Fattura> Fatture { get; } = new List<Fattura>();
+ public List<Fattura> Fatture { get; } = [];
 ```
 
 Questa property verrà usata da EF Core per capire il tipo di collegamento da fare tra la tabella dei `Clienti` e la tabella delle `Fatture`.  
@@ -93,7 +98,10 @@ public class Fattura
 
     public override string ToString()
     {
-        return string.Format($"{nameof(FatturaId)} = {FatturaId}, {nameof(Data)} = {Data.ToShortDateString()}, {nameof(Importo)} = {Importo}, {nameof(ClienteId)} = {ClienteId}");
+        return $"{{{nameof(FatturaId)} = {FatturaId}, " +
+            $"{nameof(Data)} = {Data.ToShortDateString()}, " +
+            $"{nameof(Importo)} = {Importo}, " +
+            $"{nameof(ClienteId)} = {ClienteId}}}";
     }
 }
 ```
@@ -102,7 +110,7 @@ Nella classe `Fattura` si notano alcuni elementi importantissimi:
 
 La chiave primaria `FatturaId`: è un campo di tipo intero che permette di individuare univocamente una fattura. Si può impostare da codice C# il valore da inserire nel database, ma solitamente è più comodo affidarsi alla proprietà di auto incremento che il database attribuisce alla chiave primaria, come si può vedere dallo schema della tabella che è stata creata da SQLite quando è stata fatta la migrazione.  
 
-La chiave esterna (foreign key) `ClienteId`: è un campo che non è chiave primaria nella tabella in cui compare ma lo è nella tabella riferita. In questo caso il campo `ClienteId` all'interno della classe Fattura permette di individuare univocamente il cliente intestatario della fattura. EF Core ha bisogno anche del campo `Cliente` di tipo `Cliente` nella classe `Fattura` per creare la chiave esterna nella tabella delle `Fatture` che punta alla chiave primaria della tabella dei `Clienti`. Il campo `Cliente` è usato da EF Core per definire il tipo di mapping tra la tabella delle `Fatture` e la tabella dei `Clienti`.
+La chiave esterna (foreign key) `ClienteId`: è un campo che non è chiave primaria nella tabella in cui compare, ma lo è nella tabella riferita. In questo caso il campo `ClienteId` all'interno della classe `Fattura` permette di individuare univocamente il cliente intestatario della fattura. EF Core ha bisogno anche del campo `Cliente` di tipo `Cliente` nella classe `Fattura` per creare la chiave esterna nella tabella delle `Fatture` che punta alla chiave primaria della tabella dei `Clienti`. Il campo `Cliente` è usato da EF Core per definire il tipo di mapping tra la tabella delle `Fatture` e la tabella dei `Clienti`.
 
 ### Creating and configuring a model
 

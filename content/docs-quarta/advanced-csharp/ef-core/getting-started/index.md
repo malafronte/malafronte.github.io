@@ -421,15 +421,19 @@ Dalla shell posizionata sulla cartella del progetto `GestioneFattureClienti`, in
   # https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite
   dotnet add package Microsoft.EntityFrameworkCore.Sqlite
   ```
+{{< bs/alert >}}
+{{< markdownify >}}
+I pacchetti possono essere installati anche ricorrendo alle funzionalità del Solution Explorer di C# Dev Kit, oppure ad un plugin di Visual Studio Code, come **NuGet Gallery** (Extension ID: `patcx.vscode-nuget-gallery`).
+{{< /markdownify >}}
+{{< /bs/alert >}}
 
->Tip: I pacchetti possono essere installati anche ricorrendo alle funzionalità del Solution Explorer di C# Dev Kit, oppure ad un plugin di Visual Studio Code, come **NuGet Gallery** (Extension ID: `patcx.vscode-nuget-gallery`), oppure tramite .
 
 ### Creazione del modello
 
 * In Visual Studio Code, tramite C# Dev Kit, creare la cartella `Model` e al suo interno aggiungere la classe `Cliente` nel file `Cliente.cs` con il seguente codice:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Cliente.cs" >}}
 
-* Aggiungere la classe `Fattura` nel file `Fattura.cs` all’interno della cartella `Model`, con dentro il seguente codice:
+* Aggiungere la classe `Fattura` nel file `Fattura.cs` all'interno della cartella `Model`, con dentro il seguente codice:
 {{< ghcode "https://raw.githubusercontent.com/malafronte/malafronte-doc-samples/main/samples-quarta/EFCore/GestioneFattureClienti/GestioneFattureClienti/Model/Fattura.cs" >}}
 
 * In Visual Studio Code, tramite C# Dev Kit, creare la cartella `Data` e al suo interno aggiungere la classe `FattureClientiContext` nel file `FattureClientiContext.cs` con il codice:
@@ -450,7 +454,7 @@ A questo punto nel progetto dovrebbe essere presente una struttura di file e car
   ```
 
 Una volta eseguita la migration e aggiornato il database, dovrebbe essere presente un file di database di SQLite `FattureClienti.db` con le tabelle corrispondenti agli oggetti `Fatture` e `Clienti` (di tipo `DBSet<Fattura>` e `DBSet<Cliente>` rispettivamente).
-Dopo aver eseguito la migration e l’aggiornamento del database, la struttura dei file e delle cartelle dovrebbe essere come quella della figura seguente:
+Dopo aver eseguito la migration e l'aggiornamento del database, la struttura dei file e delle cartelle dovrebbe essere come quella della figura seguente:
 
 ![Solution Explorer Image complete](SolutionExplorerImageComplete.png#center)
 

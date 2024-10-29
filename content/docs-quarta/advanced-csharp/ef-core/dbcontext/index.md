@@ -67,9 +67,14 @@ It is very important to dispose the DbContext after use. This ensures both that 
 Quando si crea un DBContext specifico per un determinato dominio applicativo, si crea una classe che discende dalla classe [`DbContext`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext). In questa classe, sono molto importanti i metodi:
 
 [**OnConfiguring(DbContextOptionsBuilder)**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.onconfiguring#microsoft-entityframeworkcore-dbcontext-onconfiguring(microsoft-entityframeworkcore-dbcontextoptionsbuilder))  
-  Override this method to configure the database (and other options) to be used for this context. This method is called for each instance of the context that is created. The base implementation does nothing. Questo metodo, di solito, contiene informazioni importanti che servono al DBContext per sapere dove si trova il Data Source, quali sono i parametri di connessione, etc.  
+  Override this method to configure the database (and other options) to be used for this context. This method is called for each instance of the context that is created. The base implementation does nothing.
+
+  Questo metodo, di solito, contiene informazioni importanti che servono al DBContext per sapere dove si trova il Data Source, quali sono i parametri di connessione, etc. 
+
 [**OnModelCreating(ModelBuilder)**](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating#microsoft-entityframeworkcore-dbcontext-onmodelcreating(microsoft-entityframeworkcore-modelbuilder))  
-  Override this method to further configure the model that was discovered by convention from the entity types exposed in `DbSet<TEntity>` properties on your derived context. The resulting model may be cached and re-used for subsequent instances of your derived context. Questo metodo viene usato per completare la definizione del modello dei dati, aggiungendo vincoli e parametri che non sono ricavati automaticamente da EF Core mediante l’ispezione delle classi del modello dei dati.
+  Override this method to further configure the model that was discovered by convention from the entity types exposed in `DbSet<TEntity>` properties on your derived context. The resulting model may be cached and re-used for subsequent instances of your derived context.
+  
+  Questo metodo viene usato per completare la definizione del modello dei dati, aggiungendo vincoli e parametri che non sono ricavati automaticamente da EF Core mediante l’ispezione delle classi del modello dei dati.
 {{< /markdownify >}}
 {{< /bs/alert >}}
 
